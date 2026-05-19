@@ -36,8 +36,10 @@ import { Route as DotwellKnownOauthProtectedResourceRouteImport } from './routes
 import { Route as DotwellKnownOauthAuthorizationServerRouteImport } from './routes/[.]well-known/oauth-authorization-server'
 import { Route as DotwellKnownSplatRouteImport } from './routes/[.]well-known/$'
 import { Route as UsernameSlugRouteImport } from './routes/$username/$slug'
+import { Route as DashboardJobsRouteRouteImport } from './routes/dashboard/jobs/route'
 import { Route as BuilderResumeIdRouteRouteImport } from './routes/builder/$resumeId/route'
 import { Route as DashboardResumesIndexRouteImport } from './routes/dashboard/resumes/index'
+import { Route as DashboardJobsIndexRouteImport } from './routes/dashboard/jobs/index'
 import { Route as BuilderResumeIdIndexRouteImport } from './routes/builder/$resumeId/index'
 import { Route as UploadsUserIdSplatRouteImport } from './routes/uploads/$userId.$'
 import { Route as DashboardSettingsProfileRouteImport } from './routes/dashboard/settings/profile'
@@ -53,6 +55,7 @@ import { Route as DotwellKnownOauthAuthorizationServerSplatRouteImport } from '.
 import { Route as DotwellKnownMcpServerCardDotjsonRouteImport } from './routes/[.]well-known/mcp/server-card[.]json'
 import { Route as DashboardSettingsIntegrationsRouteRouteImport } from './routes/dashboard/settings/integrations/route'
 import { Route as DashboardSettingsAuthenticationIndexRouteImport } from './routes/dashboard/settings/authentication/index'
+import { Route as DashboardJobsCampaignIdIndexRouteImport } from './routes/dashboard/jobs/$campaignId/index'
 import { Route as ApiUploadsUserIdSplatRouteImport } from './routes/api/uploads/$userId.$'
 
 const SchemaDotjsonRoute = SchemaDotjsonRouteImport.update({
@@ -192,6 +195,11 @@ const UsernameSlugRoute = UsernameSlugRouteImport.update({
   path: '/$username/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardJobsRouteRoute = DashboardJobsRouteRouteImport.update({
+  id: '/jobs',
+  path: '/jobs',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
 const BuilderResumeIdRouteRoute = BuilderResumeIdRouteRouteImport.update({
   id: '/builder/$resumeId',
   path: '/builder/$resumeId',
@@ -201,6 +209,11 @@ const DashboardResumesIndexRoute = DashboardResumesIndexRouteImport.update({
   id: '/resumes/',
   path: '/resumes/',
   getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardJobsIndexRoute = DashboardJobsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardJobsRouteRoute,
 } as any)
 const BuilderResumeIdIndexRoute = BuilderResumeIdIndexRouteImport.update({
   id: '/',
@@ -287,6 +300,12 @@ const DashboardSettingsAuthenticationIndexRoute =
     path: '/settings/authentication/',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
+const DashboardJobsCampaignIdIndexRoute =
+  DashboardJobsCampaignIdIndexRouteImport.update({
+    id: '/$campaignId/',
+    path: '/$campaignId/',
+    getParentRoute: () => DashboardJobsRouteRoute,
+  } as any)
 const ApiUploadsUserIdSplatRoute = ApiUploadsUserIdSplatRouteImport.update({
   id: '/api/uploads/$userId/$',
   path: '/api/uploads/$userId/$',
@@ -300,6 +319,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRouteRouteWithChildren
   '/schema.json': typeof SchemaDotjsonRoute
   '/builder/$resumeId': typeof BuilderResumeIdRouteRouteWithChildren
+  '/dashboard/jobs': typeof DashboardJobsRouteRouteWithChildren
   '/$username/$slug': typeof UsernameSlugRoute
   '/.well-known/$': typeof DotwellKnownSplatRoute
   '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRouteWithChildren
@@ -335,8 +355,10 @@ export interface FileRoutesByFullPath {
   '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
   '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
   '/builder/$resumeId/': typeof BuilderResumeIdIndexRoute
+  '/dashboard/jobs/': typeof DashboardJobsIndexRoute
   '/dashboard/resumes/': typeof DashboardResumesIndexRoute
   '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
+  '/dashboard/jobs/$campaignId/': typeof DashboardJobsCampaignIdIndexRoute
   '/dashboard/settings/authentication/': typeof DashboardSettingsAuthenticationIndexRoute
 }
 export interface FileRoutesByTo {
@@ -377,8 +399,10 @@ export interface FileRoutesByTo {
   '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
   '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
   '/builder/$resumeId': typeof BuilderResumeIdIndexRoute
+  '/dashboard/jobs': typeof DashboardJobsIndexRoute
   '/dashboard/resumes': typeof DashboardResumesIndexRoute
   '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
+  '/dashboard/jobs/$campaignId': typeof DashboardJobsCampaignIdIndexRoute
   '/dashboard/settings/authentication': typeof DashboardSettingsAuthenticationIndexRoute
 }
 export interface FileRoutesById {
@@ -389,6 +413,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRouteRouteWithChildren
   '/schema.json': typeof SchemaDotjsonRoute
   '/builder/$resumeId': typeof BuilderResumeIdRouteRouteWithChildren
+  '/dashboard/jobs': typeof DashboardJobsRouteRouteWithChildren
   '/$username/$slug': typeof UsernameSlugRoute
   '/.well-known/$': typeof DotwellKnownSplatRoute
   '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRouteWithChildren
@@ -425,8 +450,10 @@ export interface FileRoutesById {
   '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
   '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
   '/builder/$resumeId/': typeof BuilderResumeIdIndexRoute
+  '/dashboard/jobs/': typeof DashboardJobsIndexRoute
   '/dashboard/resumes/': typeof DashboardResumesIndexRoute
   '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
+  '/dashboard/jobs/$campaignId/': typeof DashboardJobsCampaignIdIndexRoute
   '/dashboard/settings/authentication/': typeof DashboardSettingsAuthenticationIndexRoute
 }
 export interface FileRouteTypes {
@@ -438,6 +465,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/schema.json'
     | '/builder/$resumeId'
+    | '/dashboard/jobs'
     | '/$username/$slug'
     | '/.well-known/$'
     | '/.well-known/oauth-authorization-server'
@@ -473,8 +501,10 @@ export interface FileRouteTypes {
     | '/dashboard/settings/profile'
     | '/uploads/$userId/$'
     | '/builder/$resumeId/'
+    | '/dashboard/jobs/'
     | '/dashboard/resumes/'
     | '/api/uploads/$userId/$'
+    | '/dashboard/jobs/$campaignId/'
     | '/dashboard/settings/authentication/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -515,8 +545,10 @@ export interface FileRouteTypes {
     | '/dashboard/settings/profile'
     | '/uploads/$userId/$'
     | '/builder/$resumeId'
+    | '/dashboard/jobs'
     | '/dashboard/resumes'
     | '/api/uploads/$userId/$'
+    | '/dashboard/jobs/$campaignId'
     | '/dashboard/settings/authentication'
   id:
     | '__root__'
@@ -526,6 +558,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/schema.json'
     | '/builder/$resumeId'
+    | '/dashboard/jobs'
     | '/$username/$slug'
     | '/.well-known/$'
     | '/.well-known/oauth-authorization-server'
@@ -562,8 +595,10 @@ export interface FileRouteTypes {
     | '/dashboard/settings/profile'
     | '/uploads/$userId/$'
     | '/builder/$resumeId/'
+    | '/dashboard/jobs/'
     | '/dashboard/resumes/'
     | '/api/uploads/$userId/$'
+    | '/dashboard/jobs/$campaignId/'
     | '/dashboard/settings/authentication/'
   fileRoutesById: FileRoutesById
 }
@@ -781,6 +816,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UsernameSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/jobs': {
+      id: '/dashboard/jobs'
+      path: '/jobs'
+      fullPath: '/dashboard/jobs'
+      preLoaderRoute: typeof DashboardJobsRouteRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
     '/builder/$resumeId': {
       id: '/builder/$resumeId'
       path: '/builder/$resumeId'
@@ -794,6 +836,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/resumes/'
       preLoaderRoute: typeof DashboardResumesIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/jobs/': {
+      id: '/dashboard/jobs/'
+      path: '/'
+      fullPath: '/dashboard/jobs/'
+      preLoaderRoute: typeof DashboardJobsIndexRouteImport
+      parentRoute: typeof DashboardJobsRouteRoute
     }
     '/builder/$resumeId/': {
       id: '/builder/$resumeId/'
@@ -900,6 +949,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardSettingsAuthenticationIndexRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
+    '/dashboard/jobs/$campaignId/': {
+      id: '/dashboard/jobs/$campaignId/'
+      path: '/$campaignId'
+      fullPath: '/dashboard/jobs/$campaignId/'
+      preLoaderRoute: typeof DashboardJobsCampaignIdIndexRouteImport
+      parentRoute: typeof DashboardJobsRouteRoute
+    }
     '/api/uploads/$userId/$': {
       id: '/api/uploads/$userId/$'
       path: '/api/uploads/$userId/$'
@@ -966,7 +1022,21 @@ const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
   AuthRouteRouteChildren,
 )
 
+interface DashboardJobsRouteRouteChildren {
+  DashboardJobsIndexRoute: typeof DashboardJobsIndexRoute
+  DashboardJobsCampaignIdIndexRoute: typeof DashboardJobsCampaignIdIndexRoute
+}
+
+const DashboardJobsRouteRouteChildren: DashboardJobsRouteRouteChildren = {
+  DashboardJobsIndexRoute: DashboardJobsIndexRoute,
+  DashboardJobsCampaignIdIndexRoute: DashboardJobsCampaignIdIndexRoute,
+}
+
+const DashboardJobsRouteRouteWithChildren =
+  DashboardJobsRouteRoute._addFileChildren(DashboardJobsRouteRouteChildren)
+
 interface DashboardRouteRouteChildren {
+  DashboardJobsRouteRoute: typeof DashboardJobsRouteRouteWithChildren
   DashboardIndexRoute: typeof DashboardIndexRoute
   DashboardSettingsIntegrationsRouteRoute: typeof DashboardSettingsIntegrationsRouteRoute
   DashboardSettingsApiKeysRoute: typeof DashboardSettingsApiKeysRoute
@@ -979,6 +1049,7 @@ interface DashboardRouteRouteChildren {
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
+  DashboardJobsRouteRoute: DashboardJobsRouteRouteWithChildren,
   DashboardIndexRoute: DashboardIndexRoute,
   DashboardSettingsIntegrationsRouteRoute:
     DashboardSettingsIntegrationsRouteRoute,

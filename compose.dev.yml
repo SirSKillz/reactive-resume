@@ -15,6 +15,7 @@ services:
       S3_ENDPOINT: http://seaweedfs:8333
       REDIS_URL: redis://redis:6379
       CHOKIDAR_USEPOLLING: "true"
+      FLAG_ALLOW_UNSAFE_AI_BASE_URL: "true"
     ports:
       - "127.0.0.1:3000:3000"
     volumes:

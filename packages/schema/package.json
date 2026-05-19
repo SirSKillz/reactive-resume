@@ -5,6 +5,7 @@
 	"private": true,
 	"exports": {
 		"./icons": "./src/icons.ts",
+		"./job-application": "./src/job-application.ts",
 		"./page": "./src/page.ts",
 		"./resume/*": "./src/resume/*.ts",
 		"./schema.json": "./schema.json",
