@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CIGBOyb-.js";import{fr as t,kn as n}from"./index-SFMmWQwr.js";var r=e();function i(){return(0,r.jsxs)(`div`,{className:`mx-auto flex h-svh w-dvw max-w-sm flex-col justify-center space-y-6 px-4 xs:px-0`,children:[(0,r.jsx)(n,{className:`mb-4 size-20 self-center`}),(0,r.jsx)(t,{})]})}export{i as component};

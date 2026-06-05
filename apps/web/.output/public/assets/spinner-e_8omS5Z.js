@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CIGBOyb-.js";import{t}from"./CircleNotch.es-DzkH-eNL.js";import{t as n}from"./style-CZtKmMyj.js";var r=e();function i({className:e,color:i,...a}){return(0,r.jsx)(t,{role:`status`,"aria-label":`Loading`,color:i??`currentColor`,className:n(`size-4 animate-spin`,e),...a})}export{i as t};

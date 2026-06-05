@@ -71,6 +71,7 @@ export const jobApplication = pg.pgTable(
 		locationType: locationTypeEnum("location_type"),
 		salary: pg.text("salary"),
 		status: applicationStatusEnum("status").notNull().default("wishlist"),
+		position: pg.integer("position").notNull().default(0),
 		jobDescription: pg.text("job_description"),
 		notes: pg.text("notes"),
 		applicationMethod: applicationMethodEnum("application_method"),
@@ -83,7 +84,12 @@ export const jobApplication = pg.pgTable(
 			.defaultNow()
 			.$onUpdate(() => /* @__PURE__ */ new Date()),
 	},
-	(t) => [pg.index().on(t.campaignId), pg.index().on(t.userId), pg.index().on(t.campaignId, t.status)],
+	(t) => [
+		pg.index().on(t.campaignId),
+		pg.index().on(t.userId),
+		pg.index().on(t.campaignId, t.status),
+		pg.index().on(t.userId, t.status, t.position),
+	],
 );
 
 export const jobApplicationActivity = pg.pgTable(

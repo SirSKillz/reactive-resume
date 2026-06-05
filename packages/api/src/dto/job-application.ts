@@ -31,6 +31,7 @@ const jobApplicationSchema = createSelectSchema(schema.jobApplication, {
 	locationType: locationTypeSchema.nullable().describe("Whether the job is remote, hybrid, or on-site."),
 	salary: z.string().nullable().describe("The salary range or expected salary."),
 	status: applicationStatusSchema.describe("The current status of the application."),
+	position: z.number().describe("The display order within the current status column."),
 	jobDescription: z.string().nullable().describe("The full job description text."),
 	notes: z.string().nullable().describe("Personal notes about this application."),
 	applicationMethod: applicationMethodSchema
@@ -145,6 +146,14 @@ export const jobApplicationDto = {
 		input: z.object({
 			id: z.string(),
 			status: applicationStatusSchema,
+		}),
+		output: z.void(),
+	},
+
+	reorderColumn: {
+		input: z.object({
+			status: applicationStatusSchema,
+			orderedIds: z.array(z.string()).min(1),
 		}),
 		output: z.void(),
 	},

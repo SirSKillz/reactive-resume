@@ -11,10 +11,18 @@ type JobApplication = RouterOutput["jobApplication"]["application"]["list"][numb
 type Props = {
 	application: JobApplication;
 	onClick: (application: JobApplication) => void;
+	draggedApplicationId: string | null;
 };
 
-export function ApplicationCard({ application, onClick }: Props) {
-	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+export function ApplicationCard({ application, onClick, draggedApplicationId }: Props) {
+	const {
+		attributes,
+		listeners,
+		setNodeRef,
+		transform,
+		transition,
+		isDragging: isSortableDragging,
+	} = useSortable({
 		id: application.id,
 		data: { application },
 	});
@@ -34,7 +42,8 @@ export function ApplicationCard({ application, onClick }: Props) {
 			className={cn(
 				"w-full cursor-grab select-none rounded-md border bg-card p-3 text-left shadow-xs",
 				"transition-colors hover:border-primary/30",
-				isDragging && "cursor-grabbing opacity-50",
+				isSortableDragging && "cursor-grabbing opacity-50",
+				application.id === draggedApplicationId && "pointer-events-none",
 			)}
 			onClick={() => onClick(application)}
 			aria-label={t`${application.jobTitle} at ${application.company}`}

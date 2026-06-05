@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CIGBOyb-.js";var t=e(),n=()=>(0,t.jsx)(`div`,{children:`Template not found`});export{n as errorComponent};

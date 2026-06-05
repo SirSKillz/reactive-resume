@@ -152,6 +152,26 @@ const applicationRouter = {
 			await jobApplicationService.application.updateStatus({ userId: context.user.id, ...input });
 		}),
 
+	reorderColumn: protectedProcedure
+		.route({
+			method: "POST",
+			path: "/jobs/applications/reorder",
+			tags: ["Job Tracker"],
+			operationId: "reorderJobApplications",
+			summary: "Reorder applications in a column",
+			description:
+				"Reorders job applications within a Kanban column by setting their position and status. Used for drag-and-drop reordering.",
+			successDescription: "No content.",
+		})
+		.input(jobApplicationDto.reorderColumn.input)
+		.output(jobApplicationDto.reorderColumn.output)
+		.handler(async ({ context, input }) => {
+			await jobApplicationService.application.reorderColumn({
+				userId: context.user.id,
+				...input,
+			});
+		}),
+
 	delete: protectedProcedure
 		.route({
 			method: "DELETE",
