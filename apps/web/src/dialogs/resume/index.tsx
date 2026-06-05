@@ -6,7 +6,7 @@ import { CaretDownIcon, MagicWandIcon, PencilSimpleLineIcon, PlusIcon, TestTubeI
 import { useStore } from "@tanstack/react-form";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate, useParams } from "@tanstack/react-router";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { toast } from "sonner";
 import z from "zod";
 import { Button } from "@reactive-resume/ui/components/button";
@@ -34,7 +34,7 @@ import {
 } from "@reactive-resume/ui/components/input-group";
 import { generateId, generateRandomName, slugify } from "@reactive-resume/utils/string";
 import { ChipInput } from "@/components/input/chip-input";
-import { usePatchResume } from "@/components/resume/builder-resume-draft";
+import { usePatchResume } from "@/features/resume/builder/draft";
 import { useFormBlocker } from "@/hooks/use-form-blocker";
 import { authClient } from "@/libs/auth/client";
 import { getResumeErrorMessage } from "@/libs/error-message";
@@ -332,12 +332,10 @@ export function DuplicateResumeDialog({ data }: DialogProps<"resume.duplicate">)
 
 const ResumeForm = withForm({
 	defaultValues,
-	render: ({ form }) => {
+	render: function ResumeFormRenderer({ form }) {
 		const { data: session } = authClient.useSession();
 
-		const slugPrefix = useMemo(() => {
-			return `${window.location.origin}/${session?.user.username ?? ""}/`;
-		}, [session]);
+		const slugPrefix = `${window.location.origin}/${session?.user.username ?? ""}/`;
 
 		const onGenerateName = () => {
 			form.setFieldValue("name", generateRandomName());

@@ -15,19 +15,19 @@ import {
 	MagnifyingGlassPlusIcon,
 } from "@phosphor-icons/react";
 import { useNavigate } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { useCallback, useMemo, useState } from "react";
 import { useControls } from "react-zoom-pan-pinch";
 import { toast } from "sonner";
 import { useCopyToClipboard } from "usehooks-ts";
+import { buildDocx } from "@reactive-resume/docx";
 import { Button } from "@reactive-resume/ui/components/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@reactive-resume/ui/components/tooltip";
 import { downloadWithAnchor, generateFilename } from "@reactive-resume/utils/file";
-import { buildDocx } from "@reactive-resume/utils/resume/docx";
 import { cn } from "@reactive-resume/utils/style";
-import { useCurrentResume } from "@/components/resume/builder-resume-draft";
+import { useCurrentResume } from "@/features/resume/builder/draft";
+import { createResumePdfBlob } from "@/features/resume/export/pdf-document";
 import { authClient } from "@/libs/auth/client";
-import { createResumePdfBlob } from "@/libs/resume/pdf-document";
 
 type BuilderDockProps = {
 	pageLayout: BuilderPreviewPageLayout;
@@ -96,7 +96,7 @@ export function BuilderDock({ pageLayout, onTogglePageLayout }: BuilderDockProps
 
 	return (
 		<div className="fixed inset-x-0 bottom-4 flex items-center justify-center">
-			<motion.div
+			<m.div
 				initial={{ opacity: 0, y: -18 }}
 				animate={{ opacity: 0.6, y: 0 }}
 				whileHover={{ opacity: 1, y: -2, scale: 1.01 }}
@@ -130,7 +130,7 @@ export function BuilderDock({ pageLayout, onTogglePageLayout }: BuilderDockProps
 					icon={isPrinting ? CircleNotchIcon : FilePdfIcon}
 					iconClassName={cn(isPrinting && "animate-spin")}
 				/>
-			</motion.div>
+			</m.div>
 		</div>
 	);
 }
@@ -149,7 +149,7 @@ function DockIcon({ icon: Icon, title, disabled, onClick, iconClassName, active 
 		<Tooltip>
 			<TooltipTrigger
 				render={
-					<motion.div
+					<m.div
 						className="will-change-transform"
 						whileHover={disabled ? undefined : { y: -1, scale: 1.04 }}
 						whileTap={disabled ? undefined : { scale: 0.97 }}
@@ -165,7 +165,7 @@ function DockIcon({ icon: Icon, title, disabled, onClick, iconClassName, active 
 						>
 							<Icon className={cn("size-4", iconClassName)} />
 						</Button>
-					</motion.div>
+					</m.div>
 				}
 			/>
 

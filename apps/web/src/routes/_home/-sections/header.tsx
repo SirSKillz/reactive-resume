@@ -1,13 +1,13 @@
 import { t } from "@lingui/core/macro";
 import { ArrowRightIcon, TranslateIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { m, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
 import { BrandIcon } from "@reactive-resume/ui/components/brand-icon";
 import { Button } from "@reactive-resume/ui/components/button";
 import { GithubStarsButton } from "@/components/input/github-stars-button";
-import { LocaleCombobox } from "@/components/locale/combobox";
-import { ThemeToggleButton } from "@/components/theme/toggle-button";
+import { LocaleCombobox } from "@/features/locale/combobox";
+import { ThemeToggleButton } from "@/features/theme/toggle-button";
 
 export function Header() {
 	const y = useMotionValue(0);
@@ -41,7 +41,7 @@ export function Header() {
 	}, [y]);
 
 	return (
-		<motion.header
+		<m.header
 			style={{ y: springY }}
 			className="fixed inset-x-0 top-0 z-50 border-transparent border-b bg-background/80 backdrop-blur-lg transition-colors"
 			initial={{ y: -100, opacity: 0 }}
@@ -80,6 +80,6 @@ export function Header() {
 					</div>
 				</div>
 			</nav>
-		</motion.header>
+		</m.header>
 	);
 }

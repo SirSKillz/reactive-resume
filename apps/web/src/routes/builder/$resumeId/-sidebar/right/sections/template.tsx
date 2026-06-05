@@ -2,9 +2,9 @@ import { useLingui } from "@lingui/react";
 import { SwapIcon } from "@phosphor-icons/react";
 import { Badge } from "@reactive-resume/ui/components/badge";
 import { Button } from "@reactive-resume/ui/components/button";
-import { useCurrentResume } from "@/components/resume/builder-resume-draft";
 import { templates } from "@/dialogs/resume/template/data";
 import { useDialogStore } from "@/dialogs/store";
+import { useCurrentResume } from "@/features/resume/builder/draft";
 import { SectionBase } from "../shared/section-base";
 
 export function TemplateSectionBuilder() {
@@ -43,7 +43,7 @@ function TemplateSectionForm() {
 				</div>
 			</Button>
 
-			<div className="flex flex-1 flex-col space-y-4 @md:pt-1 @md:pb-3">
+			<div className="flex flex-1 flex-col gap-y-4 @md:pt-1 @md:pb-3">
 				<div className="space-y-1">
 					<h3 className="font-semibold text-2xl capitalize tracking-tight">{metadata.name}</h3>
 					<p className="text-muted-foreground text-sm">{i18n.t(metadata.description)}</p>

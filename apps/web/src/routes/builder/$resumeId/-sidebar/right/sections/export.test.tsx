@@ -10,16 +10,20 @@ const downloadWithAnchor = vi.hoisted(() => vi.fn());
 const buildDocx = vi.hoisted(() => vi.fn().mockResolvedValue(new Blob(["x"], { type: "application/x-docx" })));
 const createResumePdfBlob = vi.hoisted(() => vi.fn().mockResolvedValue(new Blob(["x"], { type: "application/pdf" })));
 
+type SectionBaseProps = {
+	children: React.ReactNode;
+};
+
 vi.mock("../shared/section-base", () => ({
-	SectionBase: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+	SectionBase: ({ children }: SectionBaseProps) => <div>{children}</div>,
 }));
 vi.mock("@reactive-resume/utils/file", () => ({
 	downloadWithAnchor,
 	generateFilename: (name: string, ext: string) => `${name}.${ext}`,
 }));
-vi.mock("@reactive-resume/utils/resume/docx", () => ({ buildDocx }));
-vi.mock("@/libs/resume/pdf-document", () => ({ createResumePdfBlob }));
-vi.mock("@/components/resume/builder-resume-draft", () => ({
+vi.mock("@reactive-resume/docx", () => ({ buildDocx }));
+vi.mock("@/features/resume/export/pdf-document", () => ({ createResumePdfBlob }));
+vi.mock("@/features/resume/builder/draft", () => ({
 	useResume: () => ({ id: "r1", name: "My Resume", data: defaultResumeData }),
 }));
 

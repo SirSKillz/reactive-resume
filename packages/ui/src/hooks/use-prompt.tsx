@@ -31,9 +31,13 @@ type PromptContextType = {
 	prompt: (title: string, options?: PromptOptions) => Promise<string | null>;
 };
 
+type PromptDialogProviderProps = {
+	children: React.ReactNode;
+};
+
 const PromptContext = React.createContext<PromptContextType | null>(null);
 
-export function PromptDialogProvider({ children }: { children: React.ReactNode }) {
+export function PromptDialogProvider({ children }: PromptDialogProviderProps) {
 	const inputRef = React.useRef<HTMLInputElement>(null);
 
 	const [state, setState] = React.useState<PromptState>({
@@ -49,10 +53,12 @@ export function PromptDialogProvider({ children }: { children: React.ReactNode }
 	React.useEffect(() => {
 		if (!state.open) return;
 
-		setTimeout(() => {
+		const timeoutId = window.setTimeout(() => {
 			if (!inputRef.current) return;
 			inputRef.current.focus();
 		}, 0);
+
+		return () => window.clearTimeout(timeoutId);
 	}, [state.open]);
 
 	const prompt = React.useCallback(async (title: string, options?: PromptOptions): Promise<string | null> => {
@@ -94,8 +100,10 @@ export function PromptDialogProvider({ children }: { children: React.ReactNode }
 		[handleConfirm],
 	);
 
+	const contextValue = React.useMemo<PromptContextType>(() => ({ prompt }), [prompt]);
+
 	return (
-		<PromptContext.Provider value={{ prompt }}>
+		<PromptContext.Provider value={contextValue}>
 			{children}
 
 			<AlertDialog open={state.open} onOpenChange={(open) => !open && handleCancel()}>
@@ -126,7 +134,7 @@ export function PromptDialogProvider({ children }: { children: React.ReactNode }
 }
 
 export function usePrompt() {
-	const context = React.useContext(PromptContext);
+	const context = React.use(PromptContext);
 
 	if (!context) {
 		throw new Error("usePrompt must be used within a <PromptDialogProvider />.");

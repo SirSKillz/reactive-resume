@@ -2,10 +2,10 @@ import type { MessageDescriptor, Messages } from "@lingui/core";
 import type { Locale } from "@reactive-resume/utils/locale";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
-import { createIsomorphicFn, createServerFn } from "@tanstack/react-start";
-import { getCookie, setCookie } from "@tanstack/react-start/server";
 import Cookies from "js-cookie";
-import { localeSchema } from "@reactive-resume/utils/locale";
+import { isRTL, localeSchema } from "@reactive-resume/utils/locale";
+
+export { isRTL };
 
 const storageKey = "locale";
 const defaultLocale: Locale = "en-US";
@@ -77,41 +77,15 @@ export const resolveLocale = (locale: string): Locale => {
 	return isLocale(locale) ? locale : defaultLocale;
 };
 
-const RTL_LANGUAGES = new Set([
-	"ar", // Arabic
-	"ckb", // Kurdish (Sorani)
-	"dv", // Dhivehi
-	"fa", // Persian
-	"he", // Hebrew
-	"ps", // Pashto
-	"sd", // Sindhi
-	"ug", // Uyghur
-	"ur", // Urdu
-	"yi", // Yiddish
-]);
+export const getLocale = () => {
+	const locale = Cookies.get(storageKey);
+	if (!locale || !isLocale(locale)) return defaultLocale;
+	return locale;
+};
 
-export function isRTL(locale: string): boolean {
-	const language = locale.split("-")[0].toLowerCase();
-	return RTL_LANGUAGES.has(language);
-}
-
-export const getLocale = createIsomorphicFn()
-	.client(() => {
-		const locale = Cookies.get(storageKey);
-		if (!locale || !isLocale(locale)) return defaultLocale;
-		return locale;
-	})
-	.server(async () => {
-		const cookieLocale = getCookie(storageKey);
-		if (!cookieLocale || !isLocale(cookieLocale)) return defaultLocale;
-		return cookieLocale;
-	});
-
-export const setLocaleServerFn = createServerFn({ method: "POST" })
-	.inputValidator(localeSchema)
-	.handler(async ({ data }) => {
-		setCookie(storageKey, data);
-	});
+export const setLocaleCookie = (locale: Locale) => {
+	Cookies.set(storageKey, locale);
+};
 
 const loadMessages = async (locale: Locale) => {
 	const load = messageLoaders[`../../locales/${locale}.po`];

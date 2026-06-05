@@ -21,8 +21,8 @@ import { cn } from "@reactive-resume/utils/style";
 import { ChipInput } from "@/components/input/chip-input";
 import { ColorPicker } from "@/components/input/color-picker";
 import { IconPicker } from "@/components/input/icon-picker";
-import { useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { useDialogStore } from "@/dialogs/store";
+import { useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useFormBlocker } from "@/hooks/use-form-blocker";
 import { makeSectionItem } from "@/libs/resume/make-section-item";
 import { createSectionItem, updateSectionItem } from "@/libs/resume/section-actions";
@@ -149,7 +149,7 @@ export function UpdateSkillDialog({ data }: DialogProps<"resume.sections.skills.
 
 const SkillForm = withForm({
 	defaultValues,
-	render: ({ form }) => {
+	render: function SkillFormRenderer({ form }) {
 		const nameMeta = useStore(form.store, (s) => s.fieldMeta?.name);
 
 		const isNameInvalid = (nameMeta?.isTouched ?? false) && (nameMeta?.errors?.length ?? 0) > 0;

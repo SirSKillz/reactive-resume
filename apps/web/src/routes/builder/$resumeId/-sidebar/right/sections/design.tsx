@@ -1,8 +1,10 @@
 import type z from "zod";
 import { Trans } from "@lingui/react/macro";
 import { useStore } from "@tanstack/react-form";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { colorDesignSchema, levelDesignSchema } from "@reactive-resume/schema/resume/data";
+import { resolveLevelDisplaySizes } from "@reactive-resume/schema/resume/level-display-sizes";
+import { resolveStyleRuleFontSize } from "@reactive-resume/schema/resume/style-rules";
 import { FormControl, FormItem, FormLabel, FormMessage } from "@reactive-resume/ui/components/form";
 import { Input } from "@reactive-resume/ui/components/input";
 import { Separator } from "@reactive-resume/ui/components/separator";
@@ -11,7 +13,7 @@ import { ColorPicker } from "@/components/input/color-picker";
 import { IconPicker } from "@/components/input/icon-picker";
 import { LevelTypeCombobox } from "@/components/level/combobox";
 import { LevelDisplay } from "@/components/level/display";
-import { useCurrentResume, useUpdateResumeData } from "@/components/resume/builder-resume-draft";
+import { useCurrentResume, useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useSyncFormValues } from "@/hooks/use-sync-form-values";
 import { useAppForm } from "@/libs/tanstack-form";
 import { SectionBase } from "../shared/section-base";
@@ -231,15 +233,15 @@ function QuickColorCircle({ color, active, onSelect, className, ...props }: Quic
 
 			<AnimatePresence>
 				{active && (
-					<motion.div
-						initial={{ scale: 0 }}
-						animate={{ scale: 1 }}
-						exit={{ scale: 0 }}
+					<m.div
+						initial={{ scale: 0.95, opacity: 0 }}
+						animate={{ scale: 1, opacity: 1 }}
+						exit={{ scale: 0.95, opacity: 0 }}
 						transition={{ duration: 0.16, ease: "easeOut" }}
 						className="absolute inset-0 flex size-8 items-center justify-center will-change-transform"
 					>
 						<div className="size-4 rounded-md bg-foreground" />
-					</motion.div>
+					</m.div>
 				)}
 			</AnimatePresence>
 		</button>
@@ -276,6 +278,13 @@ function LevelSectionForm() {
 
 	const previewType = useStore(form.store, (s) => s.values.type);
 	const previewIcon = useStore(form.store, (s) => s.values.icon);
+	const iconFontSize = resolveStyleRuleFontSize(resume.data, { slot: "icon" });
+	const levelFontSize = resolveStyleRuleFontSize(resume.data, { slot: "level" });
+	const { decorationSize, levelIconExplicitSize } = resolveLevelDisplaySizes({
+		bodyFontSize: resume.data.metadata.typography.body.fontSize,
+		iconFontSize,
+		levelFontSize,
+	});
 
 	return (
 		<form
@@ -294,7 +303,14 @@ function LevelSectionForm() {
 				style={{ "--page-primary-color": colors.primary, backgroundColor: colors.background } as React.CSSProperties}
 				className="flex items-center justify-center rounded-md p-6"
 			>
-				<LevelDisplay level={3} type={previewType} icon={previewIcon} className="w-full max-w-[220px] justify-center" />
+				<LevelDisplay
+					level={3}
+					type={previewType}
+					icon={previewIcon}
+					decorationSizePx={decorationSize}
+					iconSizePx={levelIconExplicitSize}
+					className="w-full max-w-[220px] justify-center"
+				/>
 			</div>
 
 			<div className="flex items-center gap-3">

@@ -6,10 +6,14 @@ import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { useDialogStore } from "@/dialogs/store";
 
+type SectionBaseProps = {
+	children: React.ReactNode;
+};
+
 vi.mock("../shared/section-base", () => ({
-	SectionBase: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+	SectionBase: ({ children }: SectionBaseProps) => <div>{children}</div>,
 }));
-vi.mock("@/components/resume/builder-resume-draft", () => ({
+vi.mock("@/features/resume/builder/draft", () => ({
 	useCurrentResume: () => ({
 		data: { metadata: { template: "ditto" } },
 	}),

@@ -20,8 +20,8 @@ import { Switch } from "@reactive-resume/ui/components/switch";
 import { generateId } from "@reactive-resume/utils/string";
 import { RichInput } from "@/components/input/rich-input";
 import { URLInput } from "@/components/input/url-input";
-import { useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { useDialogStore } from "@/dialogs/store";
+import { useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useFormBlocker } from "@/hooks/use-form-blocker";
 import { makeSectionItem } from "@/libs/resume/make-section-item";
 import { createSectionItem, updateSectionItem } from "@/libs/resume/section-actions";
@@ -149,7 +149,7 @@ export function UpdateExperienceDialog({ data }: DialogProps<"resume.sections.ex
 
 const ExperienceForm = withForm({
 	defaultValues,
-	render: ({ form }) => {
+	render: function ExperienceFormRenderer({ form }) {
 		const inlineLink = useStore(form.store, (s) => s.values.website.inlineLink);
 		const roles = useStore(form.store, (s) => s.values.roles);
 		const hasRoles = roles.length > 0;
@@ -297,7 +297,7 @@ const RoleFields = withForm({
 		index: 0,
 		onRemove: () => undefined,
 	},
-	render: ({ form, role, index, onRemove }) => {
+	render: function RoleFieldsRenderer({ form, role, index, onRemove }) {
 		const controls = useDragControls();
 
 		return (

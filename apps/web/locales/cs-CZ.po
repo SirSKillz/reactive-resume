@@ -8,7 +8,7 @@ msgstr ""
 "Language: cs\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-05-14 13:57\n"
+"PO-Revision-Date: 2026-06-01 13:31\n"
 "Last-Translator: \n"
 "Language-Team: Czech\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
@@ -86,7 +86,7 @@ msgstr "3 měsíce"
 msgid "6 months"
 msgstr "6 měsíců"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A confirmation link has been sent to your current email address. Please check your inbox to confirm the change."
 msgstr "Potvrzovací odkaz byl odeslán na vaši současnou e-mailovou adresu. Zkontrolujte prosím svou e-mailovou schránku a potvrďte změnu."
 
@@ -103,7 +103,7 @@ msgstr "Odkaz na váš životopis byl zkopírován do schránky."
 msgid "A lot of people have written to me over the years to share their experiences with Reactive Resume and how it has helped them, and I never get tired of reading them. If you have a story to share, let me know by sending me an email at <0>{email}</0>."
 msgstr "Spousta lidí mi během let psala, aby se podělili o své zkušenosti s Reactive Resume a tím, jak jim pomohlo, a mě nikdy neomrzí je číst. Pokud máte příběh, o který se chcete podělit, napište mi e-mail na <0>{email}</0>."
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "Nový ověřovací odkaz byl odeslán na vaši e-mailovou adresu. Zkontrolujte prosím svou e-mailovou schránku a ověřte svůj účet."
 
@@ -197,7 +197,7 @@ msgstr "Přidat novou dobrovolnickou zkušenost"
 msgid "Add and test a provider before starting a thread."
 msgstr "Před zahájením vlákna přidejte a otestujte poskytovatele."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add and test a provider before starting an agent thread."
 msgstr "Před spuštěním vlákna agenta přidejte a otestujte poskytovatele."
 
@@ -221,7 +221,7 @@ msgstr "Přidejte více rolí, abyste ukázali kariérní postup ve stejné spol
 msgid "Add Page"
 msgstr "Přidat stránku"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add Provider"
 msgstr "Přidat poskytovatele"
 
@@ -245,11 +245,11 @@ msgstr "Upravte životopis pro roli zaměřenou na práci na dálku, která si c
 msgid "Afrikaans"
 msgstr "Afrikánština"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Agent"
 msgstr "Činidlo"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "Agent připraven"
 
@@ -269,23 +269,23 @@ msgstr "Nastavení agenta umělé inteligence momentálně není k dispozici. Zk
 msgid "AI agent setup is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "Nastavení agenta AI není k dispozici, dokud nejsou nakonfigurovány parametry REDIS_URL a ENCRYPTION_SECRET."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "Správa poskytovatelů AI není k dispozici, dokud nejsou nakonfigurovány parametry REDIS_URL a ENCRYPTION_SECRET."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable. Please try again."
 msgstr "Správa poskytovatelů umělé inteligence není k dispozici. Zkuste to prosím znovu."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider saved. Test it before use."
 msgstr "Poskytovatel umělé inteligence uložen. Před použitím jej otestujte."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI Providers"
 msgstr "Poskytovatelé umělé inteligence"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI providers require REDIS_URL and ENCRYPTION_SECRET to be configured."
 msgstr "Poskytovatelé umělé inteligence vyžadují konfiguraci parametrů REDIS_URL a ENCRYPTION_SECRET."
 
@@ -297,7 +297,7 @@ msgstr "Albánština"
 msgid "Allow Public Access"
 msgstr "Povolit veřejný přístup"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "Máte již účet? <0/>"
 
@@ -320,14 +320,14 @@ msgid "Analyze Resume"
 msgstr "Analýza životopisu"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Analyzing..."
-msgstr "Analýza..."
+msgid "Analyzing…"
+msgstr "Analýza…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "And many more..."
 msgstr "A mnoho dalších…"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Anthropic Claude"
 msgstr "Antropický Claude"
 
@@ -347,21 +347,21 @@ msgstr "Každý, kdo má k dispozici odkaz, si může životopis prohlédnout a 
 msgid "API Access"
 msgstr "Přístup přes API"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API Key"
 msgstr "API klíč"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 msgid "API Keys"
 msgstr "API klíče"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API keys are encrypted on the server and never shown again after saving."
 msgstr "Klíče API jsou na serveru šifrovány a po uložení se už nikdy znovu nezobrazí."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "API Reference"
 msgstr "API dokumentace"
 
@@ -372,6 +372,10 @@ msgstr "Aplikace"
 #: src/routes/_home/-sections/statistics.tsx
 msgid "Application Statistics"
 msgstr "Statistiky aplikace"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Applied Rules"
+msgstr "Použitá pravidla"
 
 #: src/libs/locale.ts
 msgid "Arabic"
@@ -386,7 +390,7 @@ msgstr "Archiv"
 msgid "Are you sure you want to close this dialog?"
 msgstr "Opravdu chcete zavřít tento dialog?"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Are you sure you want to delete this API key?"
 msgstr "Opravdu chcete tento API klíč odstranit?"
 
@@ -404,7 +408,7 @@ msgstr "Opravdu chcete tuto položku odstranit?"
 msgid "Are you sure you want to delete this resume?"
 msgstr "Opravdu chcete smazat tento životopis?"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Are you sure you want to delete your account?"
 msgstr "Opravdu chcete smazat svůj účet?"
 
@@ -426,7 +430,7 @@ msgstr "Určitě chcete tuto sekci resetovat?"
 msgid "Area of Study"
 msgstr "Studijní obor"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Artificial Intelligence"
 msgstr "Umělá inteligence"
 
@@ -446,7 +450,7 @@ msgstr "Přiložit soubory"
 msgid "Attachment uploaded."
 msgstr "Příloha nahrána."
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
@@ -472,7 +476,7 @@ msgid "Azerbaijani"
 msgstr "Ázerbájdžánština"
 
 #. Secondary navigation button on 2FA verification screen
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Back to Login"
 msgstr "Zpět na přihlášení"
 
@@ -488,7 +492,7 @@ msgstr "Barva pozadí"
 msgid "Backup codes copied to clipboard."
 msgstr "Záložní kódy zkopírovány do schránky."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Base URL"
 msgstr "Základní URL"
 
@@ -526,7 +530,7 @@ msgid "Border Width"
 msgstr "Šířka ohraničení"
 
 #. Screen-reader dialog title for the command palette in the resume builder
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Builder Command Palette"
 msgstr "Příkazová paleta editoru"
 
@@ -572,20 +576,20 @@ msgstr "Mohu svůj životopis exportovat do PDF?"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/settings/pages/api-keys.tsx
+#: src/features/settings/pages/danger-zone.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Cancel"
 msgstr "Zrušit"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Cannot revert; the resume has changed since this edit was applied."
-msgstr "Nelze vrátit zpět; životopis se od provedení této úpravy změnil."
+msgid "Cannot restore; the resume has changed since this edit was applied."
+msgstr "Nelze obnovit; životopis se od provedení této úpravy změnil."
 
 #: src/libs/locale.ts
 msgid "Catalan"
@@ -609,13 +613,13 @@ msgstr "Osvědčení"
 msgid "Change language"
 msgstr "Změnit jazyk"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change language to..."
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change language to…"
 msgstr "Změnit jazyk na…"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change theme to..."
-msgstr "Změnit motiv na…"
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change theme to…"
+msgstr "Změnit téma na…"
 
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
@@ -629,11 +633,11 @@ msgstr "Protokol změn"
 msgid "Chat"
 msgstr "Povídání"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "Zkontrolujte svůj e-mail, kde najdete odkaz pro obnovení hesla."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Check your email for a link to verify your account."
 msgstr "Zkontrolujte svůj e-mail, kde najdete odkaz pro ověření účtu."
 
@@ -649,6 +653,7 @@ msgstr "Čínština (tradiční)"
 msgid "Choose a model and resume draft."
 msgstr "Vyberte si model a návrh životopisu."
 
+#. Preset or custom shade refer to the color picker
 #. Preset or custom shade refer to the color picker
 #: src/components/input/rich-input.tsx
 msgid "Choose a preset or custom shade."
@@ -666,10 +671,15 @@ msgstr "Vyberte existující konverzaci z postranního panelu nebo začněte nov
 msgid "Circle"
 msgstr "Kruh"
 
+#. Clear the highlight color
 #. Clear the text color
 #: src/components/input/rich-input.tsx
 msgid "Clear"
 msgstr "Přehledně"
+
+#: src/components/ui/combobox.tsx
+msgid "Clear selection"
+msgstr "Vymazat výběr"
 
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
@@ -686,12 +696,12 @@ msgstr "Sloupce"
 
 #. Accessible label for command list region inside command palette
 #. Accessible label for the command palette dialog
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette"
 msgstr "Příkazová paleta"
 
 #. Accessible label for command palette dialog when browsing a nested command page
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette - {currentPage}"
 msgstr "Paleta příkazů - {currentPage}"
 
@@ -714,14 +724,14 @@ msgstr "Zcela zdarma, navždy, bez skrytých poplatků."
 #. Account deletion confirmation dialog confirm action in danger zone
 #. Create API key dialog acknowledgment action after copying
 #: src/dialogs/api-key/create.tsx
+#: src/features/settings/pages/danger-zone.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Confirm"
 msgstr "Potvrdit"
 
 #. Authentication settings action to link a social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Connect"
 msgstr "Připojit"
 
@@ -734,7 +744,7 @@ msgstr "Obsah"
 #. Final action button after saving backup codes
 #. Primary action button to proceed to next step in two-factor setup
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Continue"
 msgstr "Pokračovat"
 
@@ -793,10 +803,10 @@ msgid "Could not reach the AI provider. Please try again."
 msgstr "Nepodařilo se spojit s poskytovatelem UI. Zkuste to prosím znovu."
 
 #: src/routes/agent/$threadId.tsx
-msgid "Could not revert this patch."
-msgstr "Tuto záplatu se nepodařilo vrátit zpět."
+msgid "Could not restore this patch."
+msgstr "Tuto záplatu se nepodařilo obnovit."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
 msgstr "Nepodařilo se ověřit připojení poskytovatele."
 
@@ -830,12 +840,12 @@ msgstr "Průvodní dopis"
 msgid "Create"
 msgstr "Vytvořit"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Create a new account"
 msgstr "Vytvořit nový účet"
 
 #: src/dialogs/api-key/create.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Create a new API key"
 msgstr "Vytvořit nový API klíč"
 
@@ -887,8 +897,8 @@ msgstr "Vytvořit novou publikaci"
 msgid "Create a new reference"
 msgstr "Vytvořit novou referenci"
 
-#: src/components/command-palette/pages/resumes.tsx
 #: src/dialogs/resume/index.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/dashboard/resumes/-components/cards/create-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Create a new resume"
@@ -919,7 +929,7 @@ msgid "Create from scratch"
 msgstr "Vytvořte od nuly"
 
 #. Call-to-action link from login page to account registration page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Create one now"
 msgstr "Vytvořte si ji nyní"
 
@@ -945,7 +955,7 @@ msgid "Custom"
 msgstr "Vlastní"
 
 #. Authentication provider display name in account settings
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Custom OAuth"
 msgstr "Vlastní OAuth"
 
@@ -953,11 +963,15 @@ msgstr "Vlastní OAuth"
 msgid "Custom Sections"
 msgstr "Vlastní sekce"
 
+#: src/libs/resume/section.tsx
+msgid "Custom Styles"
+msgstr "Vlastní styly"
+
 #: src/libs/locale.ts
 msgid "Czech"
 msgstr "Čeština"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Danger Zone"
@@ -968,12 +982,12 @@ msgid "Danish"
 msgstr "Dánština"
 
 #. Appearance theme option for dark mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Dark"
 msgstr "Tmavý"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Dark theme"
 msgstr "Tmavý motiv"
 
@@ -1001,6 +1015,8 @@ msgstr "Titul"
 #. Passkey row action to remove the selected passkey
 #. Resume card context menu destructive action to remove a resume
 #. Resume card dropdown destructive action to remove a resume
+#: src/features/settings/authentication/components/passkeys.tsx
+#: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/thread-sidebar.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
@@ -1008,12 +1024,10 @@ msgstr "Titul"
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Delete"
 msgstr "Odstranit"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Delete Account"
 msgstr "Smazat účet"
 
@@ -1029,7 +1043,7 @@ msgstr "Smazat stránku"
 msgid "Delete picture"
 msgstr "Smazat obrázek"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
 msgstr "Smazat poskytovatele"
 
@@ -1046,11 +1060,11 @@ msgstr "Smazat tabulku"
 msgid "Delete this agent thread?"
 msgstr "Smazat toto vlákno agenta?"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Deleting your account..."
 msgstr "Mazání účtu…"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Deleting your API key..."
 msgstr "Mazání API klíče…"
 
@@ -1077,7 +1091,7 @@ msgstr "Design"
 
 #. Destructive action button to turn off two-factor authentication
 #: src/dialogs/auth/disable-two-factor.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Disable 2FA"
 msgstr "Deaktivovat 2FA"
 
@@ -1090,7 +1104,7 @@ msgid "Disabling two-factor authentication..."
 msgstr "Deaktivace dvoufázového ověření…"
 
 #. Authentication settings action to unlink a connected social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Disconnect"
 msgstr "Odpojit"
 
@@ -1107,7 +1121,7 @@ msgstr "Propustit"
 msgid "Documentation"
 msgstr "Dokumentace"
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Don't have an account? <0/>"
 msgstr "Nemáte účet? <0/>"
 
@@ -1144,7 +1158,7 @@ msgstr "Stáhnout DOCX"
 msgid "Download JSON"
 msgstr "Stáhnout JSON"
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Download PDF"
@@ -1224,14 +1238,14 @@ msgstr "E-mail"
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Email Address"
 msgstr "E-mailová adresa"
 
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Enable 2FA"
 msgstr "Aktivovat 2FA"
 
@@ -1239,7 +1253,7 @@ msgstr "Aktivovat 2FA"
 msgid "Enable Two-Factor Authentication"
 msgstr "Aktivovat dvoufázové ověření"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Enabled"
 msgstr "Aktivováno"
 
@@ -1248,8 +1262,8 @@ msgid "Enabling password protection..."
 msgstr "Aktivace ochrany heslem…"
 
 #: src/dialogs/auth/enable-two-factor.tsx
-msgid "Enabling two-factor authentication..."
-msgstr "Aktivace dvoufázového ověření…"
+msgid "Enabling two-factor authentication…"
+msgstr "Povolení dvoufaktorového ověřování…"
 
 #: src/libs/locale.ts
 msgid "English"
@@ -1263,11 +1277,11 @@ msgstr "Angličtina (Spojené království)"
 msgid "Enhance the security of your account with additional layers of protection."
 msgstr "Zvyšte zabezpečení svého účtu pomocí dalších vrstev ochrany."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "Zadejte název přístupového klíče."
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Enter one of your saved backup codes to access your account"
 msgstr "Zadejte jeden z uložených záložních kódů pro přístup ke svému účtu"
 
@@ -1275,7 +1289,7 @@ msgstr "Zadejte jeden z uložených záložních kódů pro přístup ke svému 
 msgid "Enter the URL to link to"
 msgstr "Zadejte URL adresu, na kterou chcete odkazovat"
 
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter the verification code from your authenticator app"
 msgstr "Zadejte ověřovací kód z autentizační aplikace"
 
@@ -1314,7 +1328,7 @@ msgid "Expires in"
 msgstr "Vyprší za"
 
 #. placeholder {0}: key.expiresAt?.toLocaleDateString()
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Expires on {0}"
 msgstr "Platnost vyprší {0}"
 
@@ -1322,7 +1336,7 @@ msgstr "Platnost vyprší {0}"
 msgid "Explore our diverse selection of templates, each designed to fit different styles, professions, and personalities. Reactive Resume currently offers 12 templates, with more on the way."
 msgstr "Prozkoumejte naši pestrou nabídku šablon, z nichž každá je navržena pro různé styly, profese a osobnosti. Reactive Resume v současnosti nabízí 12 šablon a další jsou na cestě."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Explore the API documentation to learn how to integrate Reactive Resume with your applications. Find detailed endpoints, request examples, and authentication methods."
 msgstr "Prozkoumejte API dokumentaci a zjistěte, jak integrovat Reactive Resume do svých aplikací. Najdete zde podrobné endpointy, ukázky požadavků a způsoby ověřování."
 
@@ -1334,7 +1348,7 @@ msgstr "Export"
 msgid "Export your resume to PDF instantly, without any waiting or delays."
 msgstr "Exportujte svůj životopis do PDF okamžitě, bez čekání nebo zpoždění."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed"
 msgstr "Selhalo"
 
@@ -1353,21 +1367,21 @@ msgid "Failed to create API key. Please try again."
 msgstr "Nepodařilo se vytvořit klíč API. Zkuste to prosím znovu."
 
 #. Fallback toast when account registration fails without a server error message
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Failed to create your account. Please try again."
 msgstr "Účet se nepodařilo vytvořit. Zkuste to prosím znovu."
 
 #. Fallback toast when deleting a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to delete passkey. Please try again."
 msgstr "Nepodařilo se odstranit přístupový klíč. Zkuste to prosím znovu."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to delete provider."
 msgstr "Smazání poskytovatele se nezdařilo."
 
 #. Fallback toast when deleting an API key fails
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Failed to delete the API key. Please try again."
 msgstr "Nepodařilo se odstranit klíč API. Zkuste to prosím znovu."
 
@@ -1377,7 +1391,7 @@ msgid "Failed to delete thread."
 msgstr "Vlákno se nepodařilo smazat."
 
 #. Fallback toast when account deletion fails
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Failed to delete your account. Please try again."
 msgstr "Účet se nepodařilo odstranit. Zkuste to prosím znovu."
 
@@ -1392,41 +1406,41 @@ msgid "Failed to enable two-factor authentication. Please try again."
 msgstr "Nepodařilo se povolit dvoufaktorové ověřování. Zkuste to prosím znovu."
 
 #. Fallback toast when linking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to link provider. Please try again."
 msgstr "Nepodařilo se propojit poskytovatele. Zkuste to prosím znovu."
 
 #. Fallback toast when passkey registration fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to register passkey. Please try again."
 msgstr "Nepodařilo se zaregistrovat přístupový klíč. Zkuste to prosím znovu."
 
 #. Fallback toast when renaming a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to rename passkey. Please try again."
 msgstr "Nepodařilo se přejmenovat přístupový klíč. Zkuste to prosím znovu."
 
 #. Fallback toast when requesting email change confirmation fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to request email change. Please try again."
 msgstr "Nepodařilo se vyžádat změnu e-mailu. Zkuste to prosím znovu."
 
 #. Fallback toast when resending account verification email fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to resend verification email. Please try again."
 msgstr "Nepodařilo se znovu odeslat ověřovací e-mail. Zkuste to prosím znovu."
 
 #. Fallback toast when resetting password fails and no backend message is available
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Failed to reset your password. Please try again."
 msgstr "Nepodařilo se obnovit heslo. Zkuste to prosím znovu."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to save AI provider."
 msgstr "Uložení poskytovatele umělé inteligence se nezdařilo."
 
 #. Fallback toast when requesting password reset email fails without backend message
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Failed to send password reset email. Please try again."
 msgstr "Nepodařilo se odeslat e-mail s obnovením hesla. Zkuste to prosím znovu."
 
@@ -1438,13 +1452,13 @@ msgstr "Dvoufázové ověření se nepodařilo nastavit."
 #. Fallback toast when passkey sign-in fails without an error message
 #. Fallback toast when sign-in fails and no server error message is available
 #. Fallback toast when social sign-in fails without a provider error message
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Failed to sign in. Please try again."
 msgstr "Přihlášení se nezdařilo. Zkuste to prosím znovu."
 
 #. Fallback toast when signing out fails
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Failed to sign out. Please try again."
 msgstr "Nepodařilo se odhlásit. Zkuste to prosím znovu."
 
@@ -1453,11 +1467,11 @@ msgid "Failed to start agent thread."
 msgstr "Nepodařilo se spustit vlákno agenta."
 
 #. Fallback toast when unlinking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to unlink provider. Please try again."
 msgstr "Nepodařilo se zrušit propojení poskytovatele. Zkuste to prosím znovu."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to update provider."
 msgstr "Aktualizace poskytovatele se nezdařilo."
 
@@ -1467,7 +1481,7 @@ msgid "Failed to update your password. Please try again."
 msgstr "Nepodařilo se aktualizovat heslo. Zkuste to prosím znovu."
 
 #. Fallback toast when updating profile details fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to update your profile. Please try again."
 msgstr "Nepodařilo se aktualizovat váš profil. Zkuste to prosím znovu."
 
@@ -1481,29 +1495,25 @@ msgid "Failed to upload picture. Please try again."
 msgstr "Nepodařilo se nahrát obrázek. Zkuste to prosím znovu."
 
 #. Fallback toast when resume password verification fails unexpectedly
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Failed to verify the password. Please try again."
 msgstr "Heslo se nepodařilo ověřit. Zkuste to prosím znovu."
 
 #. Fallback toast when verifying a backup two-factor authentication code fails
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Failed to verify your backup code. Please try again."
 msgstr "Nepodařilo se ověřit váš záložní kód. Zkuste to prosím znovu."
 
 #. Fallback toast when verifying a two-factor authentication code fails
 #. Fallback toast when verifying two-factor setup code fails
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Failed to verify your code. Please try again."
 msgstr "Nepodařilo se ověřit váš kód. Zkuste to prosím znovu."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Features"
 msgstr "Funkce"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Fetched URL"
-msgstr "Načtená adresa URL"
 
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
@@ -1554,11 +1564,11 @@ msgid "For security reasons, this key will only be displayed once."
 msgstr "Z bezpečnostních důvodů bude tento klíč zobrazen pouze jednou."
 
 #. Link label to password reset page from login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Forgot Password?"
 msgstr "Zapomněli jste heslo?"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Forgot your password?"
 msgstr "Zapomněli jste heslo?"
 
@@ -1615,15 +1625,15 @@ msgstr "Začít"
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "GitHub"
 msgstr "GitHub"
 
 #. Secondary navigation button on backup-code verification screen
 #: src/components/layout/not-found-screen.tsx
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Go Back"
 msgstr "Zpět"
 
@@ -1636,22 +1646,22 @@ msgstr "Přejít na nástěnku"
 msgid "Go to resumes dashboard"
 msgstr "Přejít na palubní desku s životopisy"
 
-#: src/components/command-palette/pages/navigation.tsx
-msgid "Go to..."
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Go to…"
 msgstr "Přejít na…"
 
 #. Authentication provider display name in account settings
 #. Brand name label for Google social sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Google"
 msgstr "Google"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "gpt-4.1"
 msgstr "gpt-4.1"
 
@@ -1712,7 +1722,7 @@ msgstr "Hebrejština"
 msgid "Help me bring more experienced contributors on board, reducing the burden on a single maintainer and accelerating development."
 msgstr "Pomozte mi zapojit zkušenější přispěvatele, snížit zátěž jednoho maintainera a zrychlit vývoj."
 
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/settings/pages/preferences.tsx
 msgid "Help translate the app to your language"
 msgstr "Pomozte přeložit aplikaci do svého jazyka"
 
@@ -1737,8 +1747,12 @@ msgid "Hide"
 msgstr "Skrýt"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-msgid "Hide all icons on the resume"
-msgstr "Skrýt všechny ikony v životopisu"
+msgid "Hide Icons"
+msgstr "Skrýt ikony"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Link Underline"
+msgstr "Skrýt podtržení odkazu"
 
 #. Accessible label for button that hides password in registration form
 #. Accessible label for button that hides password in reset-password form
@@ -1751,12 +1765,16 @@ msgstr "Skrýt všechny ikony v životopisu"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Hide password"
 msgstr "Skrýt heslo"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Section Icons"
+msgstr "Skrýt ikony sekcí"
 
 #. Impact severity label in resume analysis suggestion card
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
@@ -1767,11 +1785,15 @@ msgstr "Vysoká"
 msgid "Highlight"
 msgstr "Zvýraznění"
 
+#: src/components/input/rich-input.tsx
+msgid "Highlight Color"
+msgstr "Barva zvýraznění"
+
 #: src/libs/locale.ts
 msgid "Hindi"
 msgstr "Hindština"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "Domů"
 
@@ -1779,7 +1801,7 @@ msgstr "Domů"
 msgid "How do I share my resume?"
 msgstr "Jak mohu sdílet svůj životopis?"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "Jak používat API?"
 
@@ -1787,7 +1809,7 @@ msgstr "Jak používat API?"
 msgid "How is my data protected?"
 msgstr "Jak jsou má data chráněna?"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "https://gateway.example.com/v1"
 msgstr "https://gateway.example.com/v1"
 
@@ -1819,8 +1841,8 @@ msgid "Importing your resume..."
 msgstr "Importování životopisu…"
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "Importování…"
+msgid "Importing…"
+msgstr "Import…"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Increase zoom"
@@ -1846,7 +1868,7 @@ msgstr "Vložit tabulku"
 msgid "Instant Generation"
 msgstr "Okamžité generování"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/integrations/route.tsx
 msgid "Integrations"
@@ -1858,7 +1880,7 @@ msgstr "Integrace"
 msgid "Interests"
 msgstr "Zájmy"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "Neplatná konfigurace poskytovatele umělé inteligence."
 
@@ -1888,15 +1910,15 @@ msgstr "Japonština"
 
 #. Example full name placeholder on profile settings form
 #. Example full name placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "John Doe"
 msgstr "John Doe"
 
 #. Example username placeholder on profile settings form
 #. Example username placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe"
 msgstr "john.doe"
 
@@ -1904,10 +1926,10 @@ msgstr "john.doe"
 #. Example email placeholder on forgot-password form
 #. Example email placeholder on profile settings form
 #. Example email placeholder on registration form
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
 
@@ -1924,7 +1946,7 @@ msgstr "Zarovnání do bloku"
 msgid "Kannada"
 msgstr "Kannadština"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "Klíč"
 
@@ -1943,7 +1965,7 @@ msgstr "Korejština"
 
 #. Short field label for custom display text associated with a URL
 #: src/components/input/url-input.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Label"
 msgstr "Popisek"
 
@@ -1953,11 +1975,11 @@ msgid "Landscape"
 msgstr "Krajina"
 
 #. Menu item that opens language selection submenu
-#: src/components/command-palette/pages/preferences/language.tsx
-#: src/components/user/dropdown-menu.tsx
 #: src/dialogs/resume/sections/language.tsx
+#: src/features/command-palette/pages/preferences/language.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-#: src/routes/dashboard/settings/preferences.tsx
 msgid "Language"
 msgstr "Jazyk"
 
@@ -1967,10 +1989,9 @@ msgstr "Jazyk"
 msgid "Languages"
 msgstr "Jazyky"
 
-#. placeholder {0}: new Date(analysis.updatedAt).toLocaleString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Last analyzed on {0}"
-msgstr "Naposledy analyzováno na {0}"
+msgid "Last analyzed on {updatedAtLabel}"
+msgstr "Naposledy analyzováno {updatedAtLabel}"
 
 #. placeholder {0}: statistics.lastDownloadedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
@@ -2031,12 +2052,12 @@ msgid "Licensed under <0>MIT</0>."
 msgstr "Licencováno pod <0>MIT</0>."
 
 #. Appearance theme option for light mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Light"
 msgstr "Světlý"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Light theme"
 msgstr "Světlý motiv"
 
@@ -2046,13 +2067,13 @@ msgstr "Výška řádku"
 
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Linking your {providerName} account..."
 msgstr "Propojuji váš účet {providerName}…"
 
@@ -2065,29 +2086,29 @@ msgid "Lithuanian"
 msgstr "Litevština"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Loading agent workspace..."
-msgstr "Načítání pracovního prostoru agenta..."
+msgid "Loading agent workspace…"
+msgstr "Načítání pracovního prostoru agenta…"
 
 #: src/dialogs/resume/import.tsx
 msgid "Loading AI providers. Please try again in a moment."
 msgstr "Načítání poskytovatelů umělé inteligence. Zkuste to prosím znovu za chvíli."
 
+#: src/features/settings/integrations/components/ai-section.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
-msgid "Loading providers..."
-msgstr "Načítání poskytovatelů..."
+msgid "Loading providers…"
+msgstr "Načítání poskytovatelů…"
 
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-msgid "Loading resumes..."
+msgid "Loading resumes…"
 msgstr "Načítání životopisů…"
 
 #: src/routes/agent/-components/thread-sidebar.tsx
-msgid "Loading threads..."
-msgstr "Načítání vláken..."
+msgid "Loading threads…"
+msgstr "Načítání vláken…"
 
 #: src/components/layout/loading-screen.tsx
-msgid "Loading..."
+msgid "Loading…"
 msgstr "Načítání…"
 
 #: src/dialogs/resume/sections/education.tsx
@@ -2106,7 +2127,7 @@ msgid "Lock"
 msgstr "Zámek"
 
 #. User menu action to sign out of current account
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Logout"
 msgstr "Odhlásit se"
 
@@ -2115,7 +2136,7 @@ msgid "Long-term Sustainability"
 msgstr "Dlouhodobá udržitelnost"
 
 #. Link to backup-code verification flow when authenticator app is unavailable
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Lost access to your authenticator?"
 msgstr "Ztratili jste přístup ke své autentizační aplikaci?"
 
@@ -2171,7 +2192,7 @@ msgstr "Microsoft Word"
 msgid "Missing working resume"
 msgstr "Chybí pracovní životopis"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
 msgstr "Model"
 
@@ -2195,9 +2216,9 @@ msgstr "Musí začít na https://"
 #: src/dialogs/resume/sections/project.tsx
 #: src/dialogs/resume/sections/reference.tsx
 #: src/dialogs/resume/sections/skill.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Name"
 msgstr "Název"
 
@@ -2223,7 +2244,7 @@ msgstr "Nová stránka"
 
 #. Label for new password input on reset-password form
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "New Password"
 msgstr "Nové heslo"
 
@@ -2244,7 +2265,7 @@ msgstr "Bez reklam, bez sledování"
 msgid "No data was returned from the AI provider."
 msgstr "Od poskytovatele UI nebyly vráceny žádné údaje."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
 msgstr "Zatím nebyly zaregistrovány žádné pasové klíče."
 
@@ -2252,7 +2273,11 @@ msgstr "Zatím nebyly zaregistrovány žádné pasové klíče."
 msgid "No results found."
 msgstr "Nebyly nalezeny žádné výsledky."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "No style rules yet."
+msgstr "Zatím žádná stylistická pravidla."
+
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "Žádný ověřený poskytovatel"
 
@@ -2272,7 +2297,7 @@ msgstr "Poznámky"
 msgid "Odia"
 msgstr "Udijština"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Ollama"
 msgstr "Ollama"
 
@@ -2296,7 +2321,7 @@ msgid "Open AI agent"
 msgstr "Otevřený agent AI"
 
 #. Button label to open the user's default email app
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Open Email Client"
 msgstr "Otevřít e-mailového klienta"
 
@@ -2312,15 +2337,15 @@ msgstr "Otevřít Nastavení integrace"
 msgid "Open Source"
 msgstr "Open source"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "Kompatibilní s OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenRouter"
 msgstr "OpenRouter"
 
@@ -2333,7 +2358,7 @@ msgstr "otevře se na nové kartě"
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr "Volitelně můžete nastavit heslo, aby si váš životopis mohli přes odkaz prohlédnout jen lidé, kteří heslo znají."
 
-#: src/routes/auth/-components/social-auth.tsx
+#: src/features/auth/components/social-auth.tsx
 msgctxt "Choose to authenticate with a social provider (Google, GitHub, etc.) instead of email and password"
 msgid "or continue with"
 msgstr "nebo pokračujte s"
@@ -2367,20 +2392,20 @@ msgstr "Odstavec"
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Passkey"
 msgstr "Passkey"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey deleted successfully."
 msgstr "Passkey byl úspěšně odstraněn."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey registered successfully."
 msgstr "Passkey byl úspěšně zaregistrován."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkeys"
 msgstr "Passkeys"
 
@@ -2394,11 +2419,11 @@ msgstr "Přístupové klíče a 2FA"
 #. Label for password input on registration form
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/resume-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/resume-password.tsx
+#: src/features/settings/authentication/components/hooks.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Password"
 msgstr "Heslo"
 
@@ -2435,11 +2460,11 @@ msgid "Patch pending"
 msgstr "Oprava čeká na vyřízení"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted"
-msgstr "Oprava vrácena zpět"
+msgid "Patch rolled back"
+msgstr "Patch vrácen zpět"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted."
+msgid "Patch rolled back."
 msgstr "Patch vrácen zpět."
 
 #. File format label in import source selector
@@ -2471,11 +2496,11 @@ msgstr "Telefon"
 msgid "Picture"
 msgstr "Fotografie"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Please enter a new password for your account"
 msgstr "Zadejte prosím nové heslo pro svůj účet"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Please enter the password shared with you by the owner of the resume to continue."
 msgstr "Zadejte prosím heslo, které vám sdílel vlastník životopisu, abyste mohli pokračovat."
 
@@ -2487,12 +2512,15 @@ msgstr "Zadejte prosím URL, na kterou chcete odkazovat:"
 msgid "Please support the project"
 msgstr "Prosím, podpořte projekt"
 
-#: src/routes/$username/-components/public-resume.tsx
-#: src/routes/agent/$threadId.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Please wait while your PDF is being generated..."
 msgstr "Počkejte prosím, než se vaše PDF vygeneruje…"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Please wait while your PDF is being generated…"
+msgstr "Počkejte prosím, než se váš PDF vygeneruje…"
 
 #: src/libs/locale.ts
 msgid "Polish"
@@ -2516,8 +2544,8 @@ msgstr "Portugalština (Portugalsko)"
 msgid "Position"
 msgstr "Pozice"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/preferences/index.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/preferences/index.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
@@ -2536,7 +2564,7 @@ msgid "Press <0>{RETURN_KEY}</0> or <1>{COMMA_KEY}</1> to add or save the curren
 msgstr "Stiskněte <0>{RETURN_KEY}</0> nebo <1>{COMMA_KEY}</1> pro přidání nebo uložení aktuálního klíčového slova."
 
 #. Command palette hint that pressing Enter opens the selected resume
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 msgid "Press <0>Enter</0> to open"
 msgstr "Stisknutím klávesy <0>Enter</0> otevřete"
 
@@ -2548,7 +2576,7 @@ msgstr "Hlavní barva"
 msgid "Proficiency"
 msgstr "Znalost"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/profile.tsx
 msgid "Profile"
@@ -2578,11 +2606,11 @@ msgstr "Chraňte svůj životopis heslem před neoprávněným přístupem"
 msgid "Protect your resume with a password, and let only people with the password view it."
 msgstr "Chraňte svůj životopis heslem a umožněte jeho zobrazení jen lidem, kteří heslo znají."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider"
 msgstr "Poskytovatel"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider connection verified."
 msgstr "Připojení poskytovatele ověřeno."
 
@@ -2657,11 +2685,11 @@ msgstr "Reference"
 msgid "Refresh"
 msgstr "Obnovit"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "Registrace nového zařízení"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
 msgstr "Vzpomínáte si na heslo? <0/>"
 
@@ -2698,11 +2726,11 @@ msgstr "Nahlásit chybu"
 msgid "Report an issue"
 msgstr "Nahlásit problém"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
 msgstr "Znovu odeslat ověřovací e-mail"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resending verification email..."
 msgstr "Opětovné odesílání ověřovacího e-mailu…"
 
@@ -2712,21 +2740,33 @@ msgid "Reset"
 msgstr "Resetovat"
 
 #. Primary action button label on reset-password form
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset Password"
 msgstr "Obnovit heslo"
 
-#: src/routes/auth/reset-password.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Reset Style"
+msgstr "Obnovit styl"
+
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset your password"
 msgstr "Obnovte své heslo"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Resetting your password..."
 msgstr "Obnovování hesla…"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Resources"
 msgstr "Zdroje"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore"
+msgstr "Obnovit"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore the resume to before this patch? This will roll back this patch and any patches applied after it."
+msgstr "Obnovit životopis do stavu před touto opravou? Tato akce vrátí zpět tuto opravu a všechny opravy použité po ní."
 
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -2744,8 +2784,8 @@ msgstr "Analýza životopisu dokončena."
 msgid "Resume patch"
 msgstr "Obnovit opravu"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/_home/-sections/statistics.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -2755,10 +2795,6 @@ msgstr "Životopisy"
 #: src/routes/agent/$threadId.tsx
 msgid "Retry"
 msgstr "Zkusit znovu"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Revert"
-msgstr "Vrátit zpět"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Review the resume against a job description and ask me questions before changing uncertain sections."
@@ -2788,6 +2824,14 @@ msgstr "Rumunština"
 msgid "Rotation"
 msgstr "Otočení"
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rule"
+msgstr "pravidlo"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rules"
+msgstr "pravidla"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
 msgid "Run your first analysis to get a scorecard, strengths, and prioritized suggestions."
 msgstr "Proveďte první analýzu a získejte hodnotící tabulku, silné stránky a návrhy priorit."
@@ -2797,7 +2841,7 @@ msgid "Russian"
 msgstr "Ruština"
 
 #. Passkey rename prompt confirm action in authentication settings
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Save"
 msgstr "Uložit"
 
@@ -2817,11 +2861,11 @@ msgstr "Uložit"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save Provider"
 msgstr "Uložit poskytovatele"
 
@@ -2838,7 +2882,7 @@ msgid "Scorecard"
 msgstr "Hodnotící karta"
 
 #. Accessible label for command palette search input
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "Vyhledávací příkazy"
 
@@ -2848,15 +2892,18 @@ msgstr "Vyhledávací příkazy"
 msgid "Search for an icon"
 msgstr "Hledat ikonu"
 
-#: src/components/command-palette/pages/resumes.tsx
-msgid "Search for..."
+#: src/features/command-palette/pages/resumes.tsx
+msgid "Search for…"
 msgstr "Hledat…"
 
-#. Placeholder in command palette input on nested pages
-#: src/components/command-palette/index.tsx
 #: src/components/ui/combobox.tsx
 msgid "Search..."
 msgstr "Hledat..."
+
+#. Placeholder in command palette input on nested pages
+#: src/features/command-palette/index.tsx
+msgid "Search…"
+msgstr "Hledat…"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -2899,11 +2946,11 @@ msgid "Send message"
 msgstr "Odeslat zprávu"
 
 #. Primary action button label on forgot-password form
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Send Password Reset Email"
 msgstr "Odeslat e-mail pro obnovení hesla"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "Odesílání e-mailu pro obnovení hesla…"
 
@@ -2915,12 +2962,12 @@ msgstr "Oddělovač"
 msgid "Serbian"
 msgstr "Srbština"
 
+#: src/features/settings/authentication/components/password.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
 msgid "Set Password"
 msgstr "Nastavit heslo"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Settings"
@@ -2975,10 +3022,10 @@ msgstr "Zobrazit odkaz v nadpisu"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Show password"
 msgstr "Zobrazit heslo"
 
@@ -2992,19 +3039,19 @@ msgid "Sidebar Width"
 msgstr "Šířka postranního panelu"
 
 #. Primary action button label on login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in"
 msgstr "Přihlásit se"
 
 #. Call-to-action link from forgot-password page to login page
 #. Call-to-action link from registration page to login page
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign in now"
 msgstr "Přihlaste se nyní"
 
 #. Title on the login page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in to your account"
 msgstr "Přihlaste se ke svému účtu"
 
@@ -3013,20 +3060,20 @@ msgid "Sign in with GitHub, Google or a custom OAuth provider."
 msgstr "Přihlaste se pomocí GitHubu, Googlu nebo vlastního poskytovatele OAuth."
 
 #. Primary action button label on registration form
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign up"
 msgstr "Zaregistrovat se"
 
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Signing in..."
 msgstr "Přihlašování…"
 
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Signing out..."
 msgstr "Odhlašování…"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Signing up..."
 msgstr "Registrace…"
 
@@ -3207,11 +3254,11 @@ msgstr "Podpořte aplikaci tím, co můžete!"
 msgid "Swedish"
 msgstr "Švédština"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to dark theme"
 msgstr "Přepnout na tmavý motiv"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to light theme"
 msgstr "Přepnout na světlý motiv"
 
@@ -3251,11 +3298,11 @@ msgstr "Galerie šablon"
 msgid "Templates"
 msgstr "Šablony"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Test"
 msgstr "Test"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Tested"
 msgstr "Testováno"
 
@@ -3281,16 +3328,16 @@ msgstr "Agent potřebuje váš vstup."
 msgid "The AI returned an invalid analysis format. Please try again."
 msgstr "UI vrátil neplatný formát analýzy. Zkuste to prosím znovu."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key has been deleted successfully."
 msgstr "API klíč byl úspěšně smazán."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key will no longer be able to access your data after deletion. This action cannot be undone."
 msgstr "API klíč po smazání již nebude mít přístup k vašim datům. Tuto akci nelze vrátit zpět."
 
 #. Empty-state message when no command palette results match the search query
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "The command you're looking for doesn't exist."
 msgstr "Příkaz, který hledáte, neexistuje."
 
@@ -3299,11 +3346,11 @@ msgstr "Příkaz, který hledáte, neexistuje."
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "Importovaný soubor se nepodařilo analyzovat do platného resumé."
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The password you entered is incorrect"
 msgstr "Zadané heslo je nesprávné"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The resume you are trying to access is password protected"
 msgstr "Životopis, ke kterému se snažíte získat přístup, je chráněn heslem"
 
@@ -3316,9 +3363,9 @@ msgid "The working resume was deleted. This thread is read-only."
 msgstr "Pracovní životopis byl smazán. Toto vlákno je pouze pro čtení."
 
 #. Menu item that opens appearance theme selection submenu
-#: src/components/command-palette/pages/preferences/theme.tsx
-#: src/components/user/dropdown-menu.tsx
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr "Motiv"
 
@@ -3331,7 +3378,7 @@ msgstr "Poté zadejte šestimístný kód, který aplikace poskytne, abyste mohl
 msgid "There was a problem while generating the DOCX, please try again."
 msgstr "Při generování DOCX došlo k problému, zkuste to prosím znovu."
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -3348,7 +3395,7 @@ msgstr "Myslící"
 msgid "This action cannot be undone."
 msgstr "Tuto akci nelze vrátit zpět."
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "This action cannot be undone. All your data will be permanently deleted."
 msgstr "Tuto akci nelze vrátit zpět. Všechna vaše data budou trvale smazána."
 
@@ -3376,7 +3423,7 @@ msgstr "Toto je název vašeho životopisu vhodný pro URL adresu."
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "Může to trvat několik minut v závislosti na odezvě poskytovatele AI. Nezavírejte prosím okno ani neobnovujte stránku."
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "This resume is locked and cannot be updated."
 msgstr "Tento životopis je uzamčen a nelze ho aktualizovat."
 
@@ -3384,7 +3431,7 @@ msgstr "Tento životopis je uzamčen a nelze ho aktualizovat."
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Tato sekce je vyhrazena pro vaše osobní poznámky k tomuto životopisu. Obsah zde zůstává soukromý a s nikým jiným se nesdílí."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "This step is optional, but recommended."
 msgstr "Tento krok je volitelný, ale doporučený."
 
@@ -3404,7 +3451,7 @@ msgstr "Toto vlákno je pouze pro čtení, protože funkční životopis nebo po
 msgid "This will generate a new API key to access the Reactive Resume API to allow machines to interact with your resume data."
 msgstr "Tímto vygenerujete nový API klíč pro přístup k Reactive Resume API, aby mohly stroje pracovat s vašimi daty z životopisu."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "This will help you identify it later, if you plan to have multiple passkeys."
 msgstr "To vám pomůže identifikovat jej později, pokud plánujete mít více přístupových klíčů."
 
@@ -3453,7 +3500,7 @@ msgstr "Tip: Životopis můžete pojmenovat podle pozice, na kterou se hlásíte
 msgid "Title"
 msgstr "Název"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "To delete your account, you need to enter the confirmation text and click the button below."
 msgstr "Pro smazání účtu musíte zadat potvrzovací text a kliknout na tlačítko níže."
 
@@ -3532,8 +3579,8 @@ msgstr "Dvousloupcové, minimalistické a textově hutné bez dekorativních prv
 msgid "Two-column, minimal with light gray sidebar and subtle icons; professional and understated for legal, finance, or executive roles."
 msgstr "Dvousloupcové, minimalistické se světle šedým postranním panelem a jemnými ikonami; profesionální a střídmé pro právní, finanční nebo manažerské role."
 
-#: src/routes/auth/verify-2fa.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/auth/pages/verify-2fa.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Two-Factor Authentication"
 msgstr "Dvoufázové ověření"
 
@@ -3555,15 +3602,15 @@ msgstr "Dvoufaktorové ověřování QR kódem"
 msgid "Type"
 msgstr "Typ"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Type \"{CONFIRMATION_TEXT}\" to confirm"
 msgstr "Zadejte „{CONFIRMATION_TEXT}“ pro potvrzení"
 
 #. Placeholder in command palette input on root page
 #. Screen-reader dialog description instructing users how to use the command palette
-#: src/components/command-palette/index.tsx
-msgid "Type a command or search..."
-msgstr "Zadejte příkaz nebo hledaný výraz…"
+#: src/features/command-palette/index.tsx
+msgid "Type a command or search…"
+msgstr "Zadejte příkaz nebo vyhledejte…"
 
 #: src/libs/resume/section.tsx
 msgid "Typography"
@@ -3581,29 +3628,29 @@ msgstr "Podtržení"
 msgid "Unlimited Resumes"
 msgstr "Neomezené životopisy"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."
 msgstr "Odpájím váš účet {providerName}…"
 
 #. Primary action button label to unlock a password-protected resume
 #. Resume card context menu action to remove edit lock
 #. Resume card dropdown action to remove edit lock
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Unlock"
 msgstr "Odemknout"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Unnamed passkey"
 msgstr "Nejmenovaný přístupový klíč"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Untested"
 msgstr "Netestované"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "Neověřeno"
 
@@ -3679,7 +3726,7 @@ msgstr "Aktualizovat existující dobrovolnickou zkušenost"
 
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Update Password"
 msgstr "Aktualizovat heslo"
 
@@ -3703,13 +3750,17 @@ msgstr "Aktualizace hesla…"
 msgid "Updating your resume..."
 msgstr "Aktualizace životopisu…"
 
+#: src/routes/agent/$threadId.tsx
+msgid "Upload attachments"
+msgstr "Nahrát přílohy"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Upload picture"
 msgstr "Nahrát obrázek"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Uploading picture..."
-msgstr "Nahrávání fotografie…"
+msgid "Uploading picture…"
+msgstr "Nahrávání obrázku…"
 
 #. Form field label for the generated public resume link in sharing settings
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -3717,7 +3768,7 @@ msgstr "Nahrávání fotografie…"
 msgid "URL"
 msgstr "URL"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Use"
 msgstr "Použití"
 
@@ -3727,8 +3778,8 @@ msgstr "Použijte barvu {color}"
 
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "Uživatelské jméno"
 
@@ -3744,39 +3795,42 @@ msgstr "Uzbečtina"
 msgid "Valid URLs must start with http:// or https://."
 msgstr "Platné URL adresy musí začínat http:// nebo https://."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Vercel AI Gateway"
 msgstr "Brána Vercel AI"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "Ověřeno"
 
 #. Primary action button to submit 2FA code
 #. Primary action button to submit backup code
-#: src/routes/auth/verify-2fa-backup.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verify"
 msgstr "Ověřit"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verify with a Backup Code"
 msgstr "Ověřit pomocí záložního kódu"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verifying backup code..."
 msgstr "Ověřování záložního kódu…"
 
-#: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verifying code..."
 msgstr "Ověřování kódu…"
 
-#: src/routes/auth/resume-password.tsx
+#: src/dialogs/auth/enable-two-factor.tsx
+msgid "Verifying code…"
+msgstr "Ověřovací kód…"
+
+#: src/features/auth/pages/resume-password.tsx
 msgid "Verifying password..."
 msgstr "Ověřování hesla…"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Verifying your email is required when resetting your password."
 msgstr "Ověření e-mailu je při obnovování hesla povinné."
 
@@ -3793,10 +3847,6 @@ msgstr "Zobrazení"
 #: src/libs/resume/section.tsx
 msgid "Volunteer"
 msgstr "Dobrovolnictví"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Waiting for fetch result..."
-msgstr "Čekání na výsledek načtení..."
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -3833,13 +3883,13 @@ msgstr "Co je nového v poslední verzi?"
 msgid "When locked, the resume cannot be updated or deleted."
 msgstr "Pokud je životopis uzamčen, nelze ho aktualizovat ani smazat."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Work OpenAI"
 msgstr "Práce s OpenAI"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Working..."
-msgstr "Pracovní..."
+msgid "Working…"
+msgstr "Funguje…"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "X (Twitter)"
@@ -3857,7 +3907,7 @@ msgstr "Ano! Reactive Resume je zcela zdarma k použití, bez skrytých poplatk�
 msgid "You also have the option to deploy on your own servers using the Docker image."
 msgstr "Máte také možnost nasadit aplikaci na vlastních serverech pomocí Docker image."
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "You can also use your username to login."
 msgstr "K přihlášení můžete také použít své uživatelské jméno."
 
@@ -3869,12 +3919,12 @@ msgstr "Svůj životopis můžete sdílet pomocí jedinečné veřejné URL adre
 msgid "You have unsaved changes that will be lost."
 msgstr "Máte neuložené změny, které budou ztraceny."
 
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "You've got mail!"
 msgstr "Máte poštu!"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Your account has been deleted successfully."
 msgstr "Váš účet byl úspěšně smazán."
 
@@ -3894,11 +3944,11 @@ msgstr "Vaše data jsou v bezpečí a nikdy nejsou s nikým sdílena ani prodáv
 msgid "Your data is stored securely and is never shared with third parties. You can also self-host Reactive Resume on your own servers for complete control over your data."
 msgstr "Vaše data jsou ukládána bezpečně a nikdy nejsou sdílena s třetími stranami. Reactive Resume si můžete také hostovat sami na vlastních serverech a mít tak nad svými daty plnou kontrolu."
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "Your latest changes could not be saved."
 msgstr "Vaše poslední změny se nepodařilo uložit."
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Your password has been reset successfully. You can now sign in with your new password."
 msgstr "Vaše heslo bylo úspěšně obnoveno. Nyní se můžete přihlásit pomocí nového hesla."
 
@@ -3906,7 +3956,7 @@ msgstr "Vaše heslo bylo úspěšně obnoveno. Nyní se můžete přihlásit pom
 msgid "Your password has been updated successfully."
 msgstr "Vaše heslo bylo úspěšně aktualizováno."
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Your profile has been updated successfully."
 msgstr "Váš profil byl úspěšně aktualizován."
 

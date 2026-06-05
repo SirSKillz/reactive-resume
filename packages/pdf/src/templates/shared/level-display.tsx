@@ -1,22 +1,36 @@
 import type { Style } from "@react-pdf/types";
 import type { IconName } from "phosphor-icons-react-pdf/dynamic";
-import { View } from "@react-pdf/renderer";
+import { resolveLevelDisplaySizes } from "@reactive-resume/schema/resume/level-display-sizes";
 import { useRender } from "../../context";
-import { useTemplateIconSlot, useTemplateStyle } from "./context";
+import { View } from "../../renderer";
+import { useSectionStyleRule, useTemplateIconSlot, useTemplateStyle } from "./context";
+import { resolveStyleFontSize } from "./icon-size";
 import { getTemplateMetrics } from "./metrics";
 import { Icon } from "./primitives";
 import { composeStyles } from "./styles";
 
-export const LevelDisplay = ({ level }: { level: number }) => {
+const LEVEL_ITEM_KEYS = ["level-1", "level-2", "level-3", "level-4", "level-5"] as const;
+
+type LevelDisplayProps = {
+	level: number;
+};
+
+export const LevelDisplay = ({ level }: LevelDisplayProps) => {
 	const data = useRender();
 	const levelDesign = data.metadata.design.level;
-	const iconSize = data.metadata.typography.body.fontSize - 2;
 	const metrics = getTemplateMetrics(data.metadata.page);
 	const iconProps = useTemplateIconSlot("icon");
 	const levelContainerStyle = useTemplateStyle("levelContainer");
 	const levelItemStyle = useTemplateStyle("levelItem");
 	const levelItemActiveStyle = useTemplateStyle("levelItemActive");
 	const levelItemInactiveStyle = useTemplateStyle("levelItemInactive");
+	const iconRuleStyle = useSectionStyleRule("icon");
+	const levelRuleStyle = useSectionStyleRule("level");
+	const { decorationSize, levelIconExplicitSize } = resolveLevelDisplaySizes({
+		bodyFontSize: data.metadata.typography.body.fontSize,
+		iconFontSize: resolveStyleFontSize(iconRuleStyle),
+		levelFontSize: resolveStyleFontSize(levelRuleStyle),
+	});
 	const color = typeof iconProps.color === "string" ? iconProps.color : "#000000";
 
 	if (level === 0) return null;
@@ -38,16 +52,17 @@ export const LevelDisplay = ({ level }: { level: number }) => {
 			style={composeStyles(
 				{ flexDirection: "row", alignItems: "center", marginTop: 2, columnGap: gap },
 				levelContainerStyle,
+				levelRuleStyle,
 			)}
 		>
-			{Array.from({ length: 5 }).map((_, index) => {
+			{LEVEL_ITEM_KEYS.map((itemKey, index) => {
 				const isActive = index < level;
 
 				if (levelDesign.type === "icon") {
 					return (
 						<Icon
-							key={index}
-							size={iconSize + 4}
+							key={itemKey}
+							{...(levelIconExplicitSize === undefined ? {} : { size: levelIconExplicitSize })}
 							name={levelDesign.icon as IconName}
 							style={{ opacity: isActive ? 1 : 0.35 }}
 						/>
@@ -57,11 +72,11 @@ export const LevelDisplay = ({ level }: { level: number }) => {
 				if (levelDesign.type === "progress-bar") {
 					return (
 						<View
-							key={index}
+							key={itemKey}
 							style={composeStyles(
 								{
 									flex: 1,
-									height: iconSize,
+									height: decorationSize,
 									borderWidth: 0.75,
 									borderColor: color,
 									backgroundColor: isActive ? color : "transparent",
@@ -75,7 +90,7 @@ export const LevelDisplay = ({ level }: { level: number }) => {
 
 				const itemStyle: Style = {};
 				let borderRadius = 0;
-				let width: string | number = iconSize;
+				let width: string | number = decorationSize;
 
 				if (levelDesign.type === "rectangle") {
 					width = 16;
@@ -92,11 +107,11 @@ export const LevelDisplay = ({ level }: { level: number }) => {
 
 				return (
 					<View
-						key={index}
+						key={itemKey}
 						style={composeStyles(
 							{
 								width,
-								height: iconSize,
+								height: decorationSize,
 								borderWidth: 0.75,
 								borderColor: color,
 								borderRadius,

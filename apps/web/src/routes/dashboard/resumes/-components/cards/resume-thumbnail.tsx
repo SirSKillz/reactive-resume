@@ -3,155 +3,72 @@ import type { RouterOutput } from "@/libs/orpc/client";
 import { FileTextIcon } from "@phosphor-icons/react";
 import { useQuery } from "@tanstack/react-query";
 import { useInView } from "motion/react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { cn } from "@reactive-resume/utils/style";
+import { createResumePdfBlob } from "@/features/resume/export/pdf-document";
+import { createPdfFirstPageImageUrl } from "@/features/resume/preview/pdf-thumbnail";
+import { getResumeThumbnailCacheKey } from "@/features/resume/preview/resume-thumbnail.shared";
 import { orpc } from "@/libs/orpc/client";
-import { createResumePdfBlob } from "@/libs/resume/pdf-document";
-import {
-	getResumeThumbnailCacheKey,
-	getResumeThumbnailRenderSize,
-	RESUME_THUMBNAIL_TARGET_WIDTH,
-} from "./resume-thumbnail.shared";
 
 type ResumeListItem = RouterOutput["resume"]["list"][number];
 
 type ThumbnailState = { status: "error" | "idle" | "loading" } | { status: "ready"; url: string };
 
-const canvasToBlob = async (canvas: HTMLCanvasElement) => {
-	return await new Promise<Blob>((resolve, reject) => {
-		canvas.toBlob((blob) => {
-			if (!blob) {
-				reject(new Error("Failed to create resume thumbnail image."));
-				return;
-			}
-
-			resolve(blob);
-		}, "image/png");
-	});
+type ResumeThumbnailProps = {
+	isLocked: boolean;
+	resume: ResumeListItem;
 };
 
-const createPdfFirstPageImageUrl = async (file: Blob) => {
-	const { AnnotationMode, GlobalWorkerOptions, getDocument } = await import("pdfjs-dist");
-	GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+const throwIfAborted = (signal: AbortSignal) => {
+	if (signal.aborted) throw new DOMException("Thumbnail generation aborted.", "AbortError");
+};
 
-	const arrayBuffer = await file.arrayBuffer();
-	const loadingTask = getDocument({ data: new Uint8Array(arrayBuffer) });
-	let pdfDocument: Awaited<typeof loadingTask.promise> | undefined;
+const createResumeThumbnailUrl = async (data: ResumeData, signal: AbortSignal) => {
+	const pdf = await createResumePdfBlob(data);
+	throwIfAborted(signal);
 
-	try {
-		pdfDocument = await loadingTask.promise;
-		const page = await pdfDocument.getPage(1);
+	const url = await createPdfFirstPageImageUrl(pdf);
 
-		try {
-			const baseViewport = page.getViewport({ scale: 1 });
-			const renderSize = getResumeThumbnailRenderSize(
-				{ height: baseViewport.height, width: baseViewport.width },
-				RESUME_THUMBNAIL_TARGET_WIDTH,
-				window.devicePixelRatio || 1,
-			);
-
-			const canvas = document.createElement("canvas");
-			const canvasContext = canvas.getContext("2d");
-
-			if (!canvasContext) throw new Error("Failed to create resume thumbnail canvas context.");
-
-			canvas.height = renderSize.height;
-			canvas.width = renderSize.width;
-
-			const viewport = page.getViewport({ scale: renderSize.scale });
-			const renderTask = page.render({
-				canvas,
-				canvasContext,
-				viewport,
-				annotationMode: AnnotationMode.DISABLE,
-				background: "white",
-			});
-
-			await renderTask.promise;
-
-			const image = await canvasToBlob(canvas);
-			return URL.createObjectURL(image);
-		} finally {
-			page.cleanup();
-		}
-	} finally {
-		if (pdfDocument) {
-			void pdfDocument.destroy();
-		} else {
-			void loadingTask.destroy();
-		}
+	if (signal.aborted) {
+		URL.revokeObjectURL(url);
+		throwIfAborted(signal);
 	}
+
+	return url;
 };
 
-function useResumeThumbnail(data: ResumeData | undefined, cacheKey: string | undefined) {
-	const [thumbnail, setThumbnail] = useState<ThumbnailState>({ status: "idle" });
-	const currentUrlRef = useRef<string | null>(null);
-
-	const revokeCurrentThumbnail = useCallback(() => {
-		if (!currentUrlRef.current) return;
-		URL.revokeObjectURL(currentUrlRef.current);
-		currentUrlRef.current = null;
-	}, []);
-
-	useEffect(() => {
-		return () => {
-			revokeCurrentThumbnail();
-		};
-	}, [revokeCurrentThumbnail]);
+function useResumeThumbnail(data: ResumeData | undefined, cacheKey: string | undefined): ThumbnailState {
+	const thumbnailQuery = useQuery({
+		queryKey: ["resume-thumbnail", cacheKey],
+		queryFn: ({ signal }) => {
+			if (!data) throw new Error("Resume data is required to generate a thumbnail.");
+			return createResumeThumbnailUrl(data, signal);
+		},
+		enabled: Boolean(data && cacheKey),
+		gcTime: 0,
+	});
 
 	useEffect(() => {
-		if (!data || !cacheKey) {
-			revokeCurrentThumbnail();
-			setThumbnail({ status: "idle" });
-			return;
-		}
+		if (thumbnailQuery.error) console.error("Failed to generate resume thumbnail", thumbnailQuery.error);
+	}, [thumbnailQuery.error]);
 
-		let isCancelled = false;
-		let nextUrl: string | null = null;
-
-		setThumbnail({ status: "loading" });
-
-		const generateThumbnail = async () => {
-			try {
-				const pdf = await createResumePdfBlob(data);
-				if (isCancelled) return;
-
-				nextUrl = await createPdfFirstPageImageUrl(pdf);
-				if (isCancelled) {
-					URL.revokeObjectURL(nextUrl);
-					nextUrl = null;
-					return;
-				}
-
-				revokeCurrentThumbnail();
-				currentUrlRef.current = nextUrl;
-				setThumbnail({ status: "ready", url: nextUrl });
-				nextUrl = null;
-			} catch (error) {
-				if (isCancelled) return;
-
-				console.error("Failed to generate resume thumbnail", error);
-				revokeCurrentThumbnail();
-				setThumbnail({ status: "error" });
-			}
-		};
-
-		void generateThumbnail();
+	useEffect(() => {
+		const url = thumbnailQuery.data;
 
 		return () => {
-			isCancelled = true;
-
-			if (nextUrl) {
-				URL.revokeObjectURL(nextUrl);
-			}
+			if (url) URL.revokeObjectURL(url);
 		};
-	}, [data, cacheKey, revokeCurrentThumbnail]);
+	}, [thumbnailQuery.data]);
 
-	return thumbnail;
+	if (!data || !cacheKey) return { status: "idle" };
+	if (thumbnailQuery.isError) return { status: "error" };
+	if (thumbnailQuery.data) return { status: "ready", url: thumbnailQuery.data };
+
+	return { status: "loading" };
 }
 
-export function ResumeThumbnail({ isLocked, resume }: { isLocked: boolean; resume: ResumeListItem }) {
+export function ResumeThumbnail({ isLocked, resume }: ResumeThumbnailProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, { amount: 0.1, margin: "240px", once: true });
 	const resumeQuery = useQuery({

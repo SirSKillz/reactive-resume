@@ -61,7 +61,20 @@ const experienceItems = vi.hoisted(() => [
 	},
 ]);
 
-vi.mock("@/components/resume/builder-resume-draft", () => ({
+type SectionBaseProps = {
+	children: React.ReactNode;
+};
+
+type SectionAddItemButtonProps = {
+	children: React.ReactNode;
+};
+
+type SectionItemProps = {
+	title: string;
+	subtitle: string;
+};
+
+vi.mock("@/features/resume/builder/draft", () => ({
 	useCurrentResume: () => ({
 		data: {
 			sections: {
@@ -73,11 +86,11 @@ vi.mock("@/components/resume/builder-resume-draft", () => ({
 	useUpdateResumeData: () => vi.fn(),
 }));
 vi.mock("../shared/section-base", () => ({
-	SectionBase: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+	SectionBase: ({ children }: SectionBaseProps) => <div>{children}</div>,
 }));
 vi.mock("../shared/section-item", () => ({
-	SectionAddItemButton: ({ children }: { children: React.ReactNode }) => <button type="button">{children}</button>,
-	SectionItem: ({ title, subtitle }: { title: string; subtitle: string }) => (
+	SectionAddItemButton: ({ children }: SectionAddItemButtonProps) => <button type="button">{children}</button>,
+	SectionItem: ({ title, subtitle }: SectionItemProps) => (
 		<div>
 			<span data-testid="item-title">{title}</span>
 			<span data-testid="item-subtitle">{subtitle}</span>

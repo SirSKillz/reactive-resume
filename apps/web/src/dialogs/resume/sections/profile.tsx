@@ -26,8 +26,8 @@ import { cn } from "@reactive-resume/utils/style";
 import { ColorPicker } from "@/components/input/color-picker";
 import { IconPicker } from "@/components/input/icon-picker";
 import { URLInput } from "@/components/input/url-input";
-import { useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { useDialogStore } from "@/dialogs/store";
+import { useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useFormBlocker } from "@/hooks/use-form-blocker";
 import { makeSectionItem } from "@/libs/resume/make-section-item";
 import { createSectionItem, updateSectionItem } from "@/libs/resume/section-actions";
@@ -153,7 +153,7 @@ export function UpdateProfileDialog({ data }: DialogProps<"resume.sections.profi
 
 const ProfileForm = withForm({
 	defaultValues,
-	render: ({ form }) => {
+	render: function ProfileFormRenderer({ form }) {
 		const networkMeta = useStore(form.store, (s) => s.fieldMeta?.network);
 		const inlineLink = useStore(form.store, (s) => s.values.website.inlineLink);
 

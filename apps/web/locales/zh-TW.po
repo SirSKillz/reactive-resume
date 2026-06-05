@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-05-14 13:57\n"
+"PO-Revision-Date: 2026-06-01 13:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -86,7 +86,7 @@ msgstr "3 個月"
 msgid "6 months"
 msgstr "6 個月"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A confirmation link has been sent to your current email address. Please check your inbox to confirm the change."
 msgstr "確認連結已傳送至您目前的電子郵件地址。請檢查收件匣以完成變更確認。"
 
@@ -103,7 +103,7 @@ msgstr "履歷連結已複製到剪貼簿。"
 msgid "A lot of people have written to me over the years to share their experiences with Reactive Resume and how it has helped them, and I never get tired of reading them. If you have a story to share, let me know by sending me an email at <0>{email}</0>."
 msgstr "多年來，許多人寫信給我分享他們使用 Reactive Resume 的經驗，以及這個工具如何幫助他們，而我總是樂於閱讀這些故事。如果您也有故事想分享，歡迎寄信到 <0>{email}</0> 告訴我。"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "新的驗證連結已傳送至您的電子郵件地址。請檢查收件匣以驗證您的帳戶。"
 
@@ -197,7 +197,7 @@ msgstr "新增志工經歷"
 msgid "Add and test a provider before starting a thread."
 msgstr "在啟動線程之前，請新增並測試提供者。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add and test a provider before starting an agent thread."
 msgstr "在啟動代理線程之前，請新增並測試提供者。"
 
@@ -221,7 +221,7 @@ msgstr "新增多個職位以展示在同一公司的職涯晉升情況。"
 msgid "Add Page"
 msgstr "新增頁面"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add Provider"
 msgstr "新增提供者"
 
@@ -245,11 +245,11 @@ msgstr "調整履歷，使其更適合遠端優先、重視非同步溝通和自
 msgid "Afrikaans"
 msgstr "南非荷蘭語"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Agent"
 msgstr "代理人"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "代理已準備就緒"
 
@@ -269,23 +269,23 @@ msgstr "目前無法設定人工智慧代理，請稍後再試。"
 msgid "AI agent setup is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "在配置 REDIS_URL 和 ENCRYPTION_SECRET 之前，AI 代理設定不可用。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "在配置 REDIS_URL 和 ENCRYPTION_SECRET 之前，AI 提供者管理功能不可用。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable. Please try again."
 msgstr "AI提供者管理功能不可用。請稍後再試。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider saved. Test it before use."
 msgstr "AI提供者已儲存。使用前請先測試。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI Providers"
 msgstr "人工智慧提供者"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI providers require REDIS_URL and ENCRYPTION_SECRET to be configured."
 msgstr "AI 供應商需要配置 REDIS_URL 和 ENCRYPTION_SECRET。"
 
@@ -297,7 +297,7 @@ msgstr "阿爾巴尼亞語"
 msgid "Allow Public Access"
 msgstr "允許公開存取"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "已有帳戶？<0/>"
 
@@ -320,14 +320,14 @@ msgid "Analyze Resume"
 msgstr "分析履歷"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Analyzing..."
-msgstr "分析..."
+msgid "Analyzing…"
+msgstr "分析…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "And many more..."
 msgstr "還有很多……"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Anthropic Claude"
 msgstr "克勞德人類"
 
@@ -347,21 +347,21 @@ msgstr "任何擁有連結的人都可以檢視和下載履歷。"
 msgid "API Access"
 msgstr "API 存取"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API Key"
 msgstr "API Key"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 msgid "API Keys"
 msgstr "API Key"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API keys are encrypted on the server and never shown again after saving."
 msgstr "API金鑰在伺服器上進行加密，儲存後將不再顯示。"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "API Reference"
 msgstr "API 參考文件"
 
@@ -372,6 +372,10 @@ msgstr "應用程式"
 #: src/routes/_home/-sections/statistics.tsx
 msgid "Application Statistics"
 msgstr "應用程式統計資料"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Applied Rules"
+msgstr "應用規則"
 
 #: src/libs/locale.ts
 msgid "Arabic"
@@ -386,7 +390,7 @@ msgstr "檔案"
 msgid "Are you sure you want to close this dialog?"
 msgstr "確定要關閉此對話框嗎？"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Are you sure you want to delete this API key?"
 msgstr "確定要刪除此 API Key 嗎？"
 
@@ -404,7 +408,7 @@ msgstr "您確定要刪除此項目？"
 msgid "Are you sure you want to delete this resume?"
 msgstr "您確定要刪除這份履歷嗎？"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Are you sure you want to delete your account?"
 msgstr "您確定要刪除您的帳戶嗎？"
 
@@ -426,7 +430,7 @@ msgstr "您確定要重設此部分嗎？"
 msgid "Area of Study"
 msgstr "學習領域"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Artificial Intelligence"
 msgstr "人工智慧"
 
@@ -446,7 +450,7 @@ msgstr "附加文件"
 msgid "Attachment uploaded."
 msgstr "附件已上傳。"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
@@ -472,7 +476,7 @@ msgid "Azerbaijani"
 msgstr "亞塞拜然語"
 
 #. Secondary navigation button on 2FA verification screen
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Back to Login"
 msgstr "返回登入"
 
@@ -488,7 +492,7 @@ msgstr "背景顏色"
 msgid "Backup codes copied to clipboard."
 msgstr "備份代碼已複製到剪貼簿。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Base URL"
 msgstr "基本 URL"
 
@@ -526,7 +530,7 @@ msgid "Border Width"
 msgstr "邊框寬度"
 
 #. Screen-reader dialog title for the command palette in the resume builder
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Builder Command Palette"
 msgstr "編輯器指令選單"
 
@@ -572,20 +576,20 @@ msgstr "我可以把履歷匯出成 PDF 嗎？"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/settings/pages/api-keys.tsx
+#: src/features/settings/pages/danger-zone.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Cancel"
 msgstr "取消"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Cannot revert; the resume has changed since this edit was applied."
-msgstr "無法撤銷；履歷自此編輯應用程式後已發生變更。"
+msgid "Cannot restore; the resume has changed since this edit was applied."
+msgstr "無法恢復；簡歷自此編輯後已發生更改。"
 
 #: src/libs/locale.ts
 msgid "Catalan"
@@ -609,13 +613,13 @@ msgstr "證照"
 msgid "Change language"
 msgstr "變更語言"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change language to..."
-msgstr "變更語言為…"
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change language to…"
+msgstr "將語言改為…"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change theme to..."
-msgstr "變更主題為…"
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change theme to…"
+msgstr "改主題為…"
 
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
@@ -629,11 +633,11 @@ msgstr "更新日誌"
 msgid "Chat"
 msgstr "聊天"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "請到電子郵件收件匣查看重設密碼的連結。"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Check your email for a link to verify your account."
 msgstr "請到電子郵件收件匣查看用於驗證帳戶的連結。"
 
@@ -649,6 +653,7 @@ msgstr "中文（繁體）"
 msgid "Choose a model and resume draft."
 msgstr "選擇一款履歷表範本並撰寫履歷草稿。"
 
+#. Preset or custom shade refer to the color picker
 #. Preset or custom shade refer to the color picker
 #: src/components/input/rich-input.tsx
 msgid "Choose a preset or custom shade."
@@ -666,10 +671,15 @@ msgstr "從側邊欄選擇現有對話，或發起新的以草稿為中心的討
 msgid "Circle"
 msgstr "圓形"
 
+#. Clear the highlight color
 #. Clear the text color
 #: src/components/input/rich-input.tsx
 msgid "Clear"
 msgstr "清除"
+
+#: src/components/ui/combobox.tsx
+msgid "Clear selection"
+msgstr "清除選擇"
 
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
@@ -686,12 +696,12 @@ msgstr "欄"
 
 #. Accessible label for command list region inside command palette
 #. Accessible label for the command palette dialog
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette"
 msgstr "指令選項板"
 
 #. Accessible label for command palette dialog when browsing a nested command page
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette - {currentPage}"
 msgstr "指令選項板 - {currentPage}"
 
@@ -714,14 +724,14 @@ msgstr "完全免費，永遠如此，沒有任何隱藏費用。"
 #. Account deletion confirmation dialog confirm action in danger zone
 #. Create API key dialog acknowledgment action after copying
 #: src/dialogs/api-key/create.tsx
+#: src/features/settings/pages/danger-zone.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Confirm"
 msgstr "確認"
 
 #. Authentication settings action to link a social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Connect"
 msgstr "連結"
 
@@ -734,7 +744,7 @@ msgstr "內容"
 #. Final action button after saving backup codes
 #. Primary action button to proceed to next step in two-factor setup
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Continue"
 msgstr "繼續"
 
@@ -793,10 +803,10 @@ msgid "Could not reach the AI provider. Please try again."
 msgstr "無法連絡 AI 提供者。請再試一次。"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Could not revert this patch."
-msgstr "無法撤銷此補丁。"
+msgid "Could not restore this patch."
+msgstr "無法恢復此補丁。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
 msgstr "無法驗證提供者連線。"
 
@@ -830,12 +840,12 @@ msgstr "求職信"
 msgid "Create"
 msgstr "建立"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Create a new account"
 msgstr "建立一個新帳戶"
 
 #: src/dialogs/api-key/create.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Create a new API key"
 msgstr "建立新的 API Key"
 
@@ -887,8 +897,8 @@ msgstr "建立新的出版品"
 msgid "Create a new reference"
 msgstr "建立新的推薦人"
 
-#: src/components/command-palette/pages/resumes.tsx
 #: src/dialogs/resume/index.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/dashboard/resumes/-components/cards/create-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Create a new resume"
@@ -919,7 +929,7 @@ msgid "Create from scratch"
 msgstr "從零開始創建"
 
 #. Call-to-action link from login page to account registration page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Create one now"
 msgstr "立即建立"
 
@@ -945,7 +955,7 @@ msgid "Custom"
 msgstr "自訂"
 
 #. Authentication provider display name in account settings
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Custom OAuth"
 msgstr "自訂 OAuth"
 
@@ -953,11 +963,15 @@ msgstr "自訂 OAuth"
 msgid "Custom Sections"
 msgstr "自訂段落"
 
+#: src/libs/resume/section.tsx
+msgid "Custom Styles"
+msgstr "自訂樣式"
+
 #: src/libs/locale.ts
 msgid "Czech"
 msgstr "捷克語"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Danger Zone"
@@ -968,12 +982,12 @@ msgid "Danish"
 msgstr "丹麥語"
 
 #. Appearance theme option for dark mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Dark"
 msgstr "暗色"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Dark theme"
 msgstr "深色主題"
 
@@ -1001,6 +1015,8 @@ msgstr "學位"
 #. Passkey row action to remove the selected passkey
 #. Resume card context menu destructive action to remove a resume
 #. Resume card dropdown destructive action to remove a resume
+#: src/features/settings/authentication/components/passkeys.tsx
+#: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/thread-sidebar.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
@@ -1008,12 +1024,10 @@ msgstr "學位"
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Delete"
 msgstr "刪除"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Delete Account"
 msgstr "刪除帳號"
 
@@ -1029,7 +1043,7 @@ msgstr "刪除頁面"
 msgid "Delete picture"
 msgstr "刪除圖片"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
 msgstr "刪除提供者"
 
@@ -1046,11 +1060,11 @@ msgstr "刪除表格"
 msgid "Delete this agent thread?"
 msgstr "刪除此代理主題貼文？"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Deleting your account..."
 msgstr "正在刪除您的帳戶…"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Deleting your API key..."
 msgstr "正在刪除您的 API Key…"
 
@@ -1077,7 +1091,7 @@ msgstr "設計"
 
 #. Destructive action button to turn off two-factor authentication
 #: src/dialogs/auth/disable-two-factor.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Disable 2FA"
 msgstr "停用雙因子驗證（2FA）"
 
@@ -1090,7 +1104,7 @@ msgid "Disabling two-factor authentication..."
 msgstr "正在停用雙因子驗證…"
 
 #. Authentication settings action to unlink a connected social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Disconnect"
 msgstr "中斷連結"
 
@@ -1107,7 +1121,7 @@ msgstr "解僱"
 msgid "Documentation"
 msgstr "文件"
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Don't have an account? <0/>"
 msgstr "沒有帳戶？<0/>"
 
@@ -1144,7 +1158,7 @@ msgstr "下載 DOCX"
 msgid "Download JSON"
 msgstr "下載 JSON"
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Download PDF"
@@ -1224,14 +1238,14 @@ msgstr "電子郵件"
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Email Address"
 msgstr "電子郵件地址"
 
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Enable 2FA"
 msgstr "啟用雙因子驗證"
 
@@ -1239,7 +1253,7 @@ msgstr "啟用雙因子驗證"
 msgid "Enable Two-Factor Authentication"
 msgstr "啟用雙因子驗證"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Enabled"
 msgstr "已啟用"
 
@@ -1248,8 +1262,8 @@ msgid "Enabling password protection..."
 msgstr "正在啟用密碼保護…"
 
 #: src/dialogs/auth/enable-two-factor.tsx
-msgid "Enabling two-factor authentication..."
-msgstr "正在啟用雙因子驗證…"
+msgid "Enabling two-factor authentication…"
+msgstr "啟用雙重認證…"
 
 #: src/libs/locale.ts
 msgid "English"
@@ -1263,11 +1277,11 @@ msgstr "英語（英國）"
 msgid "Enhance the security of your account with additional layers of protection."
 msgstr "透過額外的保護層級強化您的帳戶安全。"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "輸入密碼的名稱。"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Enter one of your saved backup codes to access your account"
 msgstr "請輸入其中一組已儲存的備份代碼以存取您的帳戶"
 
@@ -1275,7 +1289,7 @@ msgstr "請輸入其中一組已儲存的備份代碼以存取您的帳戶"
 msgid "Enter the URL to link to"
 msgstr "輸入要連結到的 URL"
 
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter the verification code from your authenticator app"
 msgstr "請輸入您驗證器應用程式中的驗證碼"
 
@@ -1314,7 +1328,7 @@ msgid "Expires in"
 msgstr "到期時間"
 
 #. placeholder {0}: key.expiresAt?.toLocaleDateString()
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Expires on {0}"
 msgstr "將於 {0} 到期"
 
@@ -1322,7 +1336,7 @@ msgstr "將於 {0} 到期"
 msgid "Explore our diverse selection of templates, each designed to fit different styles, professions, and personalities. Reactive Resume currently offers 12 templates, with more on the way."
 msgstr "探索我們多樣化的履歷範本，每一款都為不同風格、職業和個性而設計。Reactive Resume 目前提供 12 種範本，並持續增加中。"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Explore the API documentation to learn how to integrate Reactive Resume with your applications. Find detailed endpoints, request examples, and authentication methods."
 msgstr "瀏覽 API 文件，以瞭解如何將 Reactive Resume 與您的應用程式整合。您可以在其中找到詳細的端點、請求範例以及驗證方式。"
 
@@ -1334,7 +1348,7 @@ msgstr "導出"
 msgid "Export your resume to PDF instantly, without any waiting or delays."
 msgstr "立即將履歷匯出為PDF格式，無需等待或延遲。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed"
 msgstr "失敗的"
 
@@ -1353,21 +1367,21 @@ msgid "Failed to create API key. Please try again."
 msgstr "建立 API 金鑰失敗。請再試一次。"
 
 #. Fallback toast when account registration fails without a server error message
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Failed to create your account. Please try again."
 msgstr "建立帳戶失敗。請再試一次。"
 
 #. Fallback toast when deleting a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to delete passkey. Please try again."
 msgstr "刪除密碼失敗。請再試一次。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to delete provider."
 msgstr "刪除提供者失敗。"
 
 #. Fallback toast when deleting an API key fails
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Failed to delete the API key. Please try again."
 msgstr "刪除 API 金鑰失敗。請再試一次。"
 
@@ -1377,7 +1391,7 @@ msgid "Failed to delete thread."
 msgstr "刪除線程失敗。"
 
 #. Fallback toast when account deletion fails
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Failed to delete your account. Please try again."
 msgstr "刪除您的帳戶失敗。請再試一次。"
 
@@ -1392,41 +1406,41 @@ msgid "Failed to enable two-factor authentication. Please try again."
 msgstr "啟用雙重認證失敗。請再試一次。"
 
 #. Fallback toast when linking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to link provider. Please try again."
 msgstr "連結供應商失敗。請重試。"
 
 #. Fallback toast when passkey registration fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to register passkey. Please try again."
 msgstr "註冊密碼失敗。請再試一次。"
 
 #. Fallback toast when renaming a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to rename passkey. Please try again."
 msgstr "重新命名密碼失敗。請再試一次。"
 
 #. Fallback toast when requesting email change confirmation fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to request email change. Please try again."
 msgstr "要求變更電子郵件失敗。請再試一次。"
 
 #. Fallback toast when resending account verification email fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to resend verification email. Please try again."
 msgstr "重新傳送驗證電子郵件失敗。請再試一次。"
 
 #. Fallback toast when resetting password fails and no backend message is available
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Failed to reset your password. Please try again."
 msgstr "重設密碼失敗。請再試一次。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to save AI provider."
 msgstr "保存人工智慧提供者失敗。"
 
 #. Fallback toast when requesting password reset email fails without backend message
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Failed to send password reset email. Please try again."
 msgstr "發送密碼重設電子郵件失敗。請再試一次。"
 
@@ -1438,13 +1452,13 @@ msgstr "設定雙因子驗證失敗。"
 #. Fallback toast when passkey sign-in fails without an error message
 #. Fallback toast when sign-in fails and no server error message is available
 #. Fallback toast when social sign-in fails without a provider error message
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Failed to sign in. Please try again."
 msgstr "登入失敗。請再試一次。"
 
 #. Fallback toast when signing out fails
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Failed to sign out. Please try again."
 msgstr "登出失敗。請再試一次。"
 
@@ -1453,11 +1467,11 @@ msgid "Failed to start agent thread."
 msgstr "啟動代理線程失敗。"
 
 #. Fallback toast when unlinking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to unlink provider. Please try again."
 msgstr "解除供應商的連結失敗。請再試一次。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to update provider."
 msgstr "更新提供者失敗。"
 
@@ -1467,7 +1481,7 @@ msgid "Failed to update your password. Please try again."
 msgstr "更新密碼失敗。請再試一次。"
 
 #. Fallback toast when updating profile details fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to update your profile. Please try again."
 msgstr "更新您的個人資料失敗。請再試一次。"
 
@@ -1481,29 +1495,25 @@ msgid "Failed to upload picture. Please try again."
 msgstr "上傳圖片失敗。請再試一次。"
 
 #. Fallback toast when resume password verification fails unexpectedly
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Failed to verify the password. Please try again."
 msgstr "驗證密碼失敗。請再試一次。"
 
 #. Fallback toast when verifying a backup two-factor authentication code fails
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Failed to verify your backup code. Please try again."
 msgstr "驗證您的備份碼失敗。請再試一次。"
 
 #. Fallback toast when verifying a two-factor authentication code fails
 #. Fallback toast when verifying two-factor setup code fails
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Failed to verify your code. Please try again."
 msgstr "驗證您的驗證碼失敗。請再試一次。"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Features"
 msgstr "功能"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Fetched URL"
-msgstr "取得到的 URL"
 
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
@@ -1554,11 +1564,11 @@ msgid "For security reasons, this key will only be displayed once."
 msgstr "基於安全考量，此金鑰只會顯示一次。"
 
 #. Link label to password reset page from login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Forgot Password?"
 msgstr "忘記密碼？"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Forgot your password?"
 msgstr "忘記密碼？"
 
@@ -1615,15 +1625,15 @@ msgstr "開始使用"
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "GitHub"
 msgstr "GitHub"
 
 #. Secondary navigation button on backup-code verification screen
 #: src/components/layout/not-found-screen.tsx
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Go Back"
 msgstr "返回"
 
@@ -1636,22 +1646,22 @@ msgstr "前往儀表板"
 msgid "Go to resumes dashboard"
 msgstr "前往履歷儀表板"
 
-#: src/components/command-palette/pages/navigation.tsx
-msgid "Go to..."
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Go to…"
 msgstr "前往…"
 
 #. Authentication provider display name in account settings
 #. Brand name label for Google social sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Google"
 msgstr "Google"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Google Gemini"
 msgstr "Google 雙子星"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "gpt-4.1"
 msgstr "gpt-4.1"
 
@@ -1712,7 +1722,7 @@ msgstr "希伯來語"
 msgid "Help me bring more experienced contributors on board, reducing the burden on a single maintainer and accelerating development."
 msgstr "協助我邀請更多有經驗的貢獻者加入，減輕單一維護者的負擔，加速開發進程。"
 
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/settings/pages/preferences.tsx
 msgid "Help translate the app to your language"
 msgstr "協助將此應用程式翻譯成您的語言"
 
@@ -1737,8 +1747,12 @@ msgid "Hide"
 msgstr "隱藏"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-msgid "Hide all icons on the resume"
-msgstr "隱藏履歷中的所有圖示"
+msgid "Hide Icons"
+msgstr "隱藏圖示"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Link Underline"
+msgstr "隱藏連結下劃線"
 
 #. Accessible label for button that hides password in registration form
 #. Accessible label for button that hides password in reset-password form
@@ -1751,12 +1765,16 @@ msgstr "隱藏履歷中的所有圖示"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Hide password"
 msgstr "隱藏密碼"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Section Icons"
+msgstr "隱藏版塊圖標"
 
 #. Impact severity label in resume analysis suggestion card
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
@@ -1767,11 +1785,15 @@ msgstr "高"
 msgid "Highlight"
 msgstr "螢光標記"
 
+#: src/components/input/rich-input.tsx
+msgid "Highlight Color"
+msgstr "高亮顏色"
+
 #: src/libs/locale.ts
 msgid "Hindi"
 msgstr "印地語"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "首頁"
 
@@ -1779,7 +1801,7 @@ msgstr "首頁"
 msgid "How do I share my resume?"
 msgstr "我要如何分享履歷？"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "我要如何使用 API？"
 
@@ -1787,7 +1809,7 @@ msgstr "我要如何使用 API？"
 msgid "How is my data protected?"
 msgstr "我的資料如何受到保護？"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "https://gateway.example.com/v1"
 msgstr "https://gateway.example.com/v1"
 
@@ -1819,8 +1841,8 @@ msgid "Importing your resume..."
 msgstr "正在匯入您的履歷…"
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "正在匯入…"
+msgid "Importing…"
+msgstr "正在導入…"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Increase zoom"
@@ -1846,7 +1868,7 @@ msgstr "插入表格"
 msgid "Instant Generation"
 msgstr "即時生成"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/integrations/route.tsx
 msgid "Integrations"
@@ -1858,7 +1880,7 @@ msgstr "整合"
 msgid "Interests"
 msgstr "興趣"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "AI提供者配置無效。"
 
@@ -1888,15 +1910,15 @@ msgstr "日文"
 
 #. Example full name placeholder on profile settings form
 #. Example full name placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "John Doe"
 msgstr "無名氏"
 
 #. Example username placeholder on profile settings form
 #. Example username placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe"
 msgstr "john.doe"
 
@@ -1904,10 +1926,10 @@ msgstr "john.doe"
 #. Example email placeholder on forgot-password form
 #. Example email placeholder on profile settings form
 #. Example email placeholder on registration form
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
 
@@ -1924,7 +1946,7 @@ msgstr "左右對齊"
 msgid "Kannada"
 msgstr "卡納達語"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "鑰匙"
 
@@ -1943,7 +1965,7 @@ msgstr "韓文"
 
 #. Short field label for custom display text associated with a URL
 #: src/components/input/url-input.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Label"
 msgstr "標籤"
 
@@ -1953,11 +1975,11 @@ msgid "Landscape"
 msgstr "橫向"
 
 #. Menu item that opens language selection submenu
-#: src/components/command-palette/pages/preferences/language.tsx
-#: src/components/user/dropdown-menu.tsx
 #: src/dialogs/resume/sections/language.tsx
+#: src/features/command-palette/pages/preferences/language.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-#: src/routes/dashboard/settings/preferences.tsx
 msgid "Language"
 msgstr "語言"
 
@@ -1967,10 +1989,9 @@ msgstr "語言"
 msgid "Languages"
 msgstr "語言"
 
-#. placeholder {0}: new Date(analysis.updatedAt).toLocaleString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Last analyzed on {0}"
-msgstr "最後分析於 {0}"
+msgid "Last analyzed on {updatedAtLabel}"
+msgstr "最後分析於 {updatedAtLabel}"
 
 #. placeholder {0}: statistics.lastDownloadedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
@@ -2031,12 +2052,12 @@ msgid "Licensed under <0>MIT</0>."
 msgstr "以 <0>MIT</0> 授權。"
 
 #. Appearance theme option for light mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Light"
 msgstr "亮色"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Light theme"
 msgstr "淺色主題"
 
@@ -2046,13 +2067,13 @@ msgstr "行高"
 
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Linking your {providerName} account..."
 msgstr "正在連結您的 {providerName} 帳戶…"
 
@@ -2065,29 +2086,29 @@ msgid "Lithuanian"
 msgstr "立陶宛語"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Loading agent workspace..."
-msgstr "正在載入代理工作區..."
+msgid "Loading agent workspace…"
+msgstr "正在載入代理工作區…"
 
 #: src/dialogs/resume/import.tsx
 msgid "Loading AI providers. Please try again in a moment."
 msgstr "正在加載人工智慧提供者。請稍後再試。"
 
+#: src/features/settings/integrations/components/ai-section.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
-msgid "Loading providers..."
-msgstr "正在加載提供者..."
+msgid "Loading providers…"
+msgstr "正在載入提供者…"
 
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-msgid "Loading resumes..."
-msgstr "正在載入履歷…"
+msgid "Loading resumes…"
+msgstr "正在恢復載入…"
 
 #: src/routes/agent/-components/thread-sidebar.tsx
-msgid "Loading threads..."
-msgstr "正在加載線程..."
+msgid "Loading threads…"
+msgstr "正在載入線程…"
 
 #: src/components/layout/loading-screen.tsx
-msgid "Loading..."
+msgid "Loading…"
 msgstr "載入中…"
 
 #: src/dialogs/resume/sections/education.tsx
@@ -2106,7 +2127,7 @@ msgid "Lock"
 msgstr "鎖定"
 
 #. User menu action to sign out of current account
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Logout"
 msgstr "登出"
 
@@ -2115,7 +2136,7 @@ msgid "Long-term Sustainability"
 msgstr "長期永續發展"
 
 #. Link to backup-code verification flow when authenticator app is unavailable
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Lost access to your authenticator?"
 msgstr "無法使用驗證器了嗎？"
 
@@ -2171,7 +2192,7 @@ msgstr "Microsoft Word"
 msgid "Missing working resume"
 msgstr "缺少工作履歷"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
 msgstr "模型"
 
@@ -2195,9 +2216,9 @@ msgstr "必須從 https:// 開始"
 #: src/dialogs/resume/sections/project.tsx
 #: src/dialogs/resume/sections/reference.tsx
 #: src/dialogs/resume/sections/skill.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Name"
 msgstr "名稱"
 
@@ -2223,7 +2244,7 @@ msgstr "新頁面"
 
 #. Label for new password input on reset-password form
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "New Password"
 msgstr "新密碼"
 
@@ -2244,7 +2265,7 @@ msgstr "無廣告、無追蹤"
 msgid "No data was returned from the AI provider."
 msgstr "AI 提供者未傳回資料。"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
 msgstr "尚未註冊通行鑰匙。"
 
@@ -2252,7 +2273,11 @@ msgstr "尚未註冊通行鑰匙。"
 msgid "No results found."
 msgstr "找不到相符的結果。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "No style rules yet."
+msgstr "目前還沒有風格規則。"
+
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "沒有經過測試的提供者"
 
@@ -2272,7 +2297,7 @@ msgstr "注意事項"
 msgid "Odia"
 msgstr "歐利亞語"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Ollama"
 msgstr "Ollama"
 
@@ -2296,7 +2321,7 @@ msgid "Open AI agent"
 msgstr "OpenAI代理"
 
 #. Button label to open the user's default email app
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Open Email Client"
 msgstr "開啟電子郵件用戶端"
 
@@ -2312,15 +2337,15 @@ msgstr "開啟整合設定"
 msgid "Open Source"
 msgstr "開放原始碼"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "相容 OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenRouter"
 msgstr "OpenRouter"
 
@@ -2333,7 +2358,7 @@ msgstr "在新分頁中開啟"
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr "您也可以選擇設定密碼，讓只有知道密碼的人才能透過連結檢視您的履歷。"
 
-#: src/routes/auth/-components/social-auth.tsx
+#: src/features/auth/components/social-auth.tsx
 msgctxt "Choose to authenticate with a social provider (Google, GitHub, etc.) instead of email and password"
 msgid "or continue with"
 msgstr "或繼續使用"
@@ -2367,20 +2392,20 @@ msgstr "段落"
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Passkey"
 msgstr "密碼"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey deleted successfully."
 msgstr "密碼已成功刪除。"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey registered successfully."
 msgstr "密碼註冊成功。"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkeys"
 msgstr "密碼"
 
@@ -2394,11 +2419,11 @@ msgstr "通行金鑰與 2FA"
 #. Label for password input on registration form
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/resume-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/resume-password.tsx
+#: src/features/settings/authentication/components/hooks.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Password"
 msgstr "密碼"
 
@@ -2435,11 +2460,11 @@ msgid "Patch pending"
 msgstr "補丁待定"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted"
-msgstr "補丁已撤銷"
+msgid "Patch rolled back"
+msgstr "補丁已回滾"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted."
+msgid "Patch rolled back."
 msgstr "補丁已回滾。"
 
 #. File format label in import source selector
@@ -2471,11 +2496,11 @@ msgstr "電話"
 msgid "Picture"
 msgstr "圖片"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Please enter a new password for your account"
 msgstr "請為您的帳戶輸入新的密碼"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Please enter the password shared with you by the owner of the resume to continue."
 msgstr "請輸入履歷擁有者提供給您的密碼以繼續。"
 
@@ -2487,12 +2512,15 @@ msgstr "請輸入您要連結的 URL："
 msgid "Please support the project"
 msgstr "請支持這個項目"
 
-#: src/routes/$username/-components/public-resume.tsx
-#: src/routes/agent/$threadId.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Please wait while your PDF is being generated..."
 msgstr "正在產生您的 PDF，請稍候…"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Please wait while your PDF is being generated…"
+msgstr "請稍候，您的PDF檔案正在產生中…"
 
 #: src/libs/locale.ts
 msgid "Polish"
@@ -2516,8 +2544,8 @@ msgstr "葡萄牙語（葡萄牙）"
 msgid "Position"
 msgstr "職位"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/preferences/index.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/preferences/index.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
@@ -2536,7 +2564,7 @@ msgid "Press <0>{RETURN_KEY}</0> or <1>{COMMA_KEY}</1> to add or save the curren
 msgstr "請按下 <0>{RETURN_KEY}</0> 或 <1>{COMMA_KEY}</1> 來新增或儲存目前的關鍵字。"
 
 #. Command palette hint that pressing Enter opens the selected resume
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 msgid "Press <0>Enter</0> to open"
 msgstr "按<0>Enter</0>開啟"
 
@@ -2548,7 +2576,7 @@ msgstr "主要顏色"
 msgid "Proficiency"
 msgstr "熟練度"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/profile.tsx
 msgid "Profile"
@@ -2578,11 +2606,11 @@ msgstr "使用密碼保護履歷，避免未經授權的存取"
 msgid "Protect your resume with a password, and let only people with the password view it."
 msgstr "使用密碼保護您的履歷，只有知道密碼的人才能檢視。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider"
 msgstr "服務提供者"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider connection verified."
 msgstr "已驗證服務提供者連線。"
 
@@ -2657,11 +2685,11 @@ msgstr "推薦人"
 msgid "Refresh"
 msgstr "重新整理"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "註冊新裝置"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
 msgstr "記得密碼？<0/>"
 
@@ -2698,11 +2726,11 @@ msgstr "回報錯誤"
 msgid "Report an issue"
 msgstr "回報問題"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
 msgstr "重新傳送驗證電子郵件"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resending verification email..."
 msgstr "正在重新傳送驗證電子郵件…"
 
@@ -2712,21 +2740,33 @@ msgid "Reset"
 msgstr "重置"
 
 #. Primary action button label on reset-password form
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset Password"
 msgstr "重設密碼"
 
-#: src/routes/auth/reset-password.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Reset Style"
+msgstr "重設樣式"
+
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset your password"
 msgstr "重設您的密碼"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Resetting your password..."
 msgstr "正在重設您的密碼…"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Resources"
 msgstr "資源"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore"
+msgstr "恢復"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore the resume to before this patch? This will roll back this patch and any patches applied after it."
+msgstr "恢復到此補丁之前的狀態？這將回滾此補丁以及其後套用的所有補丁。"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -2744,8 +2784,8 @@ msgstr "履歷分析完成。"
 msgid "Resume patch"
 msgstr "恢復補丁"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/_home/-sections/statistics.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -2755,10 +2795,6 @@ msgstr "履歷"
 #: src/routes/agent/$threadId.tsx
 msgid "Retry"
 msgstr "重試"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Revert"
-msgstr "恢復"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Review the resume against a job description and ask me questions before changing uncertain sections."
@@ -2788,6 +2824,14 @@ msgstr "羅馬尼亞語"
 msgid "Rotation"
 msgstr "旋轉"
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rule"
+msgstr "規則"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rules"
+msgstr "規則"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
 msgid "Run your first analysis to get a scorecard, strengths, and prioritized suggestions."
 msgstr "執行您的第一次分析，以獲得計分卡、優勢和優先建議。"
@@ -2797,7 +2841,7 @@ msgid "Russian"
 msgstr "俄文"
 
 #. Passkey rename prompt confirm action in authentication settings
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Save"
 msgstr "節省"
 
@@ -2817,11 +2861,11 @@ msgstr "節省"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save Provider"
 msgstr "儲蓄提供者"
 
@@ -2838,7 +2882,7 @@ msgid "Scorecard"
 msgstr "計分卡"
 
 #. Accessible label for command palette search input
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "搜尋指令"
 
@@ -2848,15 +2892,18 @@ msgstr "搜尋指令"
 msgid "Search for an icon"
 msgstr "搜尋圖示"
 
-#: src/components/command-palette/pages/resumes.tsx
-msgid "Search for..."
-msgstr "搜尋履歷…"
+#: src/features/command-palette/pages/resumes.tsx
+msgid "Search for…"
+msgstr "搜尋…"
 
-#. Placeholder in command palette input on nested pages
-#: src/components/command-palette/index.tsx
 #: src/components/ui/combobox.tsx
 msgid "Search..."
 msgstr "搜尋..."
+
+#. Placeholder in command palette input on nested pages
+#: src/features/command-palette/index.tsx
+msgid "Search…"
+msgstr "搜尋…"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -2899,11 +2946,11 @@ msgid "Send message"
 msgstr "發送訊息"
 
 #. Primary action button label on forgot-password form
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Send Password Reset Email"
 msgstr "傳送重設密碼電子郵件"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "正在傳送重設密碼電子郵件…"
 
@@ -2915,12 +2962,12 @@ msgstr "分隔線"
 msgid "Serbian"
 msgstr "塞爾維亞語"
 
+#: src/features/settings/authentication/components/password.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Settings"
@@ -2975,10 +3022,10 @@ msgstr "在標題中顯示連結"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Show password"
 msgstr "顯示密碼"
 
@@ -2992,19 +3039,19 @@ msgid "Sidebar Width"
 msgstr "側邊欄寬度"
 
 #. Primary action button label on login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in"
 msgstr "登入"
 
 #. Call-to-action link from forgot-password page to login page
 #. Call-to-action link from registration page to login page
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign in now"
 msgstr "立即登入"
 
 #. Title on the login page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in to your account"
 msgstr "登入您的帳戶"
 
@@ -3013,20 +3060,20 @@ msgid "Sign in with GitHub, Google or a custom OAuth provider."
 msgstr "使用 GitHub、Google 或自訂 OAuth 服務登入。"
 
 #. Primary action button label on registration form
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign up"
 msgstr "註冊"
 
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Signing in..."
 msgstr "正在登入…"
 
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Signing out..."
 msgstr "正在登出…"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Signing up..."
 msgstr "正在註冊…"
 
@@ -3207,11 +3254,11 @@ msgstr "盡您所能支持此應用程式！"
 msgid "Swedish"
 msgstr "瑞典語"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to dark theme"
 msgstr "切換至深色主題"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to light theme"
 msgstr "切換至淺色主題"
 
@@ -3251,11 +3298,11 @@ msgstr "範本圖庫"
 msgid "Templates"
 msgstr "範本"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Test"
 msgstr "測試"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Tested"
 msgstr "已測試"
 
@@ -3281,16 +3328,16 @@ msgstr "經紀人需要您的意見。"
 msgid "The AI returned an invalid analysis format. Please try again."
 msgstr "AI 返回無效的分析格式。請再試一次。"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key has been deleted successfully."
 msgstr "API Key 已成功刪除。"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key will no longer be able to access your data after deletion. This action cannot be undone."
 msgstr "刪除後，此 API Key 將無法再存取您的資料。此動作無法復原。"
 
 #. Empty-state message when no command palette results match the search query
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "The command you're looking for doesn't exist."
 msgstr "您要找的指令不存在。"
 
@@ -3299,11 +3346,11 @@ msgstr "您要找的指令不存在。"
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "匯入的檔案無法解析為有效的履歷。"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The password you entered is incorrect"
 msgstr "您輸入的密碼不正確"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The resume you are trying to access is password protected"
 msgstr "您嘗試存取的履歷已啟用密碼保護"
 
@@ -3316,9 +3363,9 @@ msgid "The working resume was deleted. This thread is read-only."
 msgstr "工作簡歷已被刪除。此帖為唯讀模式。"
 
 #. Menu item that opens appearance theme selection submenu
-#: src/components/command-palette/pages/preferences/theme.tsx
-#: src/components/user/dropdown-menu.tsx
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr "佈景主題"
 
@@ -3331,7 +3378,7 @@ msgstr "接著，請輸入應用程式提供的 6 位數驗證碼以繼續。"
 msgid "There was a problem while generating the DOCX, please try again."
 msgstr "生成 DOCX 時出現問題，請重試。"
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -3348,7 +3395,7 @@ msgstr "思維"
 msgid "This action cannot be undone."
 msgstr "此動作無法復原。"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "This action cannot be undone. All your data will be permanently deleted."
 msgstr "此動作無法復原。您的所有資料都將被永久刪除。"
 
@@ -3376,7 +3423,7 @@ msgstr "這是用於履歷的 URL 友善名稱。"
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "這可能需要幾分鐘，取決於 AI 服務提供者的回應時間。請勿關閉視窗或重新整理頁面。"
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "This resume is locked and cannot be updated."
 msgstr "這份履歷已被鎖定，無法更新。"
 
@@ -3384,7 +3431,7 @@ msgstr "這份履歷已被鎖定，無法更新。"
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "這部分專門用於你在這份履歷上做個人筆記。這裡的內容屬於私密，不會與其他人分享。"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "This step is optional, but recommended."
 msgstr "此步驟為選填，但建議您完成。"
 
@@ -3404,7 +3451,7 @@ msgstr "由於履歷撰寫或人工智慧服務提供者無法使用，此貼文
 msgid "This will generate a new API key to access the Reactive Resume API to allow machines to interact with your resume data."
 msgstr "這會產生一組新的 API Key，讓機器可以透過 Reactive Resume API 與您的履歷資料互動。"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "This will help you identify it later, if you plan to have multiple passkeys."
 msgstr "如果您打算使用多個通行鑰，這將有助於您稍後辨識。"
 
@@ -3453,7 +3500,7 @@ msgstr "祕訣： 您可以參考您申請的職位為履歷命名。"
 msgid "Title"
 msgstr "標題"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "To delete your account, you need to enter the confirmation text and click the button below."
 msgstr "若要刪除帳戶，您必須先輸入確認文字，然後點擊下方按鈕。"
 
@@ -3532,8 +3579,8 @@ msgstr "雙欄版面，極簡且文字密集，毫無裝飾元素；非常適合
 msgid "Two-column, minimal with light gray sidebar and subtle icons; professional and understated for legal, finance, or executive roles."
 msgstr "雙欄版面，極簡風格、搭配淺灰色側邊欄與細緻圖示；專業低調，適合法律、金融或高階管理職。"
 
-#: src/routes/auth/verify-2fa.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/auth/pages/verify-2fa.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Two-Factor Authentication"
 msgstr "雙因子驗證"
 
@@ -3555,14 +3602,14 @@ msgstr "雙因素驗證 QR 代碼"
 msgid "Type"
 msgstr "類型"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Type \"{CONFIRMATION_TEXT}\" to confirm"
 msgstr "輸入「{CONFIRMATION_TEXT}」以確認"
 
 #. Placeholder in command palette input on root page
 #. Screen-reader dialog description instructing users how to use the command palette
-#: src/components/command-palette/index.tsx
-msgid "Type a command or search..."
+#: src/features/command-palette/index.tsx
+msgid "Type a command or search…"
 msgstr "輸入指令或搜尋…"
 
 #: src/libs/resume/section.tsx
@@ -3581,29 +3628,29 @@ msgstr "底線"
 msgid "Unlimited Resumes"
 msgstr "無限履歷"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."
 msgstr "正在取消連結您的 {providerName} 帳戶…"
 
 #. Primary action button label to unlock a password-protected resume
 #. Resume card context menu action to remove edit lock
 #. Resume card dropdown action to remove edit lock
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Unlock"
 msgstr "解鎖"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Unnamed passkey"
 msgstr "未命名密碼匙"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Untested"
 msgstr "未經測試"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "未驗證"
 
@@ -3679,7 +3726,7 @@ msgstr "更新現有的志工經歷"
 
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Update Password"
 msgstr "更新密碼"
 
@@ -3703,12 +3750,16 @@ msgstr "正在更新您的密碼…"
 msgid "Updating your resume..."
 msgstr "正在更新您的履歷…"
 
+#: src/routes/agent/$threadId.tsx
+msgid "Upload attachments"
+msgstr "上傳附件"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Upload picture"
 msgstr "上傳圖片"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Uploading picture..."
+msgid "Uploading picture…"
 msgstr "正在上傳圖片…"
 
 #. Form field label for the generated public resume link in sharing settings
@@ -3717,7 +3768,7 @@ msgstr "正在上傳圖片…"
 msgid "URL"
 msgstr "URL"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Use"
 msgstr "使用"
 
@@ -3727,8 +3778,8 @@ msgstr "使用顏色 {color}"
 
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "使用者名稱"
 
@@ -3744,39 +3795,42 @@ msgstr "烏茲別克語"
 msgid "Valid URLs must start with http:// or https://."
 msgstr "有效的 URL 必須以 http:// 或 https:// 開頭。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Vercel AI Gateway"
 msgstr "Vercel AI Gateway"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "已驗證"
 
 #. Primary action button to submit 2FA code
 #. Primary action button to submit backup code
-#: src/routes/auth/verify-2fa-backup.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verify"
 msgstr "驗證"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verify with a Backup Code"
 msgstr "使用備份代碼驗證"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verifying backup code..."
 msgstr "正在驗證備份代碼…"
 
-#: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verifying code..."
 msgstr "正在驗證代碼…"
 
-#: src/routes/auth/resume-password.tsx
+#: src/dialogs/auth/enable-two-factor.tsx
+msgid "Verifying code…"
+msgstr "驗證碼…"
+
+#: src/features/auth/pages/resume-password.tsx
 msgid "Verifying password..."
 msgstr "正在驗證密碼…"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Verifying your email is required when resetting your password."
 msgstr "重設密碼時必須先驗證您的電子郵件。"
 
@@ -3793,10 +3847,6 @@ msgstr "檢視數"
 #: src/libs/resume/section.tsx
 msgid "Volunteer"
 msgstr "志工服務"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Waiting for fetch result..."
-msgstr "正在等待取得結果..."
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -3833,13 +3883,13 @@ msgstr "最新版本的新功能？"
 msgid "When locked, the resume cannot be updated or deleted."
 msgstr "履歷被鎖定時，將無法更新或刪除。"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Work OpenAI"
 msgstr "OpenAI"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Working..."
-msgstr "在職的..."
+msgid "Working…"
+msgstr "正在運作…"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "X (Twitter)"
@@ -3857,7 +3907,7 @@ msgstr "沒錯！Reactive Resume 完全免費使用，沒有任何隱藏費用�
 msgid "You also have the option to deploy on your own servers using the Docker image."
 msgstr "您也可以使用 Docker 映像檔在自己的伺服器上部署。"
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "You can also use your username to login."
 msgstr "您也可以使用使用者名稱登入。"
 
@@ -3869,12 +3919,12 @@ msgstr "您可以透過唯一的公開 URL 分享履歷、以密碼加以保護�
 msgid "You have unsaved changes that will be lost."
 msgstr "您有未儲存的變更，這些變更將會遺失。"
 
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "You've got mail!"
 msgstr "你有新郵件"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Your account has been deleted successfully."
 msgstr "您的帳戶已成功刪除。"
 
@@ -3894,11 +3944,11 @@ msgstr "您的資料是安全的，絕不會與任何人分享或出售。"
 msgid "Your data is stored securely and is never shared with third parties. You can also self-host Reactive Resume on your own servers for complete control over your data."
 msgstr "您的資料會被安全保存，且絕不會分享給第三方。您也可以在自有伺服器上自行託管 Reactive Resume，完全掌控自己的資料。"
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "Your latest changes could not be saved."
 msgstr "您所做的最新變更未能儲存。"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Your password has been reset successfully. You can now sign in with your new password."
 msgstr "您的密碼已成功重設。您現在可以使用新密碼登入。"
 
@@ -3906,7 +3956,7 @@ msgstr "您的密碼已成功重設。您現在可以使用新密碼登入。"
 msgid "Your password has been updated successfully."
 msgstr "您的密碼已成功更新。"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Your profile has been updated successfully."
 msgstr "您的個人設定已成功更新。"
 

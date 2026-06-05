@@ -1,10 +1,10 @@
 import type { Style } from "@react-pdf/types";
 import type { TemplatePageProps } from "../../document";
 import type { TemplateColorRoles, TemplateStyleSlots } from "../shared/types";
-import { Image, Page, StyleSheet, View } from "@react-pdf/renderer";
 import { useMemo } from "react";
 import { rgbaStringToHex } from "@reactive-resume/utils/color";
 import { useRender } from "../../context";
+import { Image, Page, StyleSheet, View } from "../../renderer";
 import { CustomFieldContactItem, WebsiteContactItem } from "../shared/contact-item";
 import { TemplateProvider } from "../shared/context";
 import { filterSections } from "../shared/filtering";
@@ -12,6 +12,7 @@ import { getTemplateMetrics } from "../shared/metrics";
 import { getTemplatePageMinHeightStyle, getTemplatePageSize } from "../shared/page-size";
 import { hasTemplatePicture } from "../shared/picture";
 import { Heading, Icon, Link, Text } from "../shared/primitives";
+import { createRtlStyleHelpers } from "../shared/rtl";
 import { Section } from "../shared/sections";
 import { composeStyles, headerNameLineHeight } from "../shared/styles";
 
@@ -32,6 +33,10 @@ type BronzorTemplate = {
 	styles: BronzorStyles;
 };
 
+type BronzorHeaderProps = {
+	styles: BronzorStyles;
+};
+
 const getBronzorSections = ({
 	mainSections,
 	sidebarSections,
@@ -43,9 +48,18 @@ const getBronzorSections = ({
 }) => {
 	if (fullWidth) return mainSections;
 
-	return Array.from({ length: Math.max(mainSections.length, sidebarSections.length) }).flatMap((_, index) =>
-		[sidebarSections[index], mainSections[index]].filter((section): section is string => Boolean(section)),
-	);
+	const sections: string[] = [];
+	const sectionCount = Math.max(mainSections.length, sidebarSections.length);
+
+	for (let index = 0; index < sectionCount; index += 1) {
+		const sidebarSection = sidebarSections[index];
+		const mainSection = mainSections[index];
+
+		if (sidebarSection) sections.push(sidebarSection);
+		if (mainSection) sections.push(mainSection);
+	}
+
+	return sections;
 };
 
 export const BronzorPage = ({ page, pageIndex }: TemplatePageProps) => {
@@ -75,7 +89,7 @@ export const BronzorPage = ({ page, pageIndex }: TemplatePageProps) => {
 	);
 };
 
-const Header = ({ styles }: { styles: BronzorStyles }) => {
+const Header = ({ styles }: BronzorHeaderProps) => {
 	const { basics, picture } = useRender();
 	const hasPicture = hasTemplatePicture(picture);
 
@@ -119,9 +133,10 @@ const Header = ({ styles }: { styles: BronzorStyles }) => {
 };
 
 const useBronzorTemplate = (): BronzorTemplate => {
-	const { picture, metadata } = useRender();
+	const { picture, metadata, rtl } = useRender();
 
 	return useMemo(() => {
+		const r = createRtlStyleHelpers(rtl);
 		const foreground = rgbaStringToHex(metadata.design.colors.text);
 		const background = rgbaStringToHex(metadata.design.colors.background);
 		const primary = rgbaStringToHex(metadata.design.colors.primary);
@@ -134,6 +149,7 @@ const useBronzorTemplate = (): BronzorTemplate => {
 			fontWeight: metadata.typography.body.fontWeights[0] ?? "400",
 			lineHeight: metadata.typography.body.lineHeight,
 			color: foreground,
+			...r.text,
 		} satisfies Style;
 
 		const baseStyles = StyleSheet.create({
@@ -147,6 +163,7 @@ const useBronzorTemplate = (): BronzorTemplate => {
 				fontFamily: metadata.typography.body.fontFamily,
 				fontSize: metadata.typography.body.fontSize,
 				lineHeight: metadata.typography.body.lineHeight,
+				direction: r.pageDirection,
 			},
 			text: bodyText,
 			heading: {
@@ -155,13 +172,14 @@ const useBronzorTemplate = (): BronzorTemplate => {
 				fontWeight: metadata.typography.heading.fontWeights[0] ?? "500",
 				lineHeight: metadata.typography.heading.lineHeight,
 				color: foreground,
+				...r.text,
 			},
 			div: {
 				rowGap: metrics.gapY(0.125),
 				columnGap: metrics.gapX(1 / 3),
 			},
 			inline: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				alignItems: "center",
 				columnGap: metrics.gapX(1 / 3),
 			},
@@ -185,29 +203,26 @@ const useBronzorTemplate = (): BronzorTemplate => {
 				alignItems: "flex-start",
 			},
 			richListItemMarker: {
-				width: metadata.typography.body.fontSize,
-				textAlign: "right",
 				...bodyText,
+				width: metadata.typography.body.fontSize,
+				textAlign: r.listMarkerTextAlign,
 			},
 			richListItemContent: {
-				flex: 1,
 				...bodyText,
+				flex: 1,
 			},
 			splitRow: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				flexWrap: "wrap",
 				alignItems: "flex-start",
 				justifyContent: "space-between",
 				columnGap: metrics.gapX(2 / 3),
 			},
-			alignRight: {
-				textAlign: "right",
-				minWidth: 0,
-				maxWidth: "100%",
-				flexShrink: 1,
+			alignEnd: {
+				...r.alignEnd,
 			},
 			section: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				columnGap: metrics.columnGap,
 				borderTopWidth: 1,
 				borderTopColor: primary,
@@ -218,6 +233,7 @@ const useBronzorTemplate = (): BronzorTemplate => {
 				flexShrink: 0,
 				fontSize: metadata.typography.heading.fontSize * 0.75,
 				color: primary,
+				textAlign: r.sectionHeadingTextAlign,
 			},
 			sectionItems: {
 				flex: 1,
@@ -256,13 +272,13 @@ const useBronzorTemplate = (): BronzorTemplate => {
 			},
 			headerContactRow: {
 				justifyContent: "center",
-				flexDirection: "row",
+				flexDirection: r.row,
 				flexWrap: "wrap",
 				rowGap: metrics.gapY(0.125),
 				columnGap: metrics.gapX(5 / 6),
 			},
 			headerContactItem: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				alignItems: "center",
 				columnGap: metrics.gapX(0.25),
 			},
@@ -274,5 +290,5 @@ const useBronzorTemplate = (): BronzorTemplate => {
 		});
 
 		return { colors, styles: baseStyles satisfies BronzorStyles };
-	}, [picture, metadata]);
+	}, [picture, metadata, rtl]);
 };

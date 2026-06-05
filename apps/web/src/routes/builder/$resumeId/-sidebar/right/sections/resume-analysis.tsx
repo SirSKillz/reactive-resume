@@ -3,13 +3,13 @@ import { Trans } from "@lingui/react/macro";
 import { ArrowRightIcon, InfoIcon, LightningIcon, SparkleIcon } from "@phosphor-icons/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { match } from "ts-pattern";
 import { Alert, AlertDescription } from "@reactive-resume/ui/components/alert";
 import { Badge } from "@reactive-resume/ui/components/badge";
 import { Button } from "@reactive-resume/ui/components/button";
-import { useResume } from "@/components/resume/builder-resume-draft";
+import { useResume } from "@/features/resume/builder/draft";
 import { getOrpcErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
 import { SectionBase } from "../shared/section-base";
@@ -90,7 +90,9 @@ export function ResumeAnalysisSectionBuilder() {
 
 	const analysis = analysisQuery.data;
 	const score = analysis?.overallScore ?? null;
-	const analyzeLabel = isPending ? t`Analyzing...` : t`Analyze Resume`;
+	const updatedAt = analysis?.updatedAt ?? null;
+	const [updatedAtLabel, setUpdatedAtLabel] = useState<string | null>(null);
+	const analyzeLabel = isPending ? t`Analyzing…` : t`Analyze Resume`;
 
 	const scoreTone = useMemo(() => {
 		if (score == null) return "bg-muted";
@@ -98,6 +100,10 @@ export function ResumeAnalysisSectionBuilder() {
 		if (score >= 60) return "bg-amber-600";
 		return "bg-rose-600";
 	}, [score]);
+
+	useEffect(() => {
+		setUpdatedAtLabel(updatedAt ? new Date(updatedAt).toLocaleString() : null);
+	}, [updatedAt]);
 
 	const onAnalyze = () => {
 		if (!resume) return;
@@ -153,11 +159,11 @@ export function ResumeAnalysisSectionBuilder() {
 										);
 									})}
 								</div>
-								{analysis?.updatedAt && (
+								{updatedAtLabel ? (
 									<p className="text-muted-foreground text-xs leading-none">
-										<Trans>Last analyzed on {new Date(analysis.updatedAt).toLocaleString()}</Trans>
+										<Trans>Last analyzed on {updatedAtLabel}</Trans>
 									</p>
-								)}
+								) : null}
 							</div>
 						</div>
 					</div>
@@ -218,11 +224,11 @@ export function ResumeAnalysisSectionBuilder() {
 											<div key={suggestion.title} className="space-y-3 rounded-md border bg-card p-3">
 												<div className="flex items-center gap-2">
 													<span
-														role="img"
+														aria-hidden="true"
 														className={`size-2.5 shrink-0 rounded-full ring-1 ring-border ${impactCircleClass(suggestion.impact)}`}
 														title={impactLabel(suggestion.impact)}
-														aria-label={impactLabel(suggestion.impact)}
 													/>
+													<span className="sr-only">{impactLabel(suggestion.impact)}</span>
 													<div className="font-semibold text-sm tracking-tight">{suggestion.title}</div>
 												</div>
 

@@ -10,8 +10,8 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/
 import { ScrollArea } from "@reactive-resume/ui/components/scroll-area";
 import { cn } from "@reactive-resume/utils/style";
 import { CometCard } from "@/components/animation/comet-card";
-import { useCurrentResume, useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { useDialogStore } from "@/dialogs/store";
+import { useCurrentResume, useUpdateResumeData } from "@/features/resume/builder/draft";
 import { templates } from "./data";
 
 export function TemplateGalleryDialog(_: DialogProps<"resume.template.gallery">) {
@@ -99,7 +99,7 @@ function TemplateCard({ id, metadata, isActive, onSelect }: TemplateCardProps) {
 					sideOffset={-32}
 					align="start"
 					alignOffset={32}
-					className="pointer-events-none! flex w-80 flex-col justify-between space-y-6 rounded-md bg-background/80 p-4 pb-6"
+					className="pointer-events-none! flex w-80 flex-col justify-between gap-y-6 rounded-md bg-background/80 p-4 pb-6"
 				>
 					<div className="space-y-1">
 						<h3 className="font-semibold text-lg">{metadata.name}</h3>

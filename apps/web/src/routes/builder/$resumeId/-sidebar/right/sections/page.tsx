@@ -10,9 +10,9 @@ import {
 	InputGroupText,
 } from "@reactive-resume/ui/components/input-group";
 import { Switch } from "@reactive-resume/ui/components/switch";
-import { getLocaleOptions } from "@/components/locale/combobox";
-import { useResume, useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { Combobox } from "@/components/ui/combobox";
+import { getLocaleOptions } from "@/features/locale/combobox";
+import { useResume, useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useSyncFormValues } from "@/hooks/use-sync-form-values";
 import { useAppForm } from "@/libs/tanstack-form";
 import { SectionBase } from "../shared/section-base";
@@ -258,10 +258,34 @@ function PageSectionForm() {
 				)}
 			</form.Field>
 
+			<form.Field name="hideLinkUnderline">
+				{(field) => (
+					<FormItem
+						className="col-span-full flex items-center gap-x-3 py-1"
+						hasError={field.state.meta.isTouched && field.state.meta.errors.length > 0}
+					>
+						<FormControl
+							render={
+								<Switch
+									checked={field.state.value}
+									onCheckedChange={(checked) => {
+										field.handleChange(checked);
+										handleAutoSave("hideLinkUnderline", checked);
+									}}
+								/>
+							}
+						/>
+						<FormLabel>
+							<Trans>Hide Link Underline</Trans>
+						</FormLabel>
+					</FormItem>
+				)}
+			</form.Field>
+
 			<form.Field name="hideIcons">
 				{(field) => (
 					<FormItem
-						className="col-span-full flex items-center gap-x-3 py-2"
+						className="col-span-full flex items-center gap-x-3 py-1"
 						hasError={field.state.meta.isTouched && field.state.meta.errors.length > 0}
 					>
 						<FormControl
@@ -276,7 +300,31 @@ function PageSectionForm() {
 							}
 						/>
 						<FormLabel>
-							<Trans>Hide all icons on the resume</Trans>
+							<Trans>Hide Icons</Trans>
+						</FormLabel>
+					</FormItem>
+				)}
+			</form.Field>
+
+			<form.Field name="hideSectionIcons">
+				{(field) => (
+					<FormItem
+						className="col-span-full flex items-center gap-x-3 py-1"
+						hasError={field.state.meta.isTouched && field.state.meta.errors.length > 0}
+					>
+						<FormControl
+							render={
+								<Switch
+									checked={field.state.value}
+									onCheckedChange={(checked) => {
+										field.handleChange(checked);
+										handleAutoSave("hideSectionIcons", checked);
+									}}
+								/>
+							}
+						/>
+						<FormLabel>
+							<Trans>Hide Section Icons</Trans>
 						</FormLabel>
 					</FormItem>
 				)}

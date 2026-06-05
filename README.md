@@ -143,7 +143,7 @@ The quickest way to run Reactive Resume locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/amruthpillai/reactive-resume.git
+git clone --depth=1  https://github.com/amruthpillai/reactive-resume.git
 cd reactive-resume
 
 # Start all services
@@ -168,7 +168,7 @@ For detailed setup instructions, environment configuration, and self-hosting gui
 | API              | ORPC (Type-safe RPC)            |
 | Auth             | Better Auth                     |
 | Styling          | Tailwind CSS                    |
-| UI Components    | Radix UI                        |
+| UI Components    | Base UI + shadcn-style package  |
 | State Management | Zustand + TanStack Query        |
 
 ## Documentation

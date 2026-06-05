@@ -1,7 +1,6 @@
 import type { FontWeight } from "@reactive-resume/fonts";
 import type { ResumeData, Typography } from "@reactive-resume/schema/resume/data";
 import type { Locale } from "@reactive-resume/utils/locale";
-import { Font } from "@react-pdf/renderer";
 import { letters as cjkLetters } from "cjk-regex";
 import {
 	getFont,
@@ -12,6 +11,7 @@ import {
 	sortFontWeights,
 } from "@reactive-resume/fonts";
 import { isCJKLocale } from "@reactive-resume/utils/locale";
+import { Font } from "../renderer";
 
 type FontWeightRange = {
 	lowest: number;
@@ -21,6 +21,8 @@ type FontWeightRange = {
 const registeredFontVariants = new Set<string>();
 const fallbackFontFamily = "IBM Plex Serif";
 const cjkLetterRegex = cjkLetters().toRegExp();
+const fontWeightValues = new Set<FontWeight>(["100", "200", "300", "400", "500", "600", "700", "800", "900"]);
+const preferredFallbackFontWeights = ["400", "700", "600", "500"] satisfies FontWeight[];
 
 // `fontFamily` is widened to `string | string[]` so react-pdf can do
 // glyph-level font fallback for CJK characters (#2986).
@@ -30,7 +32,13 @@ export type PdfTypography = Omit<Typography, "body" | "heading"> & {
 };
 
 const getFontWeightRange = (fontWeights: string[]): FontWeightRange => {
-	const numericWeights = fontWeights.map(Number).filter((weight) => Number.isFinite(weight));
+	const numericWeights: number[] = [];
+
+	for (const fontWeight of fontWeights) {
+		const numericWeight = Number(fontWeight);
+		if (Number.isFinite(numericWeight)) numericWeights.push(numericWeight);
+	}
+
 	if (numericWeights.length === 0) return { lowest: 400, highest: 700 };
 
 	const lowest = Math.min(...numericWeights);
@@ -38,6 +46,52 @@ const getFontWeightRange = (fontWeights: string[]): FontWeightRange => {
 	const highest = rawHighest <= lowest ? 700 : rawHighest;
 
 	return { lowest, highest };
+};
+
+const isFontWeight = (weight: string): weight is FontWeight => fontWeightValues.has(weight as FontWeight);
+
+const uniqueSortedFontWeights = (fontWeights: FontWeight[]): FontWeight[] => {
+	return [...new Set(sortFontWeights(fontWeights))];
+};
+
+const getFallbackFontWeights = (availableWeights: FontWeight[]): FontWeight[] => {
+	const sortedAvailableWeights = uniqueSortedFontWeights(availableWeights);
+	const availableWeightSet = new Set(sortedAvailableWeights);
+	const preferredWeights = preferredFallbackFontWeights.filter((weight) => availableWeightSet.has(weight));
+
+	if (preferredWeights.length >= 2) {
+		return uniqueSortedFontWeights(preferredWeights.slice(0, 2));
+	}
+
+	if (preferredWeights.length === 1) {
+		const firstWeight = preferredWeights[0];
+		if (!firstWeight) return [];
+
+		const secondWeight =
+			sortedAvailableWeights.find((weight) => Number(weight) > Number(firstWeight)) ??
+			sortedAvailableWeights.find((weight) => weight !== firstWeight);
+
+		return uniqueSortedFontWeights(secondWeight ? [firstWeight, secondWeight] : [firstWeight]);
+	}
+
+	return sortedAvailableWeights.slice(0, 2);
+};
+
+const resolvePdfFontWeights = (family: string, fontWeights: string[]): FontWeight[] => {
+	const requestedWeights = uniqueSortedFontWeights(fontWeights.filter(isFontWeight));
+	const availableWeights = getFont(family)?.weights;
+
+	if (!availableWeights || availableWeights.length === 0) {
+		return requestedWeights.length > 0 ? requestedWeights : ["400", "700"];
+	}
+
+	const availableWeightSet = new Set(availableWeights);
+	const allRequestedWeightsAreAvailable =
+		requestedWeights.length > 0 && requestedWeights.every((weight) => availableWeightSet.has(weight));
+
+	if (allRequestedWeightsAreAvailable) return requestedWeights;
+
+	return getFallbackFontWeights(availableWeights);
 };
 
 const toFontWeight = (weight: number): FontWeight => {
@@ -50,6 +104,17 @@ const toFontWeight = (weight: number): FontWeight => {
 	if (weight <= 700) return "700";
 	if (weight <= 800) return "800";
 	return "900";
+};
+
+const collectFontRangeWeights = (ranges: FontWeightRange[]): number[] => {
+	const weights = new Set<number>();
+
+	for (const range of ranges) {
+		weights.add(range.lowest);
+		weights.add(range.highest);
+	}
+
+	return [...weights];
 };
 
 // Resolves the user-stored family to the one we hand to Font.register:
@@ -65,8 +130,8 @@ const resolvePdfFontFamily = (family: string) => {
 const resolvePdfTypography = (typography: Typography): Typography => {
 	const bodyFontFamily = resolvePdfFontFamily(typography.body.fontFamily);
 	const headingFontFamily = resolvePdfFontFamily(typography.heading.fontFamily);
-	const bodyFontWeights = sortFontWeights(typography.body.fontWeights);
-	const headingFontWeights = sortFontWeights(typography.heading.fontWeights);
+	const bodyFontWeights = resolvePdfFontWeights(bodyFontFamily, typography.body.fontWeights);
+	const headingFontWeights = resolvePdfFontWeights(headingFontFamily, typography.heading.fontWeights);
 
 	return {
 		...typography,
@@ -133,19 +198,29 @@ export const registerFonts = (typography: Typography, locale: Locale, hasCjkCont
 	}
 
 	// Register a CJK fallback so textkit can substitute per-codepoint for
-	// characters the primary font lacks (#2986). One weight per style is
-	// enough — substitution is per-codepoint, not per-weight.
+	// characters the primary font lacks (#2986). Register the regular and
+	// bold ranges so CJK glyph fallback preserves <strong>/font-weight styles.
 	const bodyCjkFallback = needsCjkTextSupport ? getPdfCjkFallbackFontFamily(bodyFontFamily) : null;
 	const headingCjkFallback = needsCjkTextSupport ? getPdfCjkFallbackFontFamily(headingFontFamily) : null;
 
-	if (bodyCjkFallback) {
-		registerFont(bodyCjkFallback, 400, false);
-		registerFont(bodyCjkFallback, 400, true);
-	}
+	const registerCjkFallback = (family: string, ranges: FontWeightRange[]) => {
+		const weights = collectFontRangeWeights(ranges);
 
-	if (headingCjkFallback && headingCjkFallback !== bodyCjkFallback) {
-		registerFont(headingCjkFallback, 400, false);
-		registerFont(headingCjkFallback, 400, true);
+		for (const weight of weights) {
+			registerFont(family, weight, false);
+			registerFont(family, weight, true);
+		}
+	};
+
+	if (bodyCjkFallback && bodyCjkFallback === headingCjkFallback) {
+		registerCjkFallback(bodyCjkFallback, [bodyRange, headingRange]);
+	} else {
+		if (bodyCjkFallback) {
+			registerCjkFallback(bodyCjkFallback, [bodyRange]);
+		}
+		if (headingCjkFallback) {
+			registerCjkFallback(headingCjkFallback, [headingRange]);
+		}
 	}
 
 	// Latin-only path: no fallback registered, return as-is.

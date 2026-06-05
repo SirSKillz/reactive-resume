@@ -12,6 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "@tanstack/react-router";
+import { useMemo } from "react";
 import { toast } from "sonner";
 import { Button } from "@reactive-resume/ui/components/button";
 import {
@@ -28,31 +29,41 @@ import { orpc } from "@/libs/orpc/client";
 
 type AgentThreadSummary = RouterOutput["agent"]["threads"]["list"][number];
 
-function formatRelativeTime(value: Date | string, locale: string) {
+type ThreadActionsProps = {
+	thread: AgentThreadSummary;
+	activeThreadId: string | null;
+};
+
+type ThreadRowProps = ThreadActionsProps;
+
+type AgentThreadSidebarProps = {
+	activeThreadId?: string | null;
+	className?: string;
+};
+
+const RELATIVE_TIME_DIVISIONS: Array<{ amount: number; unit: Intl.RelativeTimeFormatUnit }> = [
+	{ amount: 31_536_000_000, unit: "year" },
+	{ amount: 2_592_000_000, unit: "month" },
+	{ amount: 604_800_000, unit: "week" },
+	{ amount: 86_400_000, unit: "day" },
+	{ amount: 3_600_000, unit: "hour" },
+	{ amount: 60_000, unit: "minute" },
+];
+
+function formatRelativeTime(value: Date | string, formatter: Intl.RelativeTimeFormat) {
 	const date = value instanceof Date ? value : new Date(value);
 	const diffMs = date.getTime() - Date.now();
 	const absMs = Math.abs(diffMs);
-	const divisions: Array<{ amount: number; unit: Intl.RelativeTimeFormatUnit }> = [
-		{ amount: 31_536_000_000, unit: "year" },
-		{ amount: 2_592_000_000, unit: "month" },
-		{ amount: 604_800_000, unit: "week" },
-		{ amount: 86_400_000, unit: "day" },
-		{ amount: 3_600_000, unit: "hour" },
-		{ amount: 60_000, unit: "minute" },
-	];
 
-	if (absMs < 60_000) return new Intl.RelativeTimeFormat(locale, { numeric: "auto" }).format(0, "second");
+	if (absMs < 60_000) return formatter.format(0, "second");
 
-	const division = divisions.find((candidate) => absMs >= candidate.amount);
+	const division = RELATIVE_TIME_DIVISIONS.find((candidate) => absMs >= candidate.amount);
 	if (!division) return "";
 
-	return new Intl.RelativeTimeFormat(locale, { numeric: "auto" }).format(
-		Math.round(diffMs / division.amount),
-		division.unit,
-	);
+	return formatter.format(Math.round(diffMs / division.amount), division.unit);
 }
 
-function ThreadActions({ thread, activeThreadId }: { thread: AgentThreadSummary; activeThreadId: string | null }) {
+function ThreadActions({ thread, activeThreadId }: ThreadActionsProps) {
 	const navigate = useNavigate();
 	const confirm = useConfirm();
 	const queryClient = useQueryClient();
@@ -128,8 +139,12 @@ function ThreadActions({ thread, activeThreadId }: { thread: AgentThreadSummary;
 	);
 }
 
-function ThreadRow({ thread, activeThreadId }: { thread: AgentThreadSummary; activeThreadId: string | null }) {
+function ThreadRow({ thread, activeThreadId }: ThreadRowProps) {
 	const { i18n } = useLingui();
+	const relativeTimeFormatter = useMemo(
+		() => Reflect.construct(Intl.RelativeTimeFormat, [i18n.locale, { numeric: "auto" }]) as Intl.RelativeTimeFormat,
+		[i18n.locale],
+	);
 	const isActive = thread.id === activeThreadId;
 	const isArchived = thread.status === "archived";
 	const title = thread.title === thread.resumeName ? t`New thread` : thread.title;
@@ -149,7 +164,7 @@ function ThreadRow({ thread, activeThreadId }: { thread: AgentThreadSummary; act
 			>
 				<div className="truncate font-medium">{title}</div>
 				<div className="truncate text-muted-foreground text-xs">
-					{formatRelativeTime(thread.lastMessageAt, i18n.locale)}
+					{formatRelativeTime(thread.lastMessageAt, relativeTimeFormatter)}
 				</div>
 			</Link>
 			<ThreadActions thread={thread} activeThreadId={activeThreadId} />
@@ -157,13 +172,7 @@ function ThreadRow({ thread, activeThreadId }: { thread: AgentThreadSummary; act
 	);
 }
 
-export function AgentThreadSidebar({
-	activeThreadId = null,
-	className,
-}: {
-	activeThreadId?: string | null;
-	className?: string;
-}) {
+export function AgentThreadSidebar({ activeThreadId = null, className }: AgentThreadSidebarProps) {
 	const { data: threads, isLoading } = useQuery(orpc.agent.threads.list.queryOptions());
 
 	return (
@@ -197,7 +206,7 @@ export function AgentThreadSidebar({
 
 					{isLoading ? (
 						<div className="px-3 py-2 text-muted-foreground text-sm">
-							<Trans>Loading threads...</Trans>
+							<Trans>Loading threads…</Trans>
 						</div>
 					) : null}
 

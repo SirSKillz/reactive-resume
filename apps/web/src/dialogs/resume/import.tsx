@@ -6,7 +6,7 @@ import { DownloadSimpleIcon, FileIcon, UploadSimpleIcon } from "@phosphor-icons/
 import { useStore } from "@tanstack/react-form";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 import z from "zod";
 import { JSONResumeImporter } from "@reactive-resume/import/json-resume";
@@ -92,9 +92,8 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 	const navigate = useNavigate();
 	const closeDialog = useDialogStore((state) => state.closeDialog);
 
-	const prevTypeRef = useRef<string>("");
 	const inputRef = useRef<HTMLInputElement>(null);
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isImporting, setIsImporting] = useState<boolean>(false);
 
 	const { mutateAsync: importResume } = useMutation(orpc.resume.import.mutationOptions());
 	const { data: aiProviders, isLoading: isLoadingAiProviders } = useQuery(orpc.aiProviders.list.queryOptions());
@@ -109,7 +108,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 		onSubmit: async ({ value }) => {
 			if (value.type === "" || !value.file) return;
 
-			setIsLoading(true);
+			setIsImporting(true);
 
 			const toastId = toast.loading(t`Importing your resume...`, {
 				description: t`This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page.`,
@@ -200,18 +199,12 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 					{ id: toastId, description: null },
 				);
 			} finally {
-				setIsLoading(false);
+				setIsImporting(false);
 			}
 		},
 	});
 
 	const type = useStore(form.store, (s) => s.values.type);
-
-	useEffect(() => {
-		if (prevTypeRef.current === type) return;
-		prevTypeRef.current = type;
-		form.setFieldValue("file", undefined);
-	}, [form, type]);
 
 	const onSelectFile = () => {
 		if (!inputRef.current) return;
@@ -261,7 +254,9 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 										showClear={false}
 										value={field.state.value}
 										onValueChange={(value) => {
-											field.handleChange(value as ImportType);
+											const nextType = value as ImportType;
+											if (nextType !== field.state.value) form.setFieldValue("file", undefined);
+											field.handleChange(nextType);
 										}}
 										options={[
 											{
@@ -351,9 +346,9 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 				</form.Field>
 
 				<DialogFooter>
-					<Button type="submit" disabled={!type || isLoading}>
-						{isLoading ? <Spinner /> : null}
-						{isLoading ? t`Importing...` : t`Import`}
+					<Button type="submit" disabled={!type || isImporting}>
+						{isImporting ? <Spinner /> : null}
+						{isImporting ? t`Importing…` : t`Import`}
 					</Button>
 				</DialogFooter>
 			</form>

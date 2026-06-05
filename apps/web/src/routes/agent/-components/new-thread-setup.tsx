@@ -4,7 +4,7 @@ import { Trans } from "@lingui/react/macro";
 import { ArrowRightIcon, ChatCircleDotsIcon, FilePlusIcon, GearSixIcon } from "@phosphor-icons/react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { useIsClient } from "usehooks-ts";
 import { Badge } from "@reactive-resume/ui/components/badge";
@@ -14,6 +14,10 @@ import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { Combobox } from "@/components/ui/combobox";
 import { getOrpcErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
+
+type NewThreadSetupProps = {
+	resumeId?: string;
+};
 
 function providerLabel(provider: { label: string; provider: AIProvider; model: string }) {
 	return `${provider.label} · ${provider.provider} · ${provider.model}`;
@@ -27,7 +31,7 @@ function isAgentConfigError(error: unknown) {
 	return typeof message === "string" && /REDIS_URL|ENCRYPTION_SECRET/.test(message);
 }
 
-export function NewThreadSetup({ resumeId }: { resumeId?: string }) {
+export function NewThreadSetup({ resumeId }: NewThreadSetupProps) {
 	const isClient = useIsClient();
 	const navigate = useNavigate();
 	const {
@@ -44,17 +48,10 @@ export function NewThreadSetup({ resumeId }: { resumeId?: string }) {
 		() => providers?.filter((provider) => provider.enabled && provider.testStatus === "success") ?? [],
 		[providers],
 	);
-	const [aiProviderId, setAiProviderId] = useState<string | null>(null);
-	const [sourceResumeId, setSourceResumeId] = useState<string | null>(resumeId ?? null);
-
-	useEffect(() => {
-		if (aiProviderId || usableProviders.length === 0) return;
-		setAiProviderId(usableProviders[0]?.id ?? null);
-	}, [aiProviderId, usableProviders]);
-
-	useEffect(() => {
-		setSourceResumeId(resumeId ?? null);
-	}, [resumeId]);
+	const [aiProviderIdOverride, setAiProviderIdOverride] = useState<string | null | undefined>(undefined);
+	const [sourceResumeIdOverride, setSourceResumeIdOverride] = useState<string | null | undefined>(undefined);
+	const aiProviderId = aiProviderIdOverride ?? usableProviders[0]?.id ?? null;
+	const sourceResumeId = sourceResumeIdOverride ?? resumeId ?? null;
 
 	const providerOptions = usableProviders.map((provider) => ({
 		value: provider.id,
@@ -119,8 +116,8 @@ export function NewThreadSetup({ resumeId }: { resumeId?: string }) {
 								value={aiProviderId}
 								options={providerOptions}
 								disabled={isLoadingProviders || providerOptions.length === 0}
-								placeholder={isLoadingProviders ? t`Loading providers...` : t`Select a tested provider`}
-								onValueChange={setAiProviderId}
+								placeholder={isLoadingProviders ? t`Loading providers…` : t`Select a tested provider`}
+								onValueChange={setAiProviderIdOverride}
 							/>
 							{providerOptions.length === 0 && !isLoadingProviders ? (
 								<div className="flex flex-col gap-3 rounded-md border border-dashed p-3 text-sm lg:flex-row lg:items-center lg:justify-between">
@@ -157,8 +154,8 @@ export function NewThreadSetup({ resumeId }: { resumeId?: string }) {
 								showClear={false}
 								options={resumeOptions}
 								disabled={isLoadingResumes}
-								placeholder={isLoadingResumes ? t`Loading resumes...` : t`Choose a resume`}
-								onValueChange={(value) => setSourceResumeId(value && value !== "__scratch__" ? value : null)}
+								placeholder={isLoadingResumes ? t`Loading resumes…` : t`Choose a resume`}
+								onValueChange={(value) => setSourceResumeIdOverride(value && value !== "__scratch__" ? value : null)}
 							/>
 							<div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
 								<Badge variant="secondary" className="h-7 gap-1.5 rounded-md px-2">

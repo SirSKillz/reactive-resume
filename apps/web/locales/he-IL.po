@@ -8,7 +8,7 @@ msgstr ""
 "Language: he\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-05-14 13:57\n"
+"PO-Revision-Date: 2026-06-01 13:31\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
@@ -86,7 +86,7 @@ msgstr "3 חודשים"
 msgid "6 months"
 msgstr "6 חודשים"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A confirmation link has been sent to your current email address. Please check your inbox to confirm the change."
 msgstr "קישור לאישור נשלח לכתובת הדוא״ל הנוכחית שלך. נא לבדוק את תיבת הדואר כדי לאשר את השינוי."
 
@@ -103,7 +103,7 @@ msgstr "קישור לקורות החיים שלך הועתק ללוח הגזיר
 msgid "A lot of people have written to me over the years to share their experiences with Reactive Resume and how it has helped them, and I never get tired of reading them. If you have a story to share, let me know by sending me an email at <0>{email}</0>."
 msgstr "לאורך השנים פנו אליי אנשים רבים ושיתפו את החוויות שלהם עם Reactive Resume וכיצד הוא סייע להם, ואני אף פעם לא מתעייף מלקרוא אותן. אם יש לך סיפור לשתף, ספר לי בכך שתשלח לי דוא\"ל אל <0>{email}</0>."
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "קישור אימות חדש נשלח לכתובת הדוא״ל שלך. נא לבדוק את תיבת הדואר כדי לאמת את החשבון."
 
@@ -197,7 +197,7 @@ msgstr "הוספת ניסיון התנדבות חדש"
 msgid "Add and test a provider before starting a thread."
 msgstr "הוסף ובדוק ספק לפני פתיחת שרשור."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add and test a provider before starting an agent thread."
 msgstr "הוסף ובדוק ספק לפני פתיחת שרשור של סוכן."
 
@@ -221,7 +221,7 @@ msgstr "הוסף מספר תפקידים כדי להציג את ההתקדמות
 msgid "Add Page"
 msgstr "הוספת עמוד"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Add Provider"
 msgstr "הוסף ספק"
 
@@ -245,11 +245,11 @@ msgstr "התאם את קורות החיים לתפקיד מרחוק, המערי�
 msgid "Afrikaans"
 msgstr "אפריקאנס"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Agent"
 msgstr "סוֹכֵן"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Agent ready"
 msgstr "הסוכן מוכן"
 
@@ -269,23 +269,23 @@ msgstr "הגדרת סוכן בינה מלאכותית אינה זמינה כרג
 msgid "AI agent setup is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "הגדרת סוכן בינה מלאכותית אינה זמינה עד שתצורת REDIS_URL ו-ENCRYPTION_SECRET תתבצע."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable until REDIS_URL and ENCRYPTION_SECRET are configured."
 msgstr "ניהול ספקי בינה מלאכותית אינו זמין עד ש-REDIS_URL ו-ENCRYPTION_SECRET יוגדרו."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider management is unavailable. Please try again."
 msgstr "ניהול ספקי בינה מלאכותית אינו זמין. אנא נסה שוב."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI provider saved. Test it before use."
 msgstr "ספק הבינה המלאכותית נשמר. יש לבדוק זאת לפני השימוש."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI Providers"
 msgstr "ספקי בינה מלאכותית"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "AI providers require REDIS_URL and ENCRYPTION_SECRET to be configured."
 msgstr "ספקי בינה מלאכותית דורשים הגדרה של REDIS_URL ו-ENCRYPTION_SECRET."
 
@@ -297,7 +297,7 @@ msgstr "אלבנית"
 msgid "Allow Public Access"
 msgstr "לאפשר גישה ציבורית"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Already have an account? <0/>"
 msgstr "כבר יש לך חשבון? <0/>"
 
@@ -320,14 +320,14 @@ msgid "Analyze Resume"
 msgstr "ניתוח קורות חיים"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Analyzing..."
-msgstr "מנתח..."
+msgid "Analyzing…"
+msgstr "ניתוח…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "And many more..."
 msgstr "ועוד שלל יכולות…"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Anthropic Claude"
 msgstr "קלוד האנתרופי"
 
@@ -347,21 +347,21 @@ msgstr "לכל מי שיש את הקישור יש אפשרות להוריד את
 msgid "API Access"
 msgstr "גישה דרך API"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API Key"
 msgstr "מפתח API"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 msgid "API Keys"
 msgstr "מפתחות API"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "API keys are encrypted on the server and never shown again after saving."
 msgstr "מפתחות API מוצפנים בשרת ולא מוצגים שוב לאחר השמירה."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "API Reference"
 msgstr "תיעוד API"
 
@@ -372,6 +372,10 @@ msgstr "יישום"
 #: src/routes/_home/-sections/statistics.tsx
 msgid "Application Statistics"
 msgstr "סטטיסטיקת היישום"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Applied Rules"
+msgstr "כללים יישומיים"
 
 #: src/libs/locale.ts
 msgid "Arabic"
@@ -386,7 +390,7 @@ msgstr "ארכיון"
 msgid "Are you sure you want to close this dialog?"
 msgstr "האם אתה בטוח שברצונך לסגור את תיבת הדו-שיח הזו?"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Are you sure you want to delete this API key?"
 msgstr "האם למחוק את מפתח ה־API הזה?"
 
@@ -404,7 +408,7 @@ msgstr "האם אתה בטוח שברצונך למחוק פריט זה?"
 msgid "Are you sure you want to delete this resume?"
 msgstr "למחוק את קורות החיים האלה?"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Are you sure you want to delete your account?"
 msgstr "האם למחוק את החשבון שלך?"
 
@@ -426,7 +430,7 @@ msgstr "האם אתה בטוח שברצונך לאפס את החלק הזה?"
 msgid "Area of Study"
 msgstr "תחום לימודים"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Artificial Intelligence"
 msgstr "בינה מלאכותית"
 
@@ -446,7 +450,7 @@ msgstr "צרף קבצים"
 msgid "Attachment uploaded."
 msgstr "קובץ מצורף הועלה."
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
@@ -472,7 +476,7 @@ msgid "Azerbaijani"
 msgstr "אזרית"
 
 #. Secondary navigation button on 2FA verification screen
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Back to Login"
 msgstr "חזרה להתחברות"
 
@@ -488,7 +492,7 @@ msgstr "צבע הרקע"
 msgid "Backup codes copied to clipboard."
 msgstr "קודי הגיבוי הועתקו ללוח הגזירים."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Base URL"
 msgstr "כתובת אתר בסיסית"
 
@@ -526,7 +530,7 @@ msgid "Border Width"
 msgstr "רוחב מסגרת"
 
 #. Screen-reader dialog title for the command palette in the resume builder
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Builder Command Palette"
 msgstr "לוח פקודות הבונה"
 
@@ -572,20 +576,20 @@ msgstr "האם אפשר לייצא את קורות החיים שלי ל־PDF?"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/settings/pages/api-keys.tsx
+#: src/features/settings/pages/danger-zone.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Cancel"
 msgstr "ביטול"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Cannot revert; the resume has changed since this edit was applied."
-msgstr "לא ניתן לבטל את הפעולה; קורות החיים השתנו מאז שהעריכה הזו הוחלה."
+msgid "Cannot restore; the resume has changed since this edit was applied."
+msgstr "לא ניתן לשחזר; קורות החיים השתנו מאז שהעריכה הזו הוחלה."
 
 #: src/libs/locale.ts
 msgid "Catalan"
@@ -609,13 +613,13 @@ msgstr "הסמכות"
 msgid "Change language"
 msgstr "שינוי שפה"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change language to..."
-msgstr "שינוי השפה אל..."
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change language to…"
+msgstr "שנה שפה ל-…"
 
-#: src/components/command-palette/pages/preferences/index.tsx
-msgid "Change theme to..."
-msgstr "שינוי ערכת עיצוב אל..."
+#: src/features/command-palette/pages/preferences/index.tsx
+msgid "Change theme to…"
+msgstr "שנה את התבנית ל-…"
 
 #: src/dialogs/resume/index.tsx
 msgid "Changed your mind? Rename your resume to something more descriptive."
@@ -629,11 +633,11 @@ msgstr "יומן שינויים"
 msgid "Chat"
 msgstr "לְשׂוֹחֵחַ"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "נא לבדוק את הדוא״ל שלך לקישור לאיפוס הסיסמה."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Check your email for a link to verify your account."
 msgstr "נא לבדוק את הדוא״ל שלך לקישור לאימות החשבון."
 
@@ -649,6 +653,7 @@ msgstr "סינית (מסורתית)"
 msgid "Choose a model and resume draft."
 msgstr "בחר מודל וטיוטת קורות חיים."
 
+#. Preset or custom shade refer to the color picker
 #. Preset or custom shade refer to the color picker
 #: src/components/input/rich-input.tsx
 msgid "Choose a preset or custom shade."
@@ -666,10 +671,15 @@ msgstr "בחר שיחה קיימת מסרגל הצד, או התחל שרשור �
 msgid "Circle"
 msgstr "עיגול"
 
+#. Clear the highlight color
 #. Clear the text color
 #: src/components/input/rich-input.tsx
 msgid "Clear"
 msgstr "נקה"
+
+#: src/components/ui/combobox.tsx
+msgid "Clear selection"
+msgstr "נקה את הבחירה"
 
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
@@ -686,12 +696,12 @@ msgstr "עמודות"
 
 #. Accessible label for command list region inside command palette
 #. Accessible label for the command palette dialog
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette"
 msgstr "לוח הפקודות"
 
 #. Accessible label for command palette dialog when browsing a nested command page
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Command Palette - {currentPage}"
 msgstr "לוח הפקודות - {currentPage}"
 
@@ -714,14 +724,14 @@ msgstr "חינמי לחלוטין, לנצח, בלי עלויות נסתרות."
 #. Account deletion confirmation dialog confirm action in danger zone
 #. Create API key dialog acknowledgment action after copying
 #: src/dialogs/api-key/create.tsx
+#: src/features/settings/pages/danger-zone.tsx
 #: src/hooks/use-prompt.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Confirm"
 msgstr "אישור"
 
 #. Authentication settings action to link a social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Connect"
 msgstr "חיבור"
 
@@ -734,7 +744,7 @@ msgstr "תוכן"
 #. Final action button after saving backup codes
 #. Primary action button to proceed to next step in two-factor setup
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Continue"
 msgstr "המשך"
 
@@ -793,10 +803,10 @@ msgid "Could not reach the AI provider. Please try again."
 msgstr "לא ניתן היה ליצור קשר עם ספק ה-AI. אנא נסה שוב."
 
 #: src/routes/agent/$threadId.tsx
-msgid "Could not revert this patch."
-msgstr "לא ניתן היה לבטל את התיקון הזה."
+msgid "Could not restore this patch."
+msgstr "לא ניתן היה לשחזר את התיקון הזה."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
 msgstr "לא ניתן היה לאמת את חיבור הספק."
 
@@ -830,12 +840,12 @@ msgstr "מכתב מקדים"
 msgid "Create"
 msgstr "יצירה"
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Create a new account"
 msgstr "יצירת חשבון חדש"
 
 #: src/dialogs/api-key/create.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Create a new API key"
 msgstr "יצירת מפתח API חדש"
 
@@ -887,8 +897,8 @@ msgstr "יצירת פרסום חדש"
 msgid "Create a new reference"
 msgstr "יצירת ממליץ חדש"
 
-#: src/components/command-palette/pages/resumes.tsx
 #: src/dialogs/resume/index.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/dashboard/resumes/-components/cards/create-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Create a new resume"
@@ -919,7 +929,7 @@ msgid "Create from scratch"
 msgstr "צור מאפס"
 
 #. Call-to-action link from login page to account registration page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Create one now"
 msgstr "צור אחד עכשיו"
 
@@ -945,7 +955,7 @@ msgid "Custom"
 msgstr "מותאם אישית"
 
 #. Authentication provider display name in account settings
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Custom OAuth"
 msgstr "OAuth מותאם אישית"
 
@@ -953,11 +963,15 @@ msgstr "OAuth מותאם אישית"
 msgid "Custom Sections"
 msgstr "סעיפים מותאמים אישית"
 
+#: src/libs/resume/section.tsx
+msgid "Custom Styles"
+msgstr "סגנונות מותאמים אישית"
+
 #: src/libs/locale.ts
 msgid "Czech"
 msgstr "צ׳כית"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
 msgid "Danger Zone"
@@ -968,12 +982,12 @@ msgid "Danish"
 msgstr "דנית"
 
 #. Appearance theme option for dark mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Dark"
 msgstr "כהה"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Dark theme"
 msgstr "ערכת עיצוב כהה"
 
@@ -1001,6 +1015,8 @@ msgstr "תואר"
 #. Passkey row action to remove the selected passkey
 #. Resume card context menu destructive action to remove a resume
 #. Resume card dropdown destructive action to remove a resume
+#: src/features/settings/authentication/components/passkeys.tsx
+#: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/thread-sidebar.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
@@ -1008,12 +1024,10 @@ msgstr "תואר"
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
-#: src/routes/dashboard/settings/api-keys.tsx
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Delete"
 msgstr "מחיקה"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Delete Account"
 msgstr "מחיקת חשבון"
 
@@ -1029,7 +1043,7 @@ msgstr "מחיקת עמוד"
 msgid "Delete picture"
 msgstr "מחק תמונה"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Delete provider"
 msgstr "מחיקת ספק"
 
@@ -1046,11 +1060,11 @@ msgstr "מחיקת טבלה"
 msgid "Delete this agent thread?"
 msgstr "למחוק את שרשור הסוכן הזה?"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Deleting your account..."
 msgstr "מוחק את החשבון שלך..."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Deleting your API key..."
 msgstr "מוחק את מפתח ה־API שלך..."
 
@@ -1077,7 +1091,7 @@ msgstr "עיצוב"
 
 #. Destructive action button to turn off two-factor authentication
 #: src/dialogs/auth/disable-two-factor.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Disable 2FA"
 msgstr "השבתת האימות הדו־שלבי"
 
@@ -1090,7 +1104,7 @@ msgid "Disabling two-factor authentication..."
 msgstr "השבתת אימות דו־שלבי..."
 
 #. Authentication settings action to unlink a connected social login provider
-#: src/routes/dashboard/settings/authentication/-components/social-provider.tsx
+#: src/features/settings/authentication/components/social-provider.tsx
 msgid "Disconnect"
 msgstr "ניתוק"
 
@@ -1107,7 +1121,7 @@ msgstr "לְפַטֵר"
 msgid "Documentation"
 msgstr "תיעוד"
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Don't have an account? <0/>"
 msgstr "אין לך חשבון? <0/>"
 
@@ -1144,7 +1158,7 @@ msgstr "הורד קובץ DOCX"
 msgid "Download JSON"
 msgstr "הורדת JSON"
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Download PDF"
@@ -1224,14 +1238,14 @@ msgstr "דוא״ל"
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Email Address"
 msgstr "כתובת דוא\"ל"
 
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Enable 2FA"
 msgstr "הפעלת אימות דו־שלבי"
 
@@ -1239,7 +1253,7 @@ msgstr "הפעלת אימות דו־שלבי"
 msgid "Enable Two-Factor Authentication"
 msgstr "הפעלת אימות דו־שלבי"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Enabled"
 msgstr "מופעל"
 
@@ -1248,8 +1262,8 @@ msgid "Enabling password protection..."
 msgstr "הפעלת ההגנה באמצעות סיסמה..."
 
 #: src/dialogs/auth/enable-two-factor.tsx
-msgid "Enabling two-factor authentication..."
-msgstr "הגנה עם אימות דו־שלבי..."
+msgid "Enabling two-factor authentication…"
+msgstr "הפעלת אימות דו-שלבי…"
 
 #: src/libs/locale.ts
 msgid "English"
@@ -1263,11 +1277,11 @@ msgstr "אנגלית (בריטניה)"
 msgid "Enhance the security of your account with additional layers of protection."
 msgstr "חזק את האבטחה של החשבון שלך עם שכבות הגנה נוספות."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "הזן שם למפתח הגישה שלך."
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Enter one of your saved backup codes to access your account"
 msgstr "הזן אחד מקודי הגיבוי השמורים שלך כדי לגשת לחשבון"
 
@@ -1275,7 +1289,7 @@ msgstr "הזן אחד מקודי הגיבוי השמורים שלך כדי לג�
 msgid "Enter the URL to link to"
 msgstr "הזן את כתובת ה־URL לקישור"
 
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter the verification code from your authenticator app"
 msgstr "הזן את קוד האימות מאפליקציית המאמת שלך"
 
@@ -1314,7 +1328,7 @@ msgid "Expires in"
 msgstr "פג בעוד"
 
 #. placeholder {0}: key.expiresAt?.toLocaleDateString()
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Expires on {0}"
 msgstr "פג בתאריך {0}"
 
@@ -1322,7 +1336,7 @@ msgstr "פג בתאריך {0}"
 msgid "Explore our diverse selection of templates, each designed to fit different styles, professions, and personalities. Reactive Resume currently offers 12 templates, with more on the way."
 msgstr "גלה את מגוון התבניות שלנו, שכל אחת מהן מעוצבת להתאים לסגנונות, מקצועות ואישיויות שונות. Reactive Resume מציע כרגע 12 תבניות, ועוד תבניות בדרך."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Explore the API documentation to learn how to integrate Reactive Resume with your applications. Find detailed endpoints, request examples, and authentication methods."
 msgstr "עיין בתיעוד ה־API כדי ללמוד כיצד לשלב את Reactive Resume עם היישומים שלך. תמצא בו נקודות קצה מפורטות, דוגמאות לבקשות ושיטות אימות."
 
@@ -1334,7 +1348,7 @@ msgstr "ייצוא"
 msgid "Export your resume to PDF instantly, without any waiting or delays."
 msgstr "ייצא את קורות החיים שלך ל-PDF באופן מיידי, ללא המתנה או עיכובים."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed"
 msgstr "נִכשָׁל"
 
@@ -1353,21 +1367,21 @@ msgid "Failed to create API key. Please try again."
 msgstr "לא הצליח ליצור מפתח API. אנא נסה שוב."
 
 #. Fallback toast when account registration fails without a server error message
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Failed to create your account. Please try again."
 msgstr "לא הצלחנו ליצור את החשבון שלך. אנא נסה שוב."
 
 #. Fallback toast when deleting a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to delete passkey. Please try again."
 msgstr "לא ניתן למחוק את סיסמת הגישה. אנא נסה שוב."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to delete provider."
 msgstr "מחיקת הספק נכשלה."
 
 #. Fallback toast when deleting an API key fails
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "Failed to delete the API key. Please try again."
 msgstr "לא הצליח למחוק את מפתח ה-API. אנא נסה שוב."
 
@@ -1377,7 +1391,7 @@ msgid "Failed to delete thread."
 msgstr "מחיקת השרשור נכשלה."
 
 #. Fallback toast when account deletion fails
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Failed to delete your account. Please try again."
 msgstr "לא הצלחנו למחוק את החשבון שלך. אנא נסה שוב."
 
@@ -1392,41 +1406,41 @@ msgid "Failed to enable two-factor authentication. Please try again."
 msgstr "לא הצלחנו להפעיל את האימות הדו-שלבי. אנא נסה שוב."
 
 #. Fallback toast when linking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to link provider. Please try again."
 msgstr "לא הצליח ליצור קשר עם הספק. אנא נסה שוב."
 
 #. Fallback toast when passkey registration fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to register passkey. Please try again."
 msgstr "לא הצליח לרשום את סיסמת הגישה. אנא נסה שוב."
 
 #. Fallback toast when renaming a passkey fails
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Failed to rename passkey. Please try again."
 msgstr "לא הצליח לשנות את שם מפתח הגישה. אנא נסה שוב."
 
 #. Fallback toast when requesting email change confirmation fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to request email change. Please try again."
 msgstr "לא ניתן לבצע את בקשת שינוי כתובת הדוא\"ל. אנא נסה שוב."
 
 #. Fallback toast when resending account verification email fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to resend verification email. Please try again."
 msgstr "לא הצלחנו לשלוח מחדש את דוא\"ל האימות. אנא נסה שוב."
 
 #. Fallback toast when resetting password fails and no backend message is available
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Failed to reset your password. Please try again."
 msgstr "לא הצלחת לאפס את הסיסמה שלך. אנא נסה שוב."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to save AI provider."
 msgstr "שמירת ספק הבינה המלאכותית נכשלה."
 
 #. Fallback toast when requesting password reset email fails without backend message
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Failed to send password reset email. Please try again."
 msgstr "לא הצלחנו לשלוח את הודעת הדוא\"ל לאיפוס הסיסמה. אנא נסה שוב."
 
@@ -1438,13 +1452,13 @@ msgstr "ההגנה עם אימות דו־שלבי נכשלה."
 #. Fallback toast when passkey sign-in fails without an error message
 #. Fallback toast when sign-in fails and no server error message is available
 #. Fallback toast when social sign-in fails without a provider error message
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Failed to sign in. Please try again."
 msgstr "ההתחברות נכשלה. נסה שוב."
 
 #. Fallback toast when signing out fails
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Failed to sign out. Please try again."
 msgstr "לא הצלחת לצאת מהמערכת. אנא נסה שוב."
 
@@ -1453,11 +1467,11 @@ msgid "Failed to start agent thread."
 msgstr "נכשלה ההתחלת שרשור הסוכן."
 
 #. Fallback toast when unlinking a social authentication provider fails
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Failed to unlink provider. Please try again."
 msgstr "לא הצליח לבטל את הקישור לספק. אנא נסה שוב."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Failed to update provider."
 msgstr "עדכון הספק נכשל."
 
@@ -1467,7 +1481,7 @@ msgid "Failed to update your password. Please try again."
 msgstr "לא הצלחת לעדכן את הסיסמה שלך. אנא נסה שוב."
 
 #. Fallback toast when updating profile details fails
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Failed to update your profile. Please try again."
 msgstr "לא הצלחנו לעדכן את הפרופיל שלך. אנא נסה שוב."
 
@@ -1481,29 +1495,25 @@ msgid "Failed to upload picture. Please try again."
 msgstr "לא הצליח להעלות את התמונה. אנא נסה שוב."
 
 #. Fallback toast when resume password verification fails unexpectedly
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Failed to verify the password. Please try again."
 msgstr "לא ניתן לאמת את הסיסמה. אנא נסה שוב."
 
 #. Fallback toast when verifying a backup two-factor authentication code fails
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Failed to verify your backup code. Please try again."
 msgstr "לא הצלחנו לאמת את קוד הגיבוי שלך. אנא נסה שוב."
 
 #. Fallback toast when verifying a two-factor authentication code fails
 #. Fallback toast when verifying two-factor setup code fails
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Failed to verify your code. Please try again."
 msgstr "לא הצלחנו לאמת את הקוד שלך. אנא נסה שוב."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Features"
 msgstr "יכולות"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Fetched URL"
-msgstr "כתובת URL שנשלפה"
 
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Filter by"
@@ -1554,11 +1564,11 @@ msgid "For security reasons, this key will only be displayed once."
 msgstr "מטעמי אבטחה, מפתח זה יוצג רק פעם אחת."
 
 #. Link label to password reset page from login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Forgot Password?"
 msgstr "שכחת סיסמה?"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -1615,15 +1625,15 @@ msgstr "יוצאים לדרך"
 
 #. Authentication provider display name in account settings
 #. Brand name label for GitHub social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "GitHub"
 msgstr "GitHub"
 
 #. Secondary navigation button on backup-code verification screen
 #: src/components/layout/not-found-screen.tsx
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Go Back"
 msgstr "חזרה"
 
@@ -1636,22 +1646,22 @@ msgstr "מעבר ללוח בקרה"
 msgid "Go to resumes dashboard"
 msgstr "עבור למרכז השליטה בקורות החיים"
 
-#: src/components/command-palette/pages/navigation.tsx
-msgid "Go to..."
-msgstr "מעבר אל..."
+#: src/features/command-palette/pages/navigation.tsx
+msgid "Go to…"
+msgstr "עבור אל…"
 
 #. Authentication provider display name in account settings
 #. Brand name label for Google social sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Google"
 msgstr "גוגל"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Google Gemini"
 msgstr "גוגל ג'מיני"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "gpt-4.1"
 msgstr "gpt-4.1"
 
@@ -1712,7 +1722,7 @@ msgstr "עברית"
 msgid "Help me bring more experienced contributors on board, reducing the burden on a single maintainer and accelerating development."
 msgstr "עזרו לי להביא תורמים מנוסים יותר, להפחית את העומס מתחזק יחיד ולהאיץ את הפיתוח."
 
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/settings/pages/preferences.tsx
 msgid "Help translate the app to your language"
 msgstr "עזרו לתרגם את היישום לשפה שלכם"
 
@@ -1737,8 +1747,12 @@ msgid "Hide"
 msgstr "הסתרה"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-msgid "Hide all icons on the resume"
-msgstr "הסתרת כל הסמלים בקורות החיים"
+msgid "Hide Icons"
+msgstr "הסתר סמלים"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Link Underline"
+msgstr "הסתר קו תחתון של קישור"
 
 #. Accessible label for button that hides password in registration form
 #. Accessible label for button that hides password in reset-password form
@@ -1751,12 +1765,16 @@ msgstr "הסתרת כל הסמלים בקורות החיים"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Hide password"
 msgstr "הסתר סיסמה"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
+msgid "Hide Section Icons"
+msgstr "הסתר סמלי מדור"
 
 #. Impact severity label in resume analysis suggestion card
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
@@ -1767,11 +1785,15 @@ msgstr "גבוה"
 msgid "Highlight"
 msgstr "סימון"
 
+#: src/components/input/rich-input.tsx
+msgid "Highlight Color"
+msgstr "צבע סימון"
+
 #: src/libs/locale.ts
 msgid "Hindi"
 msgstr "הינדי"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 msgid "Home"
 msgstr "דף הבית"
 
@@ -1779,7 +1801,7 @@ msgstr "דף הבית"
 msgid "How do I share my resume?"
 msgstr "איך משתפים את קורות החיים שלי?"
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "How do I use the API?"
 msgstr "איך משתמשים ב־API?"
 
@@ -1787,7 +1809,7 @@ msgstr "איך משתמשים ב־API?"
 msgid "How is my data protected?"
 msgstr "כיצד הנתונים שלי מוגנים?"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "https://gateway.example.com/v1"
 msgstr "https://gateway.example.com/v1"
 
@@ -1819,8 +1841,8 @@ msgid "Importing your resume..."
 msgstr "מייבא את קורות החיים שלך..."
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "ייבוא..."
+msgid "Importing…"
+msgstr "ייבוא…"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Increase zoom"
@@ -1846,7 +1868,7 @@ msgstr "הוספת טבלה"
 msgid "Instant Generation"
 msgstr "יצירה מיידית"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/integrations/route.tsx
 msgid "Integrations"
@@ -1858,7 +1880,7 @@ msgstr "שילובים"
 msgid "Interests"
 msgstr "תחביבים"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Invalid AI provider configuration."
 msgstr "תצורה לא חוקית של ספק בינה מלאכותית."
 
@@ -1888,15 +1910,15 @@ msgstr "יפנית"
 
 #. Example full name placeholder on profile settings form
 #. Example full name placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "John Doe"
 msgstr "ג'ון דו"
 
 #. Example username placeholder on profile settings form
 #. Example username placeholder on registration form
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe"
 msgstr "ג'ון דו"
 
@@ -1904,10 +1926,10 @@ msgstr "ג'ון דו"
 #. Example email placeholder on forgot-password form
 #. Example email placeholder on profile settings form
 #. Example email placeholder on registration form
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
 
@@ -1924,7 +1946,7 @@ msgstr "יישור לשני הצדדים"
 msgid "Kannada"
 msgstr "קנאדה"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "מַפְתֵחַ"
 
@@ -1943,7 +1965,7 @@ msgstr "קוריאנית"
 
 #. Short field label for custom display text associated with a URL
 #: src/components/input/url-input.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Label"
 msgstr "תווית"
 
@@ -1953,11 +1975,11 @@ msgid "Landscape"
 msgstr "לרוחב"
 
 #. Menu item that opens language selection submenu
-#: src/components/command-palette/pages/preferences/language.tsx
-#: src/components/user/dropdown-menu.tsx
 #: src/dialogs/resume/sections/language.tsx
+#: src/features/command-palette/pages/preferences/language.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
-#: src/routes/dashboard/settings/preferences.tsx
 msgid "Language"
 msgstr "שפה"
 
@@ -1967,10 +1989,9 @@ msgstr "שפה"
 msgid "Languages"
 msgstr "שפות"
 
-#. placeholder {0}: new Date(analysis.updatedAt).toLocaleString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
-msgid "Last analyzed on {0}"
-msgstr "נבדק לאחרונה ב- {0}"
+msgid "Last analyzed on {updatedAtLabel}"
+msgstr "ניתוח אחרון בתאריך {updatedAtLabel}"
 
 #. placeholder {0}: statistics.lastDownloadedAt.toDateString()
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
@@ -2031,12 +2052,12 @@ msgid "Licensed under <0>MIT</0>."
 msgstr "כפוף לרישיון <0>MIT</0>."
 
 #. Appearance theme option for light mode
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 #: src/libs/theme.ts
 msgid "Light"
 msgstr "בהירה"
 
-#: src/components/command-palette/pages/preferences/theme.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
 msgid "Light theme"
 msgstr "ערכת עיצוב בהירה"
 
@@ -2046,13 +2067,13 @@ msgstr "גובה שורה"
 
 #. Authentication provider display name in account settings
 #. Brand name label for LinkedIn social sign-in button
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 #: src/routes/_home/-sections/footer.tsx
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
 msgid "LinkedIn"
 msgstr "לינקדאין"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Linking your {providerName} account..."
 msgstr "מקשר את חשבון {providerName} שלך..."
 
@@ -2065,30 +2086,30 @@ msgid "Lithuanian"
 msgstr "ליטאית"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Loading agent workspace..."
-msgstr "טוען את סביבת העבודה של הסוכן..."
+msgid "Loading agent workspace…"
+msgstr "טוען את סביבת העבודה של הסוכן…"
 
 #: src/dialogs/resume/import.tsx
 msgid "Loading AI providers. Please try again in a moment."
 msgstr "טוען ספקי בינה מלאכותית. אנא נסה שוב בעוד רגע."
 
+#: src/features/settings/integrations/components/ai-section.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
-msgid "Loading providers..."
-msgstr "טוען ספקים..."
+msgid "Loading providers…"
+msgstr "טוען ספקים…"
 
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
-msgid "Loading resumes..."
-msgstr "טוען קורות חיים..."
+msgid "Loading resumes…"
+msgstr "טוען קורות חיים…"
 
 #: src/routes/agent/-components/thread-sidebar.tsx
-msgid "Loading threads..."
-msgstr "טוען שרשורים..."
+msgid "Loading threads…"
+msgstr "טוען שרשורים…"
 
 #: src/components/layout/loading-screen.tsx
-msgid "Loading..."
-msgstr "טוען..."
+msgid "Loading…"
+msgstr "טוען…"
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -2106,7 +2127,7 @@ msgid "Lock"
 msgstr "נעילה"
 
 #. User menu action to sign out of current account
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Logout"
 msgstr "יציאה"
 
@@ -2115,7 +2136,7 @@ msgid "Long-term Sustainability"
 msgstr "קיימות לטווח הארוך"
 
 #. Link to backup-code verification flow when authenticator app is unavailable
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Lost access to your authenticator?"
 msgstr "איבדת גישה לאפליקציית המאמת שלך?"
 
@@ -2171,7 +2192,7 @@ msgstr "Microsoft Word"
 msgid "Missing working resume"
 msgstr "קורות חיים חסרים"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Model"
 msgstr "מודל"
 
@@ -2195,9 +2216,9 @@ msgstr "יש להתחיל ב-https://"
 #: src/dialogs/resume/sections/project.tsx
 #: src/dialogs/resume/sections/reference.tsx
 #: src/dialogs/resume/sections/skill.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
-#: src/routes/dashboard/settings/profile.tsx
 msgid "Name"
 msgstr "שם"
 
@@ -2223,7 +2244,7 @@ msgstr "עמוד חדש"
 
 #. Label for new password input on reset-password form
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "New Password"
 msgstr "סיסמה חדשה"
 
@@ -2244,7 +2265,7 @@ msgstr "בלי פרסום, בלי מעקב"
 msgid "No data was returned from the AI provider."
 msgstr "לא התקבלו נתונים מספק ה-AI."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "No passkeys registered yet."
 msgstr "עדיין לא נרשמו מפתחות גישה."
 
@@ -2252,7 +2273,11 @@ msgstr "עדיין לא נרשמו מפתחות גישה."
 msgid "No results found."
 msgstr "לא נמצאו תוצאות."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "No style rules yet."
+msgstr "עדיין אין חוקי סגנון."
+
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "No tested provider"
 msgstr "אין ספק שנבדק"
 
@@ -2272,7 +2297,7 @@ msgstr "הערות"
 msgid "Odia"
 msgstr "אודיה"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Ollama"
 msgstr "אולמה"
 
@@ -2296,7 +2321,7 @@ msgid "Open AI agent"
 msgstr "סוכן בינה מלאכותית פתוח"
 
 #. Button label to open the user's default email app
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Open Email Client"
 msgstr "פתיחת תוכנת הדוא\"ל"
 
@@ -2312,15 +2337,15 @@ msgstr "פתח את הגדרות האינטגרציות"
 msgid "Open Source"
 msgstr "קוד פתוח"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "תואם ל-OpenAI"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenRouter"
 msgstr "OpenRouter"
 
@@ -2333,7 +2358,7 @@ msgstr "נפתח בלשונית חדשה"
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr "רשותך להגדיר סיסמה כך שרק מי שמכיר אותה יוכל לצפות בקורות החיים דרך הקישור."
 
-#: src/routes/auth/-components/social-auth.tsx
+#: src/features/auth/components/social-auth.tsx
 msgctxt "Choose to authenticate with a social provider (Google, GitHub, etc.) instead of email and password"
 msgid "or continue with"
 msgstr "או להמשיך עם"
@@ -2367,20 +2392,20 @@ msgstr "פסקה"
 
 #. Authentication provider display name in account settings
 #. Label for passkey sign-in button
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Passkey"
 msgstr "סיסמה"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey deleted successfully."
 msgstr "הסיסמה נמחקה בהצלחה."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkey registered successfully."
 msgstr "הסיסמה נרשמה בהצלחה."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Passkeys"
 msgstr "מפתחות גישה"
 
@@ -2394,11 +2419,11 @@ msgstr "מפתחות כניסה ואימות דו־שלבי"
 #. Label for password input on registration form
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/resume-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/resume-password.tsx
+#: src/features/settings/authentication/components/hooks.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Password"
 msgstr "סיסמה"
 
@@ -2435,11 +2460,11 @@ msgid "Patch pending"
 msgstr "תיקון ממתין"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted"
-msgstr "התיקון בוטל"
+msgid "Patch rolled back"
+msgstr "התיקון מוחזר"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Patch reverted."
+msgid "Patch rolled back."
 msgstr "התיקון בוטל."
 
 #. File format label in import source selector
@@ -2471,11 +2496,11 @@ msgstr "טלפון"
 msgid "Picture"
 msgstr "תמונה"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Please enter a new password for your account"
 msgstr "נא להזין סיסמה חדשה לחשבון שלך"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Please enter the password shared with you by the owner of the resume to continue."
 msgstr "נא להזין את הסיסמה ששיתף איתך בעל קורות החיים כדי להמשיך."
 
@@ -2487,12 +2512,15 @@ msgstr "נא להזין את כתובת ה־URL שאליה ברצונך לקשר
 msgid "Please support the project"
 msgstr "אנא תמכו בפרויקט"
 
-#: src/routes/$username/-components/public-resume.tsx
-#: src/routes/agent/$threadId.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Please wait while your PDF is being generated..."
 msgstr "נא להמתין בזמן שקובץ ה־PDF שלך נוצר..."
+
+#: src/routes/agent/$threadId.tsx
+msgid "Please wait while your PDF is being generated…"
+msgstr "אנא המתן בזמן יצירת קובץ ה-PDF שלך…"
 
 #: src/libs/locale.ts
 msgid "Polish"
@@ -2516,8 +2544,8 @@ msgstr "פורטוגזית (פורטוגל)"
 msgid "Position"
 msgstr "תפקיד"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/preferences/index.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/preferences/index.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/preferences.tsx
 msgid "Preferences"
@@ -2536,7 +2564,7 @@ msgid "Press <0>{RETURN_KEY}</0> or <1>{COMMA_KEY}</1> to add or save the curren
 msgstr "לחץ על <0>{RETURN_KEY}</0> או <1>{COMMA_KEY}</1> כדי להוסיף או לשמור את מילות המפתח הנוכחית."
 
 #. Command palette hint that pressing Enter opens the selected resume
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/resumes.tsx
 msgid "Press <0>Enter</0> to open"
 msgstr "לחץ על <0>Enter</0> כדי לפתוח"
 
@@ -2548,7 +2576,7 @@ msgstr "צבע עיקרי"
 msgid "Proficiency"
 msgstr "רמת מיומנות"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/settings/profile.tsx
 msgid "Profile"
@@ -2578,11 +2606,11 @@ msgstr "הגן על קורות החיים שלך מגישה לא מורשית ב
 msgid "Protect your resume with a password, and let only people with the password view it."
 msgstr "הגן על קורות החיים שלך באמצעות סיסמה, כך שרק מי שמכיר את הסיסמה יוכל לצפות בהם."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider"
 msgstr "ספק"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Provider connection verified."
 msgstr "חיבור הספק אומת."
 
@@ -2657,11 +2685,11 @@ msgstr "ממליצים"
 msgid "Refresh"
 msgstr "רענון"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "הרשמת מכשיר חדש"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
 msgstr "זוכר את הסיסמה? <0/>"
 
@@ -2698,11 +2726,11 @@ msgstr "דיווח על באג"
 msgid "Report an issue"
 msgstr "דיווח על בעיה"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resend verification email"
 msgstr "שליחת דוא\"ל אימות מחדש"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Resending verification email..."
 msgstr "שולח מחדש דוא\"ל אימות..."
 
@@ -2712,21 +2740,33 @@ msgid "Reset"
 msgstr "איפוס"
 
 #. Primary action button label on reset-password form
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset Password"
 msgstr "איפוס סיסמה"
 
-#: src/routes/auth/reset-password.tsx
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "Reset Style"
+msgstr "איפוס סגנון"
+
+#: src/features/auth/pages/reset-password.tsx
 msgid "Reset your password"
 msgstr "איפוס הסיסמה שלך"
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Resetting your password..."
 msgstr "איפוס הסיסמה שלך..."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Resources"
 msgstr "משאבים"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore"
+msgstr "לְשַׁחְזֵר"
+
+#: src/routes/agent/$threadId.tsx
+msgid "Restore the resume to before this patch? This will roll back this patch and any patches applied after it."
+msgstr "לשחזר את קורות החיים למצב שלפני תיקון זה? פעולה זו תחזיר את התיקון הזה וכל תיקון שהוחל לאחריו."
 
 #: src/routes/agent/$threadId.tsx
 msgid "Resume"
@@ -2744,8 +2784,8 @@ msgstr "ניתוח קורות החיים הושלם."
 msgid "Resume patch"
 msgstr "תיקון קורות חיים"
 
-#: src/components/command-palette/pages/navigation.tsx
-#: src/components/command-palette/pages/resumes.tsx
+#: src/features/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/resumes.tsx
 #: src/routes/_home/-sections/statistics.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -2755,10 +2795,6 @@ msgstr "מסמכי קורות חיים"
 #: src/routes/agent/$threadId.tsx
 msgid "Retry"
 msgstr "נסה שוב"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Revert"
-msgstr "לַחֲזוֹר"
 
 #: src/routes/agent/$threadId.tsx
 msgid "Review the resume against a job description and ask me questions before changing uncertain sections."
@@ -2788,6 +2824,14 @@ msgstr "רומנית"
 msgid "Rotation"
 msgstr "סיבוב"
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rule"
+msgstr "כְּלָל"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/custom-styles.tsx
+msgid "rules"
+msgstr "כללים"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/resume-analysis.tsx
 msgid "Run your first analysis to get a scorecard, strengths, and prioritized suggestions."
 msgstr "בצע את הניתוח הראשון שלך כדי לקבל דוח ביצועים, נקודות חוזק והצעות מסודרות לפי סדר עדיפויות."
@@ -2797,7 +2841,7 @@ msgid "Russian"
 msgstr "רוסית"
 
 #. Passkey rename prompt confirm action in authentication settings
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Save"
 msgstr "שמור"
 
@@ -2817,11 +2861,11 @@ msgstr "שמור"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "שמירת שינויים"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save Provider"
 msgstr "שמור ספק"
 
@@ -2838,7 +2882,7 @@ msgid "Scorecard"
 msgstr "כרטיס ביצועים"
 
 #. Accessible label for command palette search input
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "פקודות חיפוש"
 
@@ -2848,15 +2892,18 @@ msgstr "פקודות חיפוש"
 msgid "Search for an icon"
 msgstr "חיפוש סמל"
 
-#: src/components/command-palette/pages/resumes.tsx
-msgid "Search for..."
-msgstr "חיפוש..."
+#: src/features/command-palette/pages/resumes.tsx
+msgid "Search for…"
+msgstr "חפש…"
 
-#. Placeholder in command palette input on nested pages
-#: src/components/command-palette/index.tsx
 #: src/components/ui/combobox.tsx
 msgid "Search..."
 msgstr "חיפוש..."
+
+#. Placeholder in command palette input on nested pages
+#: src/features/command-palette/index.tsx
+msgid "Search…"
+msgstr "חיפוש…"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Secret copied to clipboard."
@@ -2899,11 +2946,11 @@ msgid "Send message"
 msgstr "שלח הודעה"
 
 #. Primary action button label on forgot-password form
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Send Password Reset Email"
 msgstr "שליחת דוא\"ל לאיפוס סיסמה"
 
-#: src/routes/auth/forgot-password.tsx
+#: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "שולח דוא\"ל לאיפוס סיסמה..."
 
@@ -2915,12 +2962,12 @@ msgstr "מפריד"
 msgid "Serbian"
 msgstr "סרבית"
 
+#: src/features/settings/authentication/components/password.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
 msgid "Set Password"
 msgstr "הגדרת סיסמה"
 
-#: src/components/command-palette/pages/navigation.tsx
+#: src/features/command-palette/pages/navigation.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 #: src/routes/dashboard/-components/sidebar.tsx
 msgid "Settings"
@@ -2975,10 +3022,10 @@ msgstr "הצג קישור בכותרת"
 #: src/dialogs/auth/change-password.tsx
 #: src/dialogs/auth/disable-two-factor.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/login.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/auth/reset-password.tsx
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/login.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/auth/pages/reset-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "Show password"
 msgstr "הצג סיסמה"
 
@@ -2992,19 +3039,19 @@ msgid "Sidebar Width"
 msgstr "רוחב סרגל צד"
 
 #. Primary action button label on login form
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in"
 msgstr "כניסה"
 
 #. Call-to-action link from forgot-password page to login page
 #. Call-to-action link from registration page to login page
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign in now"
 msgstr "התחבר עכשיו"
 
 #. Title on the login page
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Sign in to your account"
 msgstr "כניסה לחשבון שלך"
 
@@ -3013,20 +3060,20 @@ msgid "Sign in with GitHub, Google or a custom OAuth provider."
 msgstr "התחברות עם GitHub,‏ Google או ספק OAuth מותאם אישית."
 
 #. Primary action button label on registration form
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Sign up"
 msgstr "הרשמה"
 
-#: src/routes/auth/-components/social-auth.tsx
-#: src/routes/auth/login.tsx
+#: src/features/auth/components/social-auth.tsx
+#: src/features/auth/pages/login.tsx
 msgid "Signing in..."
 msgstr "כניסה..."
 
-#: src/components/user/dropdown-menu.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Signing out..."
 msgstr "יוצא מהמערכת..."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Signing up..."
 msgstr "הרשמה..."
 
@@ -3207,11 +3254,11 @@ msgstr "אפשר לתמוך ביישום על ידי עשייה בכל דרך ש
 msgid "Swedish"
 msgstr "שוודית"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to dark theme"
 msgstr "מעבר לערכת עיצוב כהה"
 
-#: src/components/theme/toggle-button.tsx
+#: src/features/theme/toggle-button.tsx
 msgid "Switch to light theme"
 msgstr "מעבר לערכת עיצוב בהירה"
 
@@ -3251,11 +3298,11 @@ msgstr "גלריית תבניות"
 msgid "Templates"
 msgstr "תבניות"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Test"
 msgstr "מִבְחָן"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Tested"
 msgstr "בָּדוּק"
 
@@ -3281,16 +3328,16 @@ msgstr "הסוכן זקוק לתשומתך."
 msgid "The AI returned an invalid analysis format. Please try again."
 msgstr "ה-AI החזיר פורמט ניתוח לא תקין. אנא נסה שוב."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key has been deleted successfully."
 msgstr "מפתח ה־API נמחק בהצלחה."
 
-#: src/routes/dashboard/settings/api-keys.tsx
+#: src/features/settings/pages/api-keys.tsx
 msgid "The API key will no longer be able to access your data after deletion. This action cannot be undone."
 msgstr "לאחר המחיקה מפתח ה־API לא יוכל יותר לגשת לנתונים שלך. לא ניתן לבטל פעולה זו."
 
 #. Empty-state message when no command palette results match the search query
-#: src/components/command-palette/index.tsx
+#: src/features/command-palette/index.tsx
 msgid "The command you're looking for doesn't exist."
 msgstr "הפקודה שחיפשת אינה קיימת."
 
@@ -3299,11 +3346,11 @@ msgstr "הפקודה שחיפשת אינה קיימת."
 msgid "The imported file could not be parsed into a valid resume."
 msgstr "לא ניתן היה לנתח את הקובץ המיובא לכדי קורות חיים תקפים."
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The password you entered is incorrect"
 msgstr "הסיסמה שהזנת שגויה"
 
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 msgid "The resume you are trying to access is password protected"
 msgstr "קורות החיים שאליהם ניסית לגשת מוגנים בסיסמה"
 
@@ -3316,9 +3363,9 @@ msgid "The working resume was deleted. This thread is read-only."
 msgstr "קורות החיים של העבודה נמחקו. שרשור זה הוא לקריאה בלבד."
 
 #. Menu item that opens appearance theme selection submenu
-#: src/components/command-palette/pages/preferences/theme.tsx
-#: src/components/user/dropdown-menu.tsx
-#: src/routes/dashboard/settings/preferences.tsx
+#: src/features/command-palette/pages/preferences/theme.tsx
+#: src/features/settings/pages/preferences.tsx
+#: src/features/user/dropdown-menu.tsx
 msgid "Theme"
 msgstr "ערכת עיצוב"
 
@@ -3331,7 +3378,7 @@ msgstr "לאחר מכן, הזן את הקוד בן 6 הספרות שהאפליק
 msgid "There was a problem while generating the DOCX, please try again."
 msgstr "אירעה תקלה בעת יצירת קובץ ה-DOCX. אנא נסה שוב."
 
-#: src/routes/$username/-components/public-resume.tsx
+#: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/$threadId.tsx
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -3348,7 +3395,7 @@ msgstr "חֲשִׁיבָה"
 msgid "This action cannot be undone."
 msgstr "לא ניתן לבטל פעולה זו."
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "This action cannot be undone. All your data will be permanently deleted."
 msgstr "לא ניתן לבטל פעולה זו. כל הנתונים שלך יימחקו לצמיתות."
 
@@ -3376,7 +3423,7 @@ msgstr "זהו שם ידידותי לכתובת URL עבור קורות החיי
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "זה עלול לקחת כמה דקות, בהתאם לזמן התגובה של ספק הבינה המלאכותית. נא לא לסגור את החלון או לרענן את העמוד."
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "This resume is locked and cannot be updated."
 msgstr "קורות חיים אלה נעולים ולא ניתן לעדכן אותם."
 
@@ -3384,7 +3431,7 @@ msgstr "קורות חיים אלה נעולים ולא ניתן לעדכן או�
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "סעיף זה שמור להערות האישיות שלך שנוגעות לקורות חיים אלה. התוכן כאן נשאר פרטי ואינו משותף עם אף אחד אחר."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "This step is optional, but recommended."
 msgstr "שלב זה הוא רשות בלבד, אך מומלץ."
 
@@ -3404,7 +3451,7 @@ msgstr "שרשור זה הוא לקריאה בלבד מכיוון שקורות �
 msgid "This will generate a new API key to access the Reactive Resume API to allow machines to interact with your resume data."
 msgstr "פעולה זו תיצור מפתח API חדש לגישה ל־Reactive Resume API כדי לאפשר למערכות לתקשר עם נתוני קורות החיים שלך."
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "This will help you identify it later, if you plan to have multiple passkeys."
 msgstr "זה יעזור לך לזהות אותו בהמשך, אם אתה מתכנן להשתמש במספר מפתחות גישה."
 
@@ -3453,7 +3500,7 @@ msgstr "עצה: אפשר לתת שם לקורות החיים לפי התפקיד
 msgid "Title"
 msgstr "כותרת"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "To delete your account, you need to enter the confirmation text and click the button below."
 msgstr "כדי למחוק את החשבון שלך, עליך להזין את טקסט האישור וללחוץ על הכפתור שלמטה."
 
@@ -3532,8 +3579,8 @@ msgstr "שתי עמודות, מינימלי וצפוף טקסט בלי אלמנ�
 msgid "Two-column, minimal with light gray sidebar and subtle icons; professional and understated for legal, finance, or executive roles."
 msgstr "שתי עמודות, מינימלי עם סרגל צד אפור בהיר וסמלים עדינים; מקצועי ומאופק לתפקידי משפטים, פיננסים או הנהלה."
 
-#: src/routes/auth/verify-2fa.tsx
-#: src/routes/dashboard/settings/authentication/-components/two-factor.tsx
+#: src/features/auth/pages/verify-2fa.tsx
+#: src/features/settings/authentication/components/two-factor.tsx
 msgid "Two-Factor Authentication"
 msgstr "אימות דו־שלבי"
 
@@ -3555,15 +3602,15 @@ msgstr "קוד QR לאימות דו-שלבי"
 msgid "Type"
 msgstr "סוג"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Type \"{CONFIRMATION_TEXT}\" to confirm"
 msgstr "הקלד \"{CONFIRMATION_TEXT}\" כדי לאשר"
 
 #. Placeholder in command palette input on root page
 #. Screen-reader dialog description instructing users how to use the command palette
-#: src/components/command-palette/index.tsx
-msgid "Type a command or search..."
-msgstr "הקלד פקודה או חפש..."
+#: src/features/command-palette/index.tsx
+msgid "Type a command or search…"
+msgstr "הקלד פקודה או חפש…"
 
 #: src/libs/resume/section.tsx
 msgid "Typography"
@@ -3581,29 +3628,29 @@ msgstr "קו תחתון"
 msgid "Unlimited Resumes"
 msgstr "מסמכי קורות חיים ללא הגבלה"
 
-#: src/routes/dashboard/settings/authentication/-components/hooks.tsx
+#: src/features/settings/authentication/components/hooks.tsx
 msgid "Unlinking your {providerName} account..."
 msgstr "מנתק את חשבון {providerName} שלך..."
 
 #. Primary action button label to unlock a password-protected resume
 #. Resume card context menu action to remove edit lock
 #. Resume card dropdown action to remove edit lock
-#: src/routes/auth/resume-password.tsx
+#: src/features/auth/pages/resume-password.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/dashboard/resumes/-components/menus/context-menu.tsx
 #: src/routes/dashboard/resumes/-components/menus/dropdown-menu.tsx
 msgid "Unlock"
 msgstr "שחרור"
 
-#: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
+#: src/features/settings/authentication/components/passkeys.tsx
 msgid "Unnamed passkey"
 msgstr "מילת גישה ללא שם"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Untested"
 msgstr "לא נבדק"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Unverified"
 msgstr "לא מאומת"
 
@@ -3679,7 +3726,7 @@ msgstr "עדכון ניסיון התנדבות קיים"
 
 #. Primary action button to submit changed password
 #: src/dialogs/auth/change-password.tsx
-#: src/routes/dashboard/settings/authentication/-components/password.tsx
+#: src/features/settings/authentication/components/password.tsx
 msgid "Update Password"
 msgstr "עדכון סיסמה"
 
@@ -3703,13 +3750,17 @@ msgstr "מעדכן את הסיסמה שלך..."
 msgid "Updating your resume..."
 msgstr "מעדכן את קורות החיים שלך..."
 
+#: src/routes/agent/$threadId.tsx
+msgid "Upload attachments"
+msgstr "העלאת קבצים מצורפים"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Upload picture"
 msgstr "העלה תמונה"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Uploading picture..."
-msgstr "מעלה תמונה..."
+msgid "Uploading picture…"
+msgstr "מעלה תמונה…"
 
 #. Form field label for the generated public resume link in sharing settings
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -3717,7 +3768,7 @@ msgstr "מעלה תמונה..."
 msgid "URL"
 msgstr "כתובת"
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Use"
 msgstr "לְהִשְׁתַמֵשׁ"
 
@@ -3727,8 +3778,8 @@ msgstr "השתמש בצבע {color}"
 
 #. Label for username input on registration form
 #: src/dialogs/resume/sections/profile.tsx
-#: src/routes/auth/register.tsx
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/auth/pages/register.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Username"
 msgstr "שם משתמש"
 
@@ -3744,39 +3795,42 @@ msgstr "אוזבקית"
 msgid "Valid URLs must start with http:// or https://."
 msgstr "כתובות URL חוקיות חייבות להתחיל ב־http:// או https://."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Vercel AI Gateway"
 msgstr "Vercel AI Gateway"
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Verified"
 msgstr "מאומת"
 
 #. Primary action button to submit 2FA code
 #. Primary action button to submit backup code
-#: src/routes/auth/verify-2fa-backup.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verify"
 msgstr "אימות"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verify with a Backup Code"
 msgstr "אימות עם קוד גיבוי"
 
-#: src/routes/auth/verify-2fa-backup.tsx
+#: src/features/auth/pages/verify-2fa-backup.tsx
 msgid "Verifying backup code..."
 msgstr "מאמת קוד גיבוי..."
 
-#: src/dialogs/auth/enable-two-factor.tsx
-#: src/routes/auth/verify-2fa.tsx
+#: src/features/auth/pages/verify-2fa.tsx
 msgid "Verifying code..."
 msgstr "מאמת את הקוד..."
 
-#: src/routes/auth/resume-password.tsx
+#: src/dialogs/auth/enable-two-factor.tsx
+msgid "Verifying code…"
+msgstr "מאמת קוד…"
+
+#: src/features/auth/pages/resume-password.tsx
 msgid "Verifying password..."
 msgstr "מאמת סיסמה..."
 
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/register.tsx
 msgid "Verifying your email is required when resetting your password."
 msgstr "אימות הדוא\"ל שלך נדרש בעת איפוס הסיסמה."
 
@@ -3793,10 +3847,6 @@ msgstr "צפיות"
 #: src/libs/resume/section.tsx
 msgid "Volunteer"
 msgstr "התנדבות"
-
-#: src/routes/agent/$threadId.tsx
-msgid "Waiting for fetch result..."
-msgstr "ממתין לתוצאת אחזור..."
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -3833,13 +3883,13 @@ msgstr "מה חדש בגרסה העדכנית?"
 msgid "When locked, the resume cannot be updated or deleted."
 msgstr "כאשר קורות החיים נעולים, אי אפשר לעדכן או למחוק אותם."
 
-#: src/routes/dashboard/settings/integrations/-components/ai-section.tsx
+#: src/features/settings/integrations/components/ai-section.tsx
 msgid "Work OpenAI"
 msgstr "עבודה ב-OpenAI"
 
 #: src/routes/agent/$threadId.tsx
-msgid "Working..."
-msgstr "עובד..."
+msgid "Working…"
+msgstr "עובד…"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "X (Twitter)"
@@ -3857,7 +3907,7 @@ msgstr "כן! Reactive Resume חינמי לחלוטין לשימוש, בלי ע�
 msgid "You also have the option to deploy on your own servers using the Docker image."
 msgstr "אפשר גם לפרוס על השרתים שלך באמצעות דמות Docker."
 
-#: src/routes/auth/login.tsx
+#: src/features/auth/pages/login.tsx
 msgid "You can also use your username to login."
 msgstr "אפשר גם להשתמש בשם המשתמש שלך כדי להתחבר."
 
@@ -3869,12 +3919,12 @@ msgstr "אפשר לשתף את קורות החיים שלך באמצעות כת�
 msgid "You have unsaved changes that will be lost."
 msgstr "יש לך שינויים שלא נשמרו ויאבדו."
 
-#: src/routes/auth/forgot-password.tsx
-#: src/routes/auth/register.tsx
+#: src/features/auth/pages/forgot-password.tsx
+#: src/features/auth/pages/register.tsx
 msgid "You've got mail!"
 msgstr "קיבלת הודעה!"
 
-#: src/routes/dashboard/settings/danger-zone.tsx
+#: src/features/settings/pages/danger-zone.tsx
 msgid "Your account has been deleted successfully."
 msgstr "החשבון שלך נמחק בהצלחה."
 
@@ -3894,11 +3944,11 @@ msgstr "הנתונים שלך מאובטחים, ולעולם אינם נמסרי
 msgid "Your data is stored securely and is never shared with third parties. You can also self-host Reactive Resume on your own servers for complete control over your data."
 msgstr "הנתונים שלך מאוחסנים בצורה מאובטחת ולעולם אינם משותפים עם צדדים שלישיים. אפשר גם לארח את Reactive Resume בשרתים שלך כדי לשלוט לחלוטין בנתונים שלך."
 
-#: src/components/resume/builder-resume-draft.ts
+#: src/features/resume/builder/draft.ts
 msgid "Your latest changes could not be saved."
 msgstr "לא ניתן היה לשמור את השינויים האחרונים שלך."
 
-#: src/routes/auth/reset-password.tsx
+#: src/features/auth/pages/reset-password.tsx
 msgid "Your password has been reset successfully. You can now sign in with your new password."
 msgstr "הסיסמה שלך אופסה בהצלחה. כעת אפשר להתחבר עם הסיסמה החדשה שלך."
 
@@ -3906,7 +3956,7 @@ msgstr "הסיסמה שלך אופסה בהצלחה. כעת אפשר להתחב�
 msgid "Your password has been updated successfully."
 msgstr "הסיסמה שלך עודכנה בהצלחה."
 
-#: src/routes/dashboard/settings/profile.tsx
+#: src/features/settings/pages/profile.tsx
 msgid "Your profile has been updated successfully."
 msgstr "הפרופיל שלך עודכן בהצלחה."
 

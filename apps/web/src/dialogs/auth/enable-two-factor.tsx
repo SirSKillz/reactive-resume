@@ -34,12 +34,22 @@ const verifyFormSchema = z.object({
 	code: z.string().length(6, "Code must be 6 digits"),
 });
 
+type TwoFactorSetupStep = "backup" | "enable" | "verify";
+
+type TwoFactorStepProps = {
+	step: TwoFactorSetupStep;
+};
+
+type TwoFactorQRCodeProps = {
+	totpUri: string;
+};
+
 export function EnableTwoFactorDialog(_: DialogProps<"auth.two-factor.enable">) {
 	const router = useRouter();
 
 	const [totpUri, setTotpUri] = useState<string | null>(null);
 	const [backupCodes, setBackupCodes] = useState<string[] | null>(null);
-	const [step, setStep] = useState<"enable" | "verify" | "backup">("enable");
+	const [step, setStep] = useState<TwoFactorSetupStep>("enable");
 
 	const [showPassword, toggleShowPassword] = useToggle(false);
 	const closeDialog = useDialogStore((state) => state.closeDialog);
@@ -48,7 +58,7 @@ export function EnableTwoFactorDialog(_: DialogProps<"auth.two-factor.enable">) 
 		defaultValues: { password: "" },
 		validators: { onSubmit: enableFormSchema },
 		onSubmit: async ({ value }) => {
-			const toastId = toast.loading(t`Enabling two-factor authentication...`);
+			const toastId = toast.loading(t`Enabling two-factor authentication…`);
 
 			const { data, error } = await authClient.twoFactor.enable({
 				password: value.password,
@@ -84,7 +94,7 @@ export function EnableTwoFactorDialog(_: DialogProps<"auth.two-factor.enable">) 
 		defaultValues: { code: "" },
 		validators: { onSubmit: verifyFormSchema },
 		onSubmit: async ({ value }) => {
-			const toastId = toast.loading(t`Verifying code...`);
+			const toastId = toast.loading(t`Verifying code…`);
 
 			const { error } = await authClient.twoFactor.verifyTotp({ code: value.code });
 
@@ -167,28 +177,10 @@ export function EnableTwoFactorDialog(_: DialogProps<"auth.two-factor.enable">) 
 		<DialogContent>
 			<DialogHeader>
 				<DialogTitle>
-					{match(step)
-						.with("enable", () => <Trans>Enable Two-Factor Authentication</Trans>)
-						.with("verify", () => <Trans>Setup Authenticator App</Trans>)
-						.with("backup", () => <Trans>Copy Backup Codes</Trans>)
-						.exhaustive()}
+					<TwoFactorDialogTitle step={step} />
 				</DialogTitle>
 				<DialogDescription>
-					{match(step)
-						.with("enable", () => (
-							<Trans>
-								Enter your password to confirm setting up two-factor authentication. When enabled, you'll need to enter
-								a code from your authenticator app every time you log in.
-							</Trans>
-						))
-						.with("verify", () => (
-							<Trans>
-								Scan the QR code below with your preferred authenticator app. You can also copy the secret below and
-								paste it into your app.
-							</Trans>
-						))
-						.with("backup", () => <Trans>Copy and store these backup codes in case you lose your device.</Trans>)
-						.exhaustive()}
+					<TwoFactorDialogDescription step={step} />
 				</DialogDescription>
 			</DialogHeader>
 
@@ -361,7 +353,33 @@ function extractSecretFromTotpUri(totpUri: string): string | null {
 	}
 }
 
-function TwoFactorQRCode({ totpUri }: { totpUri: string }) {
+function TwoFactorDialogTitle({ step }: TwoFactorStepProps) {
+	return match(step)
+		.with("enable", () => <Trans>Enable Two-Factor Authentication</Trans>)
+		.with("verify", () => <Trans>Setup Authenticator App</Trans>)
+		.with("backup", () => <Trans>Copy Backup Codes</Trans>)
+		.exhaustive();
+}
+
+function TwoFactorDialogDescription({ step }: TwoFactorStepProps) {
+	return match(step)
+		.with("enable", () => (
+			<Trans>
+				Enter your password to confirm setting up two-factor authentication. When enabled, you'll need to enter a code
+				from your authenticator app every time you log in.
+			</Trans>
+		))
+		.with("verify", () => (
+			<Trans>
+				Scan the QR code below with your preferred authenticator app. You can also copy the secret below and paste it
+				into your app.
+			</Trans>
+		))
+		.with("backup", () => <Trans>Copy and store these backup codes in case you lose your device.</Trans>)
+		.exhaustive();
+}
+
+function TwoFactorQRCode({ totpUri }: TwoFactorQRCodeProps) {
 	return (
 		<QRCodeSVG
 			value={totpUri}

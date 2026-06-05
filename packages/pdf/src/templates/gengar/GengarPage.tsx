@@ -1,17 +1,19 @@
 import type { Style } from "@react-pdf/types";
 import type { TemplatePageProps } from "../../document";
 import type { TemplateColorRoles, TemplateStyleContext, TemplateStyleSlots } from "../shared/types";
-import { Image, Page, StyleSheet, View } from "@react-pdf/renderer";
 import { Fragment, useMemo } from "react";
 import { parseColorString, rgbaStringToHex } from "@reactive-resume/utils/color";
 import { useRender } from "../../context";
+import { Image, Page, StyleSheet, View } from "../../renderer";
 import { CustomFieldContactItem, WebsiteContactItem } from "../shared/contact-item";
 import { TemplateProvider } from "../shared/context";
+import { getFeaturedSummaryLayout } from "../shared/featured-summary";
 import { filterSections } from "../shared/filtering";
 import { getTemplateMetrics } from "../shared/metrics";
 import { getTemplatePageMinHeightStyle, getTemplatePageSize } from "../shared/page-size";
 import { hasTemplatePicture } from "../shared/picture";
 import { Heading, Icon, Link, Text } from "../shared/primitives";
+import { createRtlStyleHelpers } from "../shared/rtl";
 import { Section } from "../shared/sections";
 import { composeStyles, headerNameLineHeight, resolvePlacementColor } from "../shared/styles";
 
@@ -37,6 +39,11 @@ type GengarTemplate = {
 	styles: GengarStyles;
 };
 
+type GengarHeaderProps = {
+	styles: GengarStyles;
+	colors: TemplateColorRoles;
+};
+
 export const GengarPage = ({ page, pageIndex }: TemplatePageProps) => {
 	const data = useRender();
 	const { metadata } = data;
@@ -48,8 +55,13 @@ export const GengarPage = ({ page, pageIndex }: TemplatePageProps) => {
 	const showSidebar = !page.fullWidth || showHeader;
 	const sidebarSections = filterSections(page.sidebar, data);
 	const mainSections = filterSections(page.main, data);
-	const specialMainSection = showHeader ? mainSections[0] : undefined;
-	const regularMainSections = showHeader ? mainSections.slice(1) : mainSections;
+	const { featuredSummarySection, regularSections: regularMainSections } = getFeaturedSummaryLayout({
+		sections: mainSections,
+		canFeatureSummary: showHeader,
+	});
+	const regularSidebarSections = featuredSummarySection
+		? sidebarSections.filter((section) => section !== "summary")
+		: sidebarSections;
 
 	return (
 		<Page size={pageSize} style={composeStyles(styles.page, pageMinHeightStyle)}>
@@ -64,8 +76,8 @@ export const GengarPage = ({ page, pageIndex }: TemplatePageProps) => {
 
 						{!page.fullWidth && (
 							<View style={styles.sidebarContent}>
-								{sidebarSections.map((section, index) => (
-									<Fragment key={index}>
+								{regularSidebarSections.map((section) => (
+									<Fragment key={section}>
 										<Section section={section} placement="sidebar" />
 									</Fragment>
 								))}
@@ -75,15 +87,15 @@ export const GengarPage = ({ page, pageIndex }: TemplatePageProps) => {
 				)}
 
 				<View style={styles.mainColumn}>
-					{specialMainSection && (
+					{featuredSummarySection && (
 						<View style={styles.specialContainer}>
-							<Section section={specialMainSection} placement="main" showHeading={specialMainSection !== "summary"} />
+							<Section section={featuredSummarySection} placement="main" showHeading={false} />
 						</View>
 					)}
 
 					<View style={composeStyles(styles.mainContent, { rowGap: metrics.sectionGap })}>
-						{regularMainSections.map((section, index) => (
-							<Section key={index} section={section} placement="main" />
+						{regularMainSections.map((section) => (
+							<Section key={section} section={section} placement="main" />
 						))}
 					</View>
 				</View>
@@ -92,7 +104,7 @@ export const GengarPage = ({ page, pageIndex }: TemplatePageProps) => {
 	);
 };
 
-const Header = ({ styles, colors }: { styles: GengarStyles; colors: TemplateColorRoles }) => {
+const Header = ({ styles, colors }: GengarHeaderProps) => {
 	const { basics, picture } = useRender();
 	const hasPicture = hasTemplatePicture(picture);
 
@@ -157,9 +169,10 @@ const getPrimaryTint = (primaryColor: string, opacity: number): string => {
 };
 
 const useGengarTemplate = (): GengarTemplate => {
-	const { picture, metadata } = useRender();
+	const { picture, metadata, rtl } = useRender();
 
 	return useMemo(() => {
+		const r = createRtlStyleHelpers(rtl);
 		const foreground = rgbaStringToHex(metadata.design.colors.text);
 		const background = rgbaStringToHex(metadata.design.colors.background);
 		const primary = rgbaStringToHex(metadata.design.colors.primary);
@@ -179,16 +192,18 @@ const useGengarTemplate = (): GengarTemplate => {
 			fontWeight: metadata.typography.body.fontWeights[0] ?? "400",
 			lineHeight: metadata.typography.body.lineHeight,
 			color: foreground,
+			...r.text,
 		} satisfies Style;
 
 		const baseStyles = StyleSheet.create({
 			page: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				color: foreground,
 				backgroundColor: background,
 				fontFamily: metadata.typography.body.fontFamily,
 				fontSize: metadata.typography.body.fontSize,
 				lineHeight: metadata.typography.body.lineHeight,
+				direction: r.pageDirection,
 			},
 			text: bodyText,
 			heading: {
@@ -197,13 +212,14 @@ const useGengarTemplate = (): GengarTemplate => {
 				fontWeight: metadata.typography.heading.fontWeights.at(-1) ?? "600",
 				lineHeight: metadata.typography.heading.lineHeight,
 				color: foreground,
+				...r.text,
 			},
 			div: {
 				rowGap: metrics.gapY(0.125),
 				columnGap: metrics.gapX(1 / 3),
 			},
 			inline: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				alignItems: "center",
 				columnGap: metrics.gapX(1 / 3),
 			},
@@ -227,26 +243,23 @@ const useGengarTemplate = (): GengarTemplate => {
 				alignItems: "flex-start",
 			},
 			richListItemMarker: {
-				width: metadata.typography.body.fontSize,
-				textAlign: "right",
 				...bodyText,
+				width: metadata.typography.body.fontSize,
+				textAlign: r.listMarkerTextAlign,
 			},
 			richListItemContent: {
-				flex: 1,
 				...bodyText,
+				flex: 1,
 			},
 			splitRow: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				flexWrap: "wrap",
 				alignItems: "flex-start",
 				justifyContent: "space-between",
 				columnGap: metrics.gapX(2 / 3),
 			},
-			alignRight: {
-				textAlign: "right",
-				minWidth: 0,
-				maxWidth: "100%",
-				flexShrink: 1,
+			alignEnd: {
+				...r.alignEnd,
 			},
 			section: {
 				flexDirection: "column",
@@ -315,8 +328,7 @@ const useGengarTemplate = (): GengarTemplate => {
 			},
 			headerTitle: {},
 			headerIdentity: {
-				textAlign: "left",
-				alignItems: "flex-start",
+				...r.headerIdentity,
 				rowGap: metrics.gapY(0.35),
 			},
 			headerName: {
@@ -331,7 +343,7 @@ const useGengarTemplate = (): GengarTemplate => {
 				rowGap: metrics.gapY(0.25),
 			},
 			contactItem: {
-				flexDirection: "row",
+				flexDirection: r.row,
 				alignItems: "center",
 				columnGap: metrics.gapX(1 / 6),
 			},
@@ -362,8 +374,8 @@ const useGengarTemplate = (): GengarTemplate => {
 						? { flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }
 						: {}),
 				}),
-				alignRight: (context) => ({
-					...baseStyles.alignRight,
+				alignEnd: (context) => ({
+					...baseStyles.alignEnd,
 					...(context.placement === "sidebar" ? { textAlign: "left" } : {}),
 				}),
 				sectionHeading: (context) => ({
@@ -380,5 +392,5 @@ const useGengarTemplate = (): GengarTemplate => {
 				}),
 			} satisfies GengarStyles,
 		};
-	}, [picture, metadata]);
+	}, [picture, metadata, rtl]);
 };

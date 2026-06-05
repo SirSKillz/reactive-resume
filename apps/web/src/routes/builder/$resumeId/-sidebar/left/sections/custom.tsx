@@ -32,8 +32,8 @@ import {
 } from "@reactive-resume/ui/components/dropdown-menu";
 import { stripHtml } from "@reactive-resume/utils/string";
 import { cn } from "@reactive-resume/utils/style";
-import { useCurrentResume, useUpdateResumeData } from "@/components/resume/builder-resume-draft";
 import { useDialogStore } from "@/dialogs/store";
+import { useCurrentResume, useUpdateResumeData } from "@/features/resume/builder/draft";
 import { useConfirm } from "@/hooks/use-confirm";
 import { getSectionTitle } from "@/libs/resume/section";
 import { SectionBase } from "../shared/section-base";
@@ -133,7 +133,11 @@ export function CustomSectionBuilder() {
 	);
 }
 
-function CustomSectionContainer({ section }: { section: CustomSection }) {
+type CustomSectionContainerProps = {
+	section: CustomSection;
+};
+
+function CustomSectionContainer({ section }: CustomSectionContainerProps) {
 	const { openDialog } = useDialogStore();
 	const updateResumeData = useUpdateResumeData();
 
@@ -203,7 +207,11 @@ function CustomSectionContainer({ section }: { section: CustomSection }) {
 	);
 }
 
-function CustomSectionDropdownMenu({ section }: { section: CustomSection }) {
+type CustomSectionDropdownMenuProps = {
+	section: CustomSection;
+};
+
+function CustomSectionDropdownMenu({ section }: CustomSectionDropdownMenuProps) {
 	const confirm = useConfirm();
 	const { openDialog } = useDialogStore();
 	const updateResumeData = useUpdateResumeData();
