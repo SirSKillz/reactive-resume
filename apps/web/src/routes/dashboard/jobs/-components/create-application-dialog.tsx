@@ -140,7 +140,7 @@ export function CreateApplicationDialog({
 					{ id: application.id, ...sharedFields },
 					{
 						onSuccess: () => {
-							void queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions());
+							queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions()).catch(() => {});
 							toast.success(t`Application updated successfully.`);
 							onControlledOpenChange?.(false);
 							form.reset();
@@ -155,7 +155,7 @@ export function CreateApplicationDialog({
 					{ campaignId, ...sharedFields },
 					{
 						onSuccess: () => {
-							void queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions());
+							queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions()).catch(() => {});
 							toast.success(t`Application created successfully.`);
 							setInternalOpen(false);
 							form.reset();
@@ -307,7 +307,7 @@ export function CreateApplicationDialog({
 											>
 												{STATUS_OPTIONS.map((o) => (
 													<option key={o.value} value={o.value}>
-														{i18n._(o.label)}
+														{i18n.t(o.label)}
 													</option>
 												))}
 											</select>
@@ -337,7 +337,7 @@ export function CreateApplicationDialog({
 												</option>
 												{METHOD_OPTIONS.map((o) => (
 													<option key={o.value} value={o.value}>
-														{i18n._(o.label)}
+														{i18n.t(o.label)}
 													</option>
 												))}
 											</select>
@@ -389,7 +389,7 @@ export function CreateApplicationDialog({
 												</option>
 												{LOCATION_TYPE_OPTIONS.map((o) => (
 													<option key={o.value} value={o.value}>
-														{i18n._(o.label)}
+														{i18n.t(o.label)}
 													</option>
 												))}
 											</select>

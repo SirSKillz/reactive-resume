@@ -1,8 +1,10 @@
 import type { RouterOutput } from "@/libs/orpc/client";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { t } from "@lingui/core/macro";
+import { msg, t } from "@lingui/core/macro";
+import { useLingui } from "@lingui/react";
 import { BriefcaseIcon, LinkIcon, MapPinIcon } from "@phosphor-icons/react";
+import { useMemo } from "react";
 import { Badge } from "@reactive-resume/ui/components/badge";
 import { cn } from "@reactive-resume/utils/style";
 
@@ -12,9 +14,12 @@ type Props = {
 	application: JobApplication;
 	onClick: (application: JobApplication) => void;
 	draggedApplicationId: string | null;
+	selected: boolean;
+	onToggleSelection: (appId: string, event: React.MouseEvent) => void;
 };
 
-export function ApplicationCard({ application, onClick, draggedApplicationId }: Props) {
+export function ApplicationCard({ application, onClick, draggedApplicationId, selected, onToggleSelection }: Props) {
+	const { i18n } = useLingui();
 	const {
 		attributes,
 		listeners,
@@ -32,6 +37,22 @@ export function ApplicationCard({ application, onClick, draggedApplicationId }: 
 		transition,
 	};
 
+	const locationTypeLabels = useMemo<Record<string, string>>(
+		() => ({
+			remote: i18n.t(msg`Remote`),
+			hybrid: i18n.t(msg`Hybrid`),
+			onsite: i18n.t(msg`On-site`),
+		}),
+		[i18n],
+	);
+
+	const handleClick = (e: React.MouseEvent) => {
+		onToggleSelection(application.id, e);
+		if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+			onClick(application);
+		}
+	};
+
 	return (
 		<button
 			type="button"
@@ -44,9 +65,11 @@ export function ApplicationCard({ application, onClick, draggedApplicationId }: 
 				"transition-colors hover:border-primary/30",
 				isSortableDragging && "cursor-grabbing opacity-50",
 				application.id === draggedApplicationId && "pointer-events-none",
+				selected && "border-primary ring-2 ring-primary/50",
 			)}
-			onClick={() => onClick(application)}
+			onClick={handleClick}
 			aria-label={t`${application.jobTitle} at ${application.company}`}
+			aria-pressed={selected}
 		>
 			<p className="font-medium text-sm leading-tight">{application.jobTitle}</p>
 			<p className="mt-0.5 text-muted-foreground text-xs">{application.company}</p>
@@ -59,8 +82,8 @@ export function ApplicationCard({ application, onClick, draggedApplicationId }: 
 					</span>
 				)}
 				{application.locationType && (
-					<Badge variant="outline" className="h-4 px-1.5 text-[10px] capitalize">
-						{application.locationType}
+					<Badge variant="outline" className="h-4 px-1.5 text-[10px]">
+						{locationTypeLabels[application.locationType] ?? application.locationType}
 					</Badge>
 				)}
 				{application.resumeId && (

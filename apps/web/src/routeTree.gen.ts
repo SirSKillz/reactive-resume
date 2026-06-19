@@ -8,57 +8,6 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-<<<<<<< HEAD
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as SchemaDotjsonRouteImport } from './routes/schema[.]json'
-import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
-import { Route as AuthRouteRouteImport } from './routes/auth/route'
-import { Route as AgentRouteRouteImport } from './routes/agent/route'
-import { Route as HomeRouteRouteImport } from './routes/_home/route'
-import { Route as McpIndexRouteImport } from './routes/mcp/index'
-import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
-import { Route as AuthIndexRouteImport } from './routes/auth/index'
-import { Route as AgentIndexRouteImport } from './routes/agent/index'
-import { Route as HomeIndexRouteImport } from './routes/_home/index'
-import { Route as TemplatesSplatRouteImport } from './routes/templates/$'
-import { Route as AuthVerify2faBackupRouteImport } from './routes/auth/verify-2fa-backup'
-import { Route as AuthVerify2faRouteImport } from './routes/auth/verify-2fa'
-import { Route as AuthResumePasswordRouteImport } from './routes/auth/resume-password'
-import { Route as AuthResetPasswordRouteImport } from './routes/auth/reset-password'
-import { Route as AuthRegisterRouteImport } from './routes/auth/register'
-import { Route as AuthOauthRouteImport } from './routes/auth/oauth'
-import { Route as AuthLoginRouteImport } from './routes/auth/login'
-import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
-import { Route as ApiHealthRouteImport } from './routes/api/health'
-import { Route as AgentNewRouteImport } from './routes/agent/new'
-import { Route as AgentThreadIdRouteImport } from './routes/agent/$threadId'
-import { Route as DotwellKnownOpenidConfigurationRouteImport } from './routes/[.]well-known/openid-configuration'
-import { Route as DotwellKnownOauthProtectedResourceRouteImport } from './routes/[.]well-known/oauth-protected-resource'
-import { Route as DotwellKnownOauthAuthorizationServerRouteImport } from './routes/[.]well-known/oauth-authorization-server'
-import { Route as DotwellKnownSplatRouteImport } from './routes/[.]well-known/$'
-import { Route as UsernameSlugRouteImport } from './routes/$username/$slug'
-import { Route as DashboardJobsRouteRouteImport } from './routes/dashboard/jobs/route'
-import { Route as BuilderResumeIdRouteRouteImport } from './routes/builder/$resumeId/route'
-import { Route as DashboardResumesIndexRouteImport } from './routes/dashboard/resumes/index'
-import { Route as DashboardJobsIndexRouteImport } from './routes/dashboard/jobs/index'
-import { Route as BuilderResumeIdIndexRouteImport } from './routes/builder/$resumeId/index'
-import { Route as UploadsUserIdSplatRouteImport } from './routes/uploads/$userId.$'
-import { Route as DashboardSettingsProfileRouteImport } from './routes/dashboard/settings/profile'
-import { Route as DashboardSettingsPreferencesRouteImport } from './routes/dashboard/settings/preferences'
-import { Route as DashboardSettingsJobSearchRouteImport } from './routes/dashboard/settings/job-search'
-import { Route as DashboardSettingsDangerZoneRouteImport } from './routes/dashboard/settings/danger-zone'
-import { Route as DashboardSettingsApiKeysRouteImport } from './routes/dashboard/settings/api-keys'
-import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
-import { Route as ApiOpenapiSplatRouteImport } from './routes/api/openapi.$'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
-import { Route as DotwellKnownOauthProtectedResourceSplatRouteImport } from './routes/[.]well-known/oauth-protected-resource.$'
-import { Route as DotwellKnownOauthAuthorizationServerSplatRouteImport } from './routes/[.]well-known/oauth-authorization-server.$'
-import { Route as DotwellKnownMcpServerCardDotjsonRouteImport } from './routes/[.]well-known/mcp/server-card[.]json'
-import { Route as DashboardSettingsIntegrationsRouteRouteImport } from './routes/dashboard/settings/integrations/route'
-import { Route as DashboardSettingsAuthenticationIndexRouteImport } from './routes/dashboard/settings/authentication/index'
-import { Route as DashboardJobsCampaignIdIndexRouteImport } from './routes/dashboard/jobs/$campaignId/index'
-import { Route as ApiUploadsUserIdSplatRouteImport } from './routes/api/uploads/$userId.$'
-=======
 import { Route as rootRouteImport } from "./routes/__root";
 import { Route as DashboardRouteRouteImport } from "./routes/dashboard/route";
 import { Route as AuthRouteRouteImport } from "./routes/auth/route";
@@ -79,8 +28,10 @@ import { Route as AuthForgotPasswordRouteImport } from "./routes/auth/forgot-pas
 import { Route as AgentNewRouteImport } from "./routes/agent/new";
 import { Route as AgentThreadIdRouteImport } from "./routes/agent/$threadId";
 import { Route as UsernameSlugRouteImport } from "./routes/$username/$slug";
+import { Route as DashboardJobsRouteRouteImport } from "./routes/dashboard/jobs/route";
 import { Route as BuilderResumeIdRouteRouteImport } from "./routes/builder/$resumeId/route";
 import { Route as DashboardResumesIndexRouteImport } from "./routes/dashboard/resumes/index";
+import { Route as DashboardJobsIndexRouteImport } from "./routes/dashboard/jobs/index";
 import { Route as BuilderResumeIdIndexRouteImport } from "./routes/builder/$resumeId/index";
 import { Route as DashboardSettingsProfileRouteImport } from "./routes/dashboard/settings/profile";
 import { Route as DashboardSettingsPreferencesRouteImport } from "./routes/dashboard/settings/preferences";
@@ -89,7 +40,7 @@ import { Route as DashboardSettingsDangerZoneRouteImport } from "./routes/dashbo
 import { Route as DashboardSettingsApiKeysRouteImport } from "./routes/dashboard/settings/api-keys";
 import { Route as DashboardSettingsIntegrationsRouteRouteImport } from "./routes/dashboard/settings/integrations/route";
 import { Route as DashboardSettingsAuthenticationIndexRouteImport } from "./routes/dashboard/settings/authentication/index";
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
+import { Route as DashboardJobsCampaignIdIndexRouteImport } from "./routes/dashboard/jobs/$campaignId/index";
 
 const DashboardRouteRoute = DashboardRouteRouteImport.update({
   id: "/dashboard",
@@ -184,16 +135,12 @@ const UsernameSlugRoute = UsernameSlugRouteImport.update({
   id: "/$username/$slug",
   path: "/$username/$slug",
   getParentRoute: () => rootRouteImport,
-<<<<<<< HEAD
-} as any)
-const DashboardJobsRouteRoute = DashboardJobsRouteRouteImport.update({
-  id: '/jobs',
-  path: '/jobs',
-  getParentRoute: () => DashboardRouteRoute,
-} as any)
-=======
 } as any);
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
+const DashboardJobsRouteRoute = DashboardJobsRouteRouteImport.update({
+  id: "/jobs",
+  path: "/jobs",
+  getParentRoute: () => DashboardRouteRoute,
+} as any);
 const BuilderResumeIdRouteRoute = BuilderResumeIdRouteRouteImport.update({
   id: "/builder/$resumeId",
   path: "/builder/$resumeId",
@@ -203,16 +150,12 @@ const DashboardResumesIndexRoute = DashboardResumesIndexRouteImport.update({
   id: "/resumes/",
   path: "/resumes/",
   getParentRoute: () => DashboardRouteRoute,
-<<<<<<< HEAD
-} as any)
-const DashboardJobsIndexRoute = DashboardJobsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => DashboardJobsRouteRoute,
-} as any)
-=======
 } as any);
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
+const DashboardJobsIndexRoute = DashboardJobsIndexRouteImport.update({
+  id: "/",
+  path: "/",
+  getParentRoute: () => DashboardJobsRouteRoute,
+} as any);
 const BuilderResumeIdIndexRoute = BuilderResumeIdIndexRouteImport.update({
   id: "/",
   path: "/",
@@ -259,164 +202,12 @@ const DashboardSettingsAuthenticationIndexRoute =
     id: "/settings/authentication/",
     path: "/settings/authentication/",
     getParentRoute: () => DashboardRouteRoute,
-<<<<<<< HEAD
-  } as any)
+  } as any);
 const DashboardJobsCampaignIdIndexRoute =
   DashboardJobsCampaignIdIndexRouteImport.update({
-    id: '/$campaignId/',
-    path: '/$campaignId/',
+    id: "/$campaignId/",
+    path: "/$campaignId/",
     getParentRoute: () => DashboardJobsRouteRoute,
-  } as any)
-const ApiUploadsUserIdSplatRoute = ApiUploadsUserIdSplatRouteImport.update({
-  id: '/api/uploads/$userId/$',
-  path: '/api/uploads/$userId/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-
-export interface FileRoutesByFullPath {
-  '/': typeof HomeIndexRoute
-  '/agent': typeof AgentRouteRouteWithChildren
-  '/auth': typeof AuthRouteRouteWithChildren
-  '/dashboard': typeof DashboardRouteRouteWithChildren
-  '/schema.json': typeof SchemaDotjsonRoute
-  '/builder/$resumeId': typeof BuilderResumeIdRouteRouteWithChildren
-  '/dashboard/jobs': typeof DashboardJobsRouteRouteWithChildren
-  '/$username/$slug': typeof UsernameSlugRoute
-  '/.well-known/$': typeof DotwellKnownSplatRoute
-  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRouteWithChildren
-  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRouteWithChildren
-  '/.well-known/openid-configuration': typeof DotwellKnownOpenidConfigurationRoute
-  '/agent/$threadId': typeof AgentThreadIdRoute
-  '/agent/new': typeof AgentNewRoute
-  '/api/health': typeof ApiHealthRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/oauth': typeof AuthOauthRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/auth/resume-password': typeof AuthResumePasswordRoute
-  '/auth/verify-2fa': typeof AuthVerify2faRoute
-  '/auth/verify-2fa-backup': typeof AuthVerify2faBackupRoute
-  '/templates/$': typeof TemplatesSplatRoute
-  '/agent/': typeof AgentIndexRoute
-  '/auth/': typeof AuthIndexRoute
-  '/dashboard/': typeof DashboardIndexRoute
-  '/mcp/': typeof McpIndexRoute
-  '/dashboard/settings/integrations': typeof DashboardSettingsIntegrationsRouteRoute
-  '/.well-known/mcp/server-card.json': typeof DotwellKnownMcpServerCardDotjsonRoute
-  '/.well-known/oauth-authorization-server/$': typeof DotwellKnownOauthAuthorizationServerSplatRoute
-  '/.well-known/oauth-protected-resource/$': typeof DotwellKnownOauthProtectedResourceSplatRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/openapi/$': typeof ApiOpenapiSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
-  '/dashboard/settings/api-keys': typeof DashboardSettingsApiKeysRoute
-  '/dashboard/settings/danger-zone': typeof DashboardSettingsDangerZoneRoute
-  '/dashboard/settings/job-search': typeof DashboardSettingsJobSearchRoute
-  '/dashboard/settings/preferences': typeof DashboardSettingsPreferencesRoute
-  '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
-  '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
-  '/builder/$resumeId/': typeof BuilderResumeIdIndexRoute
-  '/dashboard/jobs/': typeof DashboardJobsIndexRoute
-  '/dashboard/resumes/': typeof DashboardResumesIndexRoute
-  '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
-  '/dashboard/jobs/$campaignId/': typeof DashboardJobsCampaignIdIndexRoute
-  '/dashboard/settings/authentication/': typeof DashboardSettingsAuthenticationIndexRoute
-}
-export interface FileRoutesByTo {
-  '/schema.json': typeof SchemaDotjsonRoute
-  '/$username/$slug': typeof UsernameSlugRoute
-  '/.well-known/$': typeof DotwellKnownSplatRoute
-  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRouteWithChildren
-  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRouteWithChildren
-  '/.well-known/openid-configuration': typeof DotwellKnownOpenidConfigurationRoute
-  '/agent/$threadId': typeof AgentThreadIdRoute
-  '/agent/new': typeof AgentNewRoute
-  '/api/health': typeof ApiHealthRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/oauth': typeof AuthOauthRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/auth/resume-password': typeof AuthResumePasswordRoute
-  '/auth/verify-2fa': typeof AuthVerify2faRoute
-  '/auth/verify-2fa-backup': typeof AuthVerify2faBackupRoute
-  '/templates/$': typeof TemplatesSplatRoute
-  '/': typeof HomeIndexRoute
-  '/agent': typeof AgentIndexRoute
-  '/auth': typeof AuthIndexRoute
-  '/dashboard': typeof DashboardIndexRoute
-  '/mcp': typeof McpIndexRoute
-  '/dashboard/settings/integrations': typeof DashboardSettingsIntegrationsRouteRoute
-  '/.well-known/mcp/server-card.json': typeof DotwellKnownMcpServerCardDotjsonRoute
-  '/.well-known/oauth-authorization-server/$': typeof DotwellKnownOauthAuthorizationServerSplatRoute
-  '/.well-known/oauth-protected-resource/$': typeof DotwellKnownOauthProtectedResourceSplatRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/openapi/$': typeof ApiOpenapiSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
-  '/dashboard/settings/api-keys': typeof DashboardSettingsApiKeysRoute
-  '/dashboard/settings/danger-zone': typeof DashboardSettingsDangerZoneRoute
-  '/dashboard/settings/job-search': typeof DashboardSettingsJobSearchRoute
-  '/dashboard/settings/preferences': typeof DashboardSettingsPreferencesRoute
-  '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
-  '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
-  '/builder/$resumeId': typeof BuilderResumeIdIndexRoute
-  '/dashboard/jobs': typeof DashboardJobsIndexRoute
-  '/dashboard/resumes': typeof DashboardResumesIndexRoute
-  '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
-  '/dashboard/jobs/$campaignId': typeof DashboardJobsCampaignIdIndexRoute
-  '/dashboard/settings/authentication': typeof DashboardSettingsAuthenticationIndexRoute
-}
-export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/_home': typeof HomeRouteRouteWithChildren
-  '/agent': typeof AgentRouteRouteWithChildren
-  '/auth': typeof AuthRouteRouteWithChildren
-  '/dashboard': typeof DashboardRouteRouteWithChildren
-  '/schema.json': typeof SchemaDotjsonRoute
-  '/builder/$resumeId': typeof BuilderResumeIdRouteRouteWithChildren
-  '/dashboard/jobs': typeof DashboardJobsRouteRouteWithChildren
-  '/$username/$slug': typeof UsernameSlugRoute
-  '/.well-known/$': typeof DotwellKnownSplatRoute
-  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRouteWithChildren
-  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRouteWithChildren
-  '/.well-known/openid-configuration': typeof DotwellKnownOpenidConfigurationRoute
-  '/agent/$threadId': typeof AgentThreadIdRoute
-  '/agent/new': typeof AgentNewRoute
-  '/api/health': typeof ApiHealthRoute
-  '/auth/forgot-password': typeof AuthForgotPasswordRoute
-  '/auth/login': typeof AuthLoginRoute
-  '/auth/oauth': typeof AuthOauthRoute
-  '/auth/register': typeof AuthRegisterRoute
-  '/auth/reset-password': typeof AuthResetPasswordRoute
-  '/auth/resume-password': typeof AuthResumePasswordRoute
-  '/auth/verify-2fa': typeof AuthVerify2faRoute
-  '/auth/verify-2fa-backup': typeof AuthVerify2faBackupRoute
-  '/templates/$': typeof TemplatesSplatRoute
-  '/_home/': typeof HomeIndexRoute
-  '/agent/': typeof AgentIndexRoute
-  '/auth/': typeof AuthIndexRoute
-  '/dashboard/': typeof DashboardIndexRoute
-  '/mcp/': typeof McpIndexRoute
-  '/dashboard/settings/integrations': typeof DashboardSettingsIntegrationsRouteRoute
-  '/.well-known/mcp/server-card.json': typeof DotwellKnownMcpServerCardDotjsonRoute
-  '/.well-known/oauth-authorization-server/$': typeof DotwellKnownOauthAuthorizationServerSplatRoute
-  '/.well-known/oauth-protected-resource/$': typeof DotwellKnownOauthProtectedResourceSplatRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/openapi/$': typeof ApiOpenapiSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
-  '/dashboard/settings/api-keys': typeof DashboardSettingsApiKeysRoute
-  '/dashboard/settings/danger-zone': typeof DashboardSettingsDangerZoneRoute
-  '/dashboard/settings/job-search': typeof DashboardSettingsJobSearchRoute
-  '/dashboard/settings/preferences': typeof DashboardSettingsPreferencesRoute
-  '/dashboard/settings/profile': typeof DashboardSettingsProfileRoute
-  '/uploads/$userId/$': typeof UploadsUserIdSplatRoute
-  '/builder/$resumeId/': typeof BuilderResumeIdIndexRoute
-  '/dashboard/jobs/': typeof DashboardJobsIndexRoute
-  '/dashboard/resumes/': typeof DashboardResumesIndexRoute
-  '/api/uploads/$userId/$': typeof ApiUploadsUserIdSplatRoute
-  '/dashboard/jobs/$campaignId/': typeof DashboardJobsCampaignIdIndexRoute
-  '/dashboard/settings/authentication/': typeof DashboardSettingsAuthenticationIndexRoute
-=======
   } as any);
 
 export interface FileRoutesByFullPath {
@@ -425,6 +216,7 @@ export interface FileRoutesByFullPath {
   "/auth": typeof AuthRouteRouteWithChildren;
   "/dashboard": typeof DashboardRouteRouteWithChildren;
   "/builder/$resumeId": typeof BuilderResumeIdRouteRouteWithChildren;
+  "/dashboard/jobs": typeof DashboardJobsRouteRouteWithChildren;
   "/$username/$slug": typeof UsernameSlugRoute;
   "/agent/$threadId": typeof AgentThreadIdRoute;
   "/agent/new": typeof AgentNewRoute;
@@ -446,7 +238,9 @@ export interface FileRoutesByFullPath {
   "/dashboard/settings/preferences": typeof DashboardSettingsPreferencesRoute;
   "/dashboard/settings/profile": typeof DashboardSettingsProfileRoute;
   "/builder/$resumeId/": typeof BuilderResumeIdIndexRoute;
+  "/dashboard/jobs/": typeof DashboardJobsIndexRoute;
   "/dashboard/resumes/": typeof DashboardResumesIndexRoute;
+  "/dashboard/jobs/$campaignId/": typeof DashboardJobsCampaignIdIndexRoute;
   "/dashboard/settings/authentication/": typeof DashboardSettingsAuthenticationIndexRoute;
 }
 export interface FileRoutesByTo {
@@ -472,7 +266,9 @@ export interface FileRoutesByTo {
   "/dashboard/settings/preferences": typeof DashboardSettingsPreferencesRoute;
   "/dashboard/settings/profile": typeof DashboardSettingsProfileRoute;
   "/builder/$resumeId": typeof BuilderResumeIdIndexRoute;
+  "/dashboard/jobs": typeof DashboardJobsIndexRoute;
   "/dashboard/resumes": typeof DashboardResumesIndexRoute;
+  "/dashboard/jobs/$campaignId": typeof DashboardJobsCampaignIdIndexRoute;
   "/dashboard/settings/authentication": typeof DashboardSettingsAuthenticationIndexRoute;
 }
 export interface FileRoutesById {
@@ -482,6 +278,7 @@ export interface FileRoutesById {
   "/auth": typeof AuthRouteRouteWithChildren;
   "/dashboard": typeof DashboardRouteRouteWithChildren;
   "/builder/$resumeId": typeof BuilderResumeIdRouteRouteWithChildren;
+  "/dashboard/jobs": typeof DashboardJobsRouteRouteWithChildren;
   "/$username/$slug": typeof UsernameSlugRoute;
   "/agent/$threadId": typeof AgentThreadIdRoute;
   "/agent/new": typeof AgentNewRoute;
@@ -504,162 +301,20 @@ export interface FileRoutesById {
   "/dashboard/settings/preferences": typeof DashboardSettingsPreferencesRoute;
   "/dashboard/settings/profile": typeof DashboardSettingsProfileRoute;
   "/builder/$resumeId/": typeof BuilderResumeIdIndexRoute;
+  "/dashboard/jobs/": typeof DashboardJobsIndexRoute;
   "/dashboard/resumes/": typeof DashboardResumesIndexRoute;
+  "/dashboard/jobs/$campaignId/": typeof DashboardJobsCampaignIdIndexRoute;
   "/dashboard/settings/authentication/": typeof DashboardSettingsAuthenticationIndexRoute;
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-<<<<<<< HEAD
-    | '/'
-    | '/agent'
-    | '/auth'
-    | '/dashboard'
-    | '/schema.json'
-    | '/builder/$resumeId'
-    | '/dashboard/jobs'
-    | '/$username/$slug'
-    | '/.well-known/$'
-    | '/.well-known/oauth-authorization-server'
-    | '/.well-known/oauth-protected-resource'
-    | '/.well-known/openid-configuration'
-    | '/agent/$threadId'
-    | '/agent/new'
-    | '/api/health'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/oauth'
-    | '/auth/register'
-    | '/auth/reset-password'
-    | '/auth/resume-password'
-    | '/auth/verify-2fa'
-    | '/auth/verify-2fa-backup'
-    | '/templates/$'
-    | '/agent/'
-    | '/auth/'
-    | '/dashboard/'
-    | '/mcp/'
-    | '/dashboard/settings/integrations'
-    | '/.well-known/mcp/server-card.json'
-    | '/.well-known/oauth-authorization-server/$'
-    | '/.well-known/oauth-protected-resource/$'
-    | '/api/auth/$'
-    | '/api/openapi/$'
-    | '/api/rpc/$'
-    | '/dashboard/settings/api-keys'
-    | '/dashboard/settings/danger-zone'
-    | '/dashboard/settings/job-search'
-    | '/dashboard/settings/preferences'
-    | '/dashboard/settings/profile'
-    | '/uploads/$userId/$'
-    | '/builder/$resumeId/'
-    | '/dashboard/jobs/'
-    | '/dashboard/resumes/'
-    | '/api/uploads/$userId/$'
-    | '/dashboard/jobs/$campaignId/'
-    | '/dashboard/settings/authentication/'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/schema.json'
-    | '/$username/$slug'
-    | '/.well-known/$'
-    | '/.well-known/oauth-authorization-server'
-    | '/.well-known/oauth-protected-resource'
-    | '/.well-known/openid-configuration'
-    | '/agent/$threadId'
-    | '/agent/new'
-    | '/api/health'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/oauth'
-    | '/auth/register'
-    | '/auth/reset-password'
-    | '/auth/resume-password'
-    | '/auth/verify-2fa'
-    | '/auth/verify-2fa-backup'
-    | '/templates/$'
-    | '/'
-    | '/agent'
-    | '/auth'
-    | '/dashboard'
-    | '/mcp'
-    | '/dashboard/settings/integrations'
-    | '/.well-known/mcp/server-card.json'
-    | '/.well-known/oauth-authorization-server/$'
-    | '/.well-known/oauth-protected-resource/$'
-    | '/api/auth/$'
-    | '/api/openapi/$'
-    | '/api/rpc/$'
-    | '/dashboard/settings/api-keys'
-    | '/dashboard/settings/danger-zone'
-    | '/dashboard/settings/job-search'
-    | '/dashboard/settings/preferences'
-    | '/dashboard/settings/profile'
-    | '/uploads/$userId/$'
-    | '/builder/$resumeId'
-    | '/dashboard/jobs'
-    | '/dashboard/resumes'
-    | '/api/uploads/$userId/$'
-    | '/dashboard/jobs/$campaignId'
-    | '/dashboard/settings/authentication'
-  id:
-    | '__root__'
-    | '/_home'
-    | '/agent'
-    | '/auth'
-    | '/dashboard'
-    | '/schema.json'
-    | '/builder/$resumeId'
-    | '/dashboard/jobs'
-    | '/$username/$slug'
-    | '/.well-known/$'
-    | '/.well-known/oauth-authorization-server'
-    | '/.well-known/oauth-protected-resource'
-    | '/.well-known/openid-configuration'
-    | '/agent/$threadId'
-    | '/agent/new'
-    | '/api/health'
-    | '/auth/forgot-password'
-    | '/auth/login'
-    | '/auth/oauth'
-    | '/auth/register'
-    | '/auth/reset-password'
-    | '/auth/resume-password'
-    | '/auth/verify-2fa'
-    | '/auth/verify-2fa-backup'
-    | '/templates/$'
-    | '/_home/'
-    | '/agent/'
-    | '/auth/'
-    | '/dashboard/'
-    | '/mcp/'
-    | '/dashboard/settings/integrations'
-    | '/.well-known/mcp/server-card.json'
-    | '/.well-known/oauth-authorization-server/$'
-    | '/.well-known/oauth-protected-resource/$'
-    | '/api/auth/$'
-    | '/api/openapi/$'
-    | '/api/rpc/$'
-    | '/dashboard/settings/api-keys'
-    | '/dashboard/settings/danger-zone'
-    | '/dashboard/settings/job-search'
-    | '/dashboard/settings/preferences'
-    | '/dashboard/settings/profile'
-    | '/uploads/$userId/$'
-    | '/builder/$resumeId/'
-    | '/dashboard/jobs/'
-    | '/dashboard/resumes/'
-    | '/api/uploads/$userId/$'
-    | '/dashboard/jobs/$campaignId/'
-    | '/dashboard/settings/authentication/'
-  fileRoutesById: FileRoutesById
-=======
     | "/"
     | "/agent"
     | "/auth"
     | "/dashboard"
     | "/builder/$resumeId"
+    | "/dashboard/jobs"
     | "/$username/$slug"
     | "/agent/$threadId"
     | "/agent/new"
@@ -681,7 +336,9 @@ export interface FileRouteTypes {
     | "/dashboard/settings/preferences"
     | "/dashboard/settings/profile"
     | "/builder/$resumeId/"
+    | "/dashboard/jobs/"
     | "/dashboard/resumes/"
+    | "/dashboard/jobs/$campaignId/"
     | "/dashboard/settings/authentication/";
   fileRoutesByTo: FileRoutesByTo;
   to:
@@ -707,7 +364,9 @@ export interface FileRouteTypes {
     | "/dashboard/settings/preferences"
     | "/dashboard/settings/profile"
     | "/builder/$resumeId"
+    | "/dashboard/jobs"
     | "/dashboard/resumes"
+    | "/dashboard/jobs/$campaignId"
     | "/dashboard/settings/authentication";
   id:
     | "__root__"
@@ -716,6 +375,7 @@ export interface FileRouteTypes {
     | "/auth"
     | "/dashboard"
     | "/builder/$resumeId"
+    | "/dashboard/jobs"
     | "/$username/$slug"
     | "/agent/$threadId"
     | "/agent/new"
@@ -738,10 +398,11 @@ export interface FileRouteTypes {
     | "/dashboard/settings/preferences"
     | "/dashboard/settings/profile"
     | "/builder/$resumeId/"
+    | "/dashboard/jobs/"
     | "/dashboard/resumes/"
+    | "/dashboard/jobs/$campaignId/"
     | "/dashboard/settings/authentication/";
   fileRoutesById: FileRoutesById;
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
 }
 export interface RootRouteChildren {
   HomeRouteRoute: typeof HomeRouteRouteWithChildren;
@@ -755,344 +416,6 @@ export interface RootRouteChildren {
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-<<<<<<< HEAD
-    '/schema.json': {
-      id: '/schema.json'
-      path: '/schema.json'
-      fullPath: '/schema.json'
-      preLoaderRoute: typeof SchemaDotjsonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agent': {
-      id: '/agent'
-      path: '/agent'
-      fullPath: '/agent'
-      preLoaderRoute: typeof AgentRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_home': {
-      id: '/_home'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof HomeRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp/': {
-      id: '/mcp/'
-      path: '/mcp'
-      fullPath: '/mcp/'
-      preLoaderRoute: typeof McpIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/': {
-      id: '/dashboard/'
-      path: '/'
-      fullPath: '/dashboard/'
-      preLoaderRoute: typeof DashboardIndexRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/auth/': {
-      id: '/auth/'
-      path: '/'
-      fullPath: '/auth/'
-      preLoaderRoute: typeof AuthIndexRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/agent/': {
-      id: '/agent/'
-      path: '/'
-      fullPath: '/agent/'
-      preLoaderRoute: typeof AgentIndexRouteImport
-      parentRoute: typeof AgentRouteRoute
-    }
-    '/_home/': {
-      id: '/_home/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof HomeIndexRouteImport
-      parentRoute: typeof HomeRouteRoute
-    }
-    '/templates/$': {
-      id: '/templates/$'
-      path: '/templates/$'
-      fullPath: '/templates/$'
-      preLoaderRoute: typeof TemplatesSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth/verify-2fa-backup': {
-      id: '/auth/verify-2fa-backup'
-      path: '/verify-2fa-backup'
-      fullPath: '/auth/verify-2fa-backup'
-      preLoaderRoute: typeof AuthVerify2faBackupRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/verify-2fa': {
-      id: '/auth/verify-2fa'
-      path: '/verify-2fa'
-      fullPath: '/auth/verify-2fa'
-      preLoaderRoute: typeof AuthVerify2faRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/resume-password': {
-      id: '/auth/resume-password'
-      path: '/resume-password'
-      fullPath: '/auth/resume-password'
-      preLoaderRoute: typeof AuthResumePasswordRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/reset-password': {
-      id: '/auth/reset-password'
-      path: '/reset-password'
-      fullPath: '/auth/reset-password'
-      preLoaderRoute: typeof AuthResetPasswordRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/register': {
-      id: '/auth/register'
-      path: '/register'
-      fullPath: '/auth/register'
-      preLoaderRoute: typeof AuthRegisterRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/oauth': {
-      id: '/auth/oauth'
-      path: '/oauth'
-      fullPath: '/auth/oauth'
-      preLoaderRoute: typeof AuthOauthRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/login': {
-      id: '/auth/login'
-      path: '/login'
-      fullPath: '/auth/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/auth/forgot-password': {
-      id: '/auth/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/auth/forgot-password'
-      preLoaderRoute: typeof AuthForgotPasswordRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/api/health': {
-      id: '/api/health'
-      path: '/api/health'
-      fullPath: '/api/health'
-      preLoaderRoute: typeof ApiHealthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agent/new': {
-      id: '/agent/new'
-      path: '/new'
-      fullPath: '/agent/new'
-      preLoaderRoute: typeof AgentNewRouteImport
-      parentRoute: typeof AgentRouteRoute
-    }
-    '/agent/$threadId': {
-      id: '/agent/$threadId'
-      path: '/$threadId'
-      fullPath: '/agent/$threadId'
-      preLoaderRoute: typeof AgentThreadIdRouteImport
-      parentRoute: typeof AgentRouteRoute
-    }
-    '/.well-known/openid-configuration': {
-      id: '/.well-known/openid-configuration'
-      path: '/.well-known/openid-configuration'
-      fullPath: '/.well-known/openid-configuration'
-      preLoaderRoute: typeof DotwellKnownOpenidConfigurationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/.well-known/oauth-protected-resource': {
-      id: '/.well-known/oauth-protected-resource'
-      path: '/.well-known/oauth-protected-resource'
-      fullPath: '/.well-known/oauth-protected-resource'
-      preLoaderRoute: typeof DotwellKnownOauthProtectedResourceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/.well-known/oauth-authorization-server': {
-      id: '/.well-known/oauth-authorization-server'
-      path: '/.well-known/oauth-authorization-server'
-      fullPath: '/.well-known/oauth-authorization-server'
-      preLoaderRoute: typeof DotwellKnownOauthAuthorizationServerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/.well-known/$': {
-      id: '/.well-known/$'
-      path: '/.well-known/$'
-      fullPath: '/.well-known/$'
-      preLoaderRoute: typeof DotwellKnownSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/$username/$slug': {
-      id: '/$username/$slug'
-      path: '/$username/$slug'
-      fullPath: '/$username/$slug'
-      preLoaderRoute: typeof UsernameSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/jobs': {
-      id: '/dashboard/jobs'
-      path: '/jobs'
-      fullPath: '/dashboard/jobs'
-      preLoaderRoute: typeof DashboardJobsRouteRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/builder/$resumeId': {
-      id: '/builder/$resumeId'
-      path: '/builder/$resumeId'
-      fullPath: '/builder/$resumeId'
-      preLoaderRoute: typeof BuilderResumeIdRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/resumes/': {
-      id: '/dashboard/resumes/'
-      path: '/resumes'
-      fullPath: '/dashboard/resumes/'
-      preLoaderRoute: typeof DashboardResumesIndexRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/jobs/': {
-      id: '/dashboard/jobs/'
-      path: '/'
-      fullPath: '/dashboard/jobs/'
-      preLoaderRoute: typeof DashboardJobsIndexRouteImport
-      parentRoute: typeof DashboardJobsRouteRoute
-    }
-    '/builder/$resumeId/': {
-      id: '/builder/$resumeId/'
-      path: '/'
-      fullPath: '/builder/$resumeId/'
-      preLoaderRoute: typeof BuilderResumeIdIndexRouteImport
-      parentRoute: typeof BuilderResumeIdRouteRoute
-    }
-    '/uploads/$userId/$': {
-      id: '/uploads/$userId/$'
-      path: '/uploads/$userId/$'
-      fullPath: '/uploads/$userId/$'
-      preLoaderRoute: typeof UploadsUserIdSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/settings/profile': {
-      id: '/dashboard/settings/profile'
-      path: '/settings/profile'
-      fullPath: '/dashboard/settings/profile'
-      preLoaderRoute: typeof DashboardSettingsProfileRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/settings/preferences': {
-      id: '/dashboard/settings/preferences'
-      path: '/settings/preferences'
-      fullPath: '/dashboard/settings/preferences'
-      preLoaderRoute: typeof DashboardSettingsPreferencesRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/settings/job-search': {
-      id: '/dashboard/settings/job-search'
-      path: '/settings/job-search'
-      fullPath: '/dashboard/settings/job-search'
-      preLoaderRoute: typeof DashboardSettingsJobSearchRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/settings/danger-zone': {
-      id: '/dashboard/settings/danger-zone'
-      path: '/settings/danger-zone'
-      fullPath: '/dashboard/settings/danger-zone'
-      preLoaderRoute: typeof DashboardSettingsDangerZoneRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/settings/api-keys': {
-      id: '/dashboard/settings/api-keys'
-      path: '/settings/api-keys'
-      fullPath: '/dashboard/settings/api-keys'
-      preLoaderRoute: typeof DashboardSettingsApiKeysRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/api/rpc/$': {
-      id: '/api/rpc/$'
-      path: '/api/rpc/$'
-      fullPath: '/api/rpc/$'
-      preLoaderRoute: typeof ApiRpcSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/openapi/$': {
-      id: '/api/openapi/$'
-      path: '/api/openapi/$'
-      fullPath: '/api/openapi/$'
-      preLoaderRoute: typeof ApiOpenapiSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/.well-known/oauth-protected-resource/$': {
-      id: '/.well-known/oauth-protected-resource/$'
-      path: '/$'
-      fullPath: '/.well-known/oauth-protected-resource/$'
-      preLoaderRoute: typeof DotwellKnownOauthProtectedResourceSplatRouteImport
-      parentRoute: typeof DotwellKnownOauthProtectedResourceRoute
-    }
-    '/.well-known/oauth-authorization-server/$': {
-      id: '/.well-known/oauth-authorization-server/$'
-      path: '/$'
-      fullPath: '/.well-known/oauth-authorization-server/$'
-      preLoaderRoute: typeof DotwellKnownOauthAuthorizationServerSplatRouteImport
-      parentRoute: typeof DotwellKnownOauthAuthorizationServerRoute
-    }
-    '/.well-known/mcp/server-card.json': {
-      id: '/.well-known/mcp/server-card.json'
-      path: '/.well-known/mcp/server-card.json'
-      fullPath: '/.well-known/mcp/server-card.json'
-      preLoaderRoute: typeof DotwellKnownMcpServerCardDotjsonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/settings/integrations': {
-      id: '/dashboard/settings/integrations'
-      path: '/settings/integrations'
-      fullPath: '/dashboard/settings/integrations'
-      preLoaderRoute: typeof DashboardSettingsIntegrationsRouteRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/settings/authentication/': {
-      id: '/dashboard/settings/authentication/'
-      path: '/settings/authentication'
-      fullPath: '/dashboard/settings/authentication/'
-      preLoaderRoute: typeof DashboardSettingsAuthenticationIndexRouteImport
-      parentRoute: typeof DashboardRouteRoute
-    }
-    '/dashboard/jobs/$campaignId/': {
-      id: '/dashboard/jobs/$campaignId/'
-      path: '/$campaignId'
-      fullPath: '/dashboard/jobs/$campaignId/'
-      preLoaderRoute: typeof DashboardJobsCampaignIdIndexRouteImport
-      parentRoute: typeof DashboardJobsRouteRoute
-    }
-    '/api/uploads/$userId/$': {
-      id: '/api/uploads/$userId/$'
-      path: '/api/uploads/$userId/$'
-      fullPath: '/api/uploads/$userId/$'
-      preLoaderRoute: typeof ApiUploadsUserIdSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-=======
     "/dashboard": {
       id: "/dashboard";
       path: "/dashboard";
@@ -1226,6 +549,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof UsernameSlugRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    "/dashboard/jobs": {
+      id: "/dashboard/jobs";
+      path: "/jobs";
+      fullPath: "/dashboard/jobs";
+      preLoaderRoute: typeof DashboardJobsRouteRouteImport;
+      parentRoute: typeof DashboardRouteRoute;
+    };
     "/builder/$resumeId": {
       id: "/builder/$resumeId";
       path: "/builder/$resumeId";
@@ -1239,6 +569,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/dashboard/resumes/";
       preLoaderRoute: typeof DashboardResumesIndexRouteImport;
       parentRoute: typeof DashboardRouteRoute;
+    };
+    "/dashboard/jobs/": {
+      id: "/dashboard/jobs/";
+      path: "/";
+      fullPath: "/dashboard/jobs/";
+      preLoaderRoute: typeof DashboardJobsIndexRouteImport;
+      parentRoute: typeof DashboardJobsRouteRoute;
     };
     "/builder/$resumeId/": {
       id: "/builder/$resumeId/";
@@ -1296,7 +633,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof DashboardSettingsAuthenticationIndexRouteImport;
       parentRoute: typeof DashboardRouteRoute;
     };
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
+    "/dashboard/jobs/$campaignId/": {
+      id: "/dashboard/jobs/$campaignId/";
+      path: "/$campaignId";
+      fullPath: "/dashboard/jobs/$campaignId/";
+      preLoaderRoute: typeof DashboardJobsCampaignIdIndexRouteImport;
+      parentRoute: typeof DashboardJobsRouteRoute;
+    };
   }
 }
 
@@ -1355,31 +698,20 @@ const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
 );
 
 interface DashboardJobsRouteRouteChildren {
-  DashboardJobsIndexRoute: typeof DashboardJobsIndexRoute
-  DashboardJobsCampaignIdIndexRoute: typeof DashboardJobsCampaignIdIndexRoute
+  DashboardJobsIndexRoute: typeof DashboardJobsIndexRoute;
+  DashboardJobsCampaignIdIndexRoute: typeof DashboardJobsCampaignIdIndexRoute;
 }
 
 const DashboardJobsRouteRouteChildren: DashboardJobsRouteRouteChildren = {
   DashboardJobsIndexRoute: DashboardJobsIndexRoute,
   DashboardJobsCampaignIdIndexRoute: DashboardJobsCampaignIdIndexRoute,
-}
+};
 
 const DashboardJobsRouteRouteWithChildren =
-  DashboardJobsRouteRoute._addFileChildren(DashboardJobsRouteRouteChildren)
+  DashboardJobsRouteRoute._addFileChildren(DashboardJobsRouteRouteChildren);
 
 interface DashboardRouteRouteChildren {
-<<<<<<< HEAD
-  DashboardJobsRouteRoute: typeof DashboardJobsRouteRouteWithChildren
-  DashboardIndexRoute: typeof DashboardIndexRoute
-  DashboardSettingsIntegrationsRouteRoute: typeof DashboardSettingsIntegrationsRouteRoute
-  DashboardSettingsApiKeysRoute: typeof DashboardSettingsApiKeysRoute
-  DashboardSettingsDangerZoneRoute: typeof DashboardSettingsDangerZoneRoute
-  DashboardSettingsJobSearchRoute: typeof DashboardSettingsJobSearchRoute
-  DashboardSettingsPreferencesRoute: typeof DashboardSettingsPreferencesRoute
-  DashboardSettingsProfileRoute: typeof DashboardSettingsProfileRoute
-  DashboardResumesIndexRoute: typeof DashboardResumesIndexRoute
-  DashboardSettingsAuthenticationIndexRoute: typeof DashboardSettingsAuthenticationIndexRoute
-=======
+  DashboardJobsRouteRoute: typeof DashboardJobsRouteRouteWithChildren;
   DashboardIndexRoute: typeof DashboardIndexRoute;
   DashboardSettingsIntegrationsRouteRoute: typeof DashboardSettingsIntegrationsRouteRoute;
   DashboardSettingsApiKeysRoute: typeof DashboardSettingsApiKeysRoute;
@@ -1389,7 +721,6 @@ interface DashboardRouteRouteChildren {
   DashboardSettingsProfileRoute: typeof DashboardSettingsProfileRoute;
   DashboardResumesIndexRoute: typeof DashboardResumesIndexRoute;
   DashboardSettingsAuthenticationIndexRoute: typeof DashboardSettingsAuthenticationIndexRoute;
->>>>>>> b9e4ab78efb8142136cd55340e43570a9d48b84b
 }
 
 const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {

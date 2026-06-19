@@ -1,6 +1,7 @@
 import type { ApplicationStatus } from "@reactive-resume/schema/job-application";
+import type { SQL } from "drizzle-orm";
 import { ORPCError } from "@orpc/client";
-import { and, asc, desc, eq } from "drizzle-orm";
+import { and, asc, count, desc, eq, ilike, inArray, or } from "drizzle-orm";
 import { db } from "@reactive-resume/db/client";
 import * as schema from "@reactive-resume/db/schema";
 import { generateId } from "@reactive-resume/utils/string";
@@ -84,7 +85,26 @@ const campaign = {
 // -----------------------------------------------------------------------
 
 const application = {
-	list: async (input: { userId: string; campaignId?: string | undefined }) => {
+	list: async (input: {
+		userId: string;
+		campaignId?: string | undefined;
+		search?: string | undefined;
+		status?: ApplicationStatus | undefined;
+	}) => {
+		const conditions = [eq(schema.jobApplication.userId, input.userId)];
+
+		if (input.campaignId) {
+			conditions.push(eq(schema.jobApplication.campaignId, input.campaignId));
+		}
+		if (input.status) {
+			conditions.push(eq(schema.jobApplication.status, input.status));
+		}
+		if (input.search) {
+			const companySearch = ilike(schema.jobApplication.company, `%${input.search}%`) as SQL<unknown>;
+			const titleSearch = ilike(schema.jobApplication.jobTitle, `%${input.search}%`) as SQL<unknown>;
+			conditions.push(or(companySearch, titleSearch) as SQL<unknown>);
+		}
+
 		return db
 			.select({
 				id: schema.jobApplication.id,
@@ -96,6 +116,7 @@ const application = {
 				locationType: schema.jobApplication.locationType,
 				salary: schema.jobApplication.salary,
 				status: schema.jobApplication.status,
+				position: schema.jobApplication.position,
 				jobDescription: schema.jobApplication.jobDescription,
 				notes: schema.jobApplication.notes,
 				applicationMethod: schema.jobApplication.applicationMethod,
@@ -105,12 +126,7 @@ const application = {
 				updatedAt: schema.jobApplication.updatedAt,
 			})
 			.from(schema.jobApplication)
-			.where(
-				and(
-					eq(schema.jobApplication.userId, input.userId),
-					input.campaignId ? eq(schema.jobApplication.campaignId, input.campaignId) : undefined,
-				),
-			)
+			.where(and(...conditions))
 			.orderBy(desc(schema.jobApplication.createdAt));
 	},
 
@@ -126,6 +142,7 @@ const application = {
 				locationType: schema.jobApplication.locationType,
 				salary: schema.jobApplication.salary,
 				status: schema.jobApplication.status,
+				position: schema.jobApplication.position,
 				jobDescription: schema.jobApplication.jobDescription,
 				notes: schema.jobApplication.notes,
 				applicationMethod: schema.jobApplication.applicationMethod,
@@ -166,8 +183,22 @@ const application = {
 		resumeId?: string | null | undefined;
 		appliedAt?: Date | null | undefined;
 	}) => {
+		// Verify campaign ownership
+		const [campaign] = await db
+			.select({ id: schema.campaign.id })
+			.from(schema.campaign)
+			.where(and(eq(schema.campaign.id, input.campaignId), eq(schema.campaign.userId, input.userId)));
+
+		if (!campaign) throw new ORPCError("NOT_FOUND");
+
 		const id = generateId();
 		const status = input.status ?? "wishlist";
+
+		// Compute position: append to end of the target status column
+		const [countResult] = await db
+			.select({ count: count() })
+			.from(schema.jobApplication)
+			.where(and(eq(schema.jobApplication.userId, input.userId), eq(schema.jobApplication.status, status)));
 
 		await db.insert(schema.jobApplication).values({
 			id,
@@ -180,6 +211,7 @@ const application = {
 			locationType: input.locationType ?? null,
 			salary: input.salary ?? null,
 			status,
+			position: countResult?.count ?? 0,
 			jobDescription: input.jobDescription ?? null,
 			notes: input.notes ?? null,
 			applicationMethod: input.applicationMethod ?? null,
@@ -253,6 +285,7 @@ const application = {
 				locationType: schema.jobApplication.locationType,
 				salary: schema.jobApplication.salary,
 				status: schema.jobApplication.status,
+				position: schema.jobApplication.position,
 				jobDescription: schema.jobApplication.jobDescription,
 				notes: schema.jobApplication.notes,
 				applicationMethod: schema.jobApplication.applicationMethod,
@@ -307,7 +340,13 @@ const application = {
 
 		if (existing.status === input.status) return;
 
-		await db.update(schema.jobApplication).set({ status: input.status }).where(eq(schema.jobApplication.id, input.id));
+		const updates: Record<string, unknown> = { status: input.status };
+		// Auto-set appliedAt when transitioning to "applied" and it hasn't been set
+		if (input.status === "applied" && !existing.appliedAt) {
+			updates.appliedAt = new Date();
+		}
+
+		await db.update(schema.jobApplication).set(updates).where(eq(schema.jobApplication.id, input.id));
 
 		await db.insert(schema.jobApplicationActivity).values({
 			id: generateId(),
@@ -329,6 +368,90 @@ const application = {
 
 		await db.delete(schema.jobApplication).where(eq(schema.jobApplication.id, input.id));
 	},
+
+	reorderColumn: async (input: { userId: string; status: ApplicationStatus; orderedIds: string[] }) => {
+		const apps = await db
+			.select({ id: schema.jobApplication.id, userId: schema.jobApplication.userId })
+			.from(schema.jobApplication)
+			.where(and(inArray(schema.jobApplication.id, input.orderedIds), eq(schema.jobApplication.userId, input.userId)));
+
+		const appMap = new Map(apps.map((a) => [a.id, a]));
+		for (const id of input.orderedIds) {
+			if (!appMap.has(id)) throw new ORPCError("NOT_FOUND");
+		}
+
+		// Wrap updates in a transaction for atomicity — all position/status changes
+		// succeed or fail together, and the transaction reduces round-trip overhead.
+		await db.transaction(async (tx) => {
+			for (let index = 0; index < input.orderedIds.length; index++) {
+				const id = input.orderedIds[index];
+				if (id === undefined) continue;
+				const updates: Record<string, unknown> = { position: index, status: input.status };
+				await tx
+					.update(schema.jobApplication)
+					.set(updates)
+					.where(and(eq(schema.jobApplication.id, id), eq(schema.jobApplication.userId, input.userId)));
+			}
+		});
+	},
+
+	bulkUpdateStatus: async (input: { userId: string; ids: string[]; status: ApplicationStatus }) => {
+		if (input.ids.length === 0) return;
+
+		const existingApps = await db
+			.select({
+				id: schema.jobApplication.id,
+				userId: schema.jobApplication.userId,
+				status: schema.jobApplication.status,
+				appliedAt: schema.jobApplication.appliedAt,
+			})
+			.from(schema.jobApplication)
+			.where(and(eq(schema.jobApplication.userId, input.userId), inArray(schema.jobApplication.id, input.ids)));
+
+		if (existingApps.length !== input.ids.length) throw new ORPCError("NOT_FOUND");
+
+		// Only set appliedAt when transitioning to "applied" and it hasn't been set yet,
+		// mirroring the logic in updateStatus to avoid overwriting existing timestamps.
+		const needsAppliedAt = input.status === "applied" && existingApps.some((app) => !app.appliedAt);
+
+		const updates: Record<string, unknown> = { status: input.status };
+		if (needsAppliedAt) {
+			updates.appliedAt = new Date();
+		}
+
+		await db
+			.update(schema.jobApplication)
+			.set(updates)
+			.where(and(eq(schema.jobApplication.userId, input.userId), inArray(schema.jobApplication.id, input.ids)));
+
+		for (const app of existingApps) {
+			if (app.status !== input.status) {
+				await db.insert(schema.jobApplicationActivity).values({
+					id: generateId(),
+					jobApplicationId: app.id,
+					userId: input.userId,
+					type: "status_changed",
+					fromStatus: app.status,
+					toStatus: input.status,
+				});
+			}
+		}
+	},
+
+	bulkDelete: async (input: { userId: string; ids: string[] }) => {
+		if (input.ids.length === 0) return;
+
+		const existingApps = await db
+			.select({ id: schema.jobApplication.id, userId: schema.jobApplication.userId })
+			.from(schema.jobApplication)
+			.where(and(eq(schema.jobApplication.userId, input.userId), inArray(schema.jobApplication.id, input.ids)));
+
+		if (existingApps.length !== input.ids.length) throw new ORPCError("NOT_FOUND");
+
+		await db
+			.delete(schema.jobApplication)
+			.where(and(eq(schema.jobApplication.userId, input.userId), inArray(schema.jobApplication.id, input.ids)));
+	},
 };
 
 // -----------------------------------------------------------------------
@@ -336,11 +459,11 @@ const application = {
 // -----------------------------------------------------------------------
 
 const activityLog = {
-	listByApplication: async (input: { applicationId: string; userId: string }) => {
+	listByApplication: async (input: { applicationId: string; userId: string; limit?: number }) => {
 		// Verify ownership before returning activity
 		await application.getById({ id: input.applicationId, userId: input.userId });
 
-		return db
+		const query = db
 			.select({
 				id: schema.jobApplicationActivity.id,
 				jobApplicationId: schema.jobApplicationActivity.jobApplicationId,
@@ -352,6 +475,12 @@ const activityLog = {
 			.from(schema.jobApplicationActivity)
 			.where(eq(schema.jobApplicationActivity.jobApplicationId, input.applicationId))
 			.orderBy(asc(schema.jobApplicationActivity.createdAt));
+
+		if (input.limit !== undefined) {
+			return query.limit(input.limit);
+		}
+
+		return query;
 	},
 };
 

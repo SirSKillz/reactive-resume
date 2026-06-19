@@ -81,7 +81,7 @@ function RouteComponent() {
 			)}
 
 			{!isLoading && applications && applications.length > 0 && (
-				<KanbanBoard applications={applications} onCardClick={handleCardClick} />
+				<KanbanBoard applications={applications} campaignId={campaignId} onCardClick={handleCardClick} />
 			)}
 
 			<ApplicationDetailSheet

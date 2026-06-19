@@ -3,7 +3,7 @@ import { aiRouter } from "../features/ai/router";
 import { aiProvidersRouter } from "../features/ai-providers/router";
 import { authRouter } from "../features/auth/router";
 import { flagsRouter } from "../features/flags/router";
-import { jobApplicationRouter } from "./job-application";
+import { jobApplicationRouter } from "../features/job-application/router";
 import { resumeRouter } from "../features/resume/router";
 import { statisticsRouter } from "../features/statistics/router";
 import { storageRouter } from "../features/storage/router";

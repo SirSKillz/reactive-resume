@@ -44,34 +44,34 @@ export function ApplicationDetailSheet({ application, open, onOpenChange }: Prop
 
 	const statusLabels = useMemo<Record<string, string>>(
 		() => ({
-			wishlist: i18n._(msg`Wishlist`),
-			applied: i18n._(msg`Applied`),
-			interviewing: i18n._(msg`Interviewing`),
-			offer: i18n._(msg`Offer`),
-			rejected: i18n._(msg`Rejected`),
-			ghosted: i18n._(msg`Ghosted`),
+			wishlist: i18n.t(msg`Wishlist`),
+			applied: i18n.t(msg`Applied`),
+			interviewing: i18n.t(msg`Interviewing`),
+			offer: i18n.t(msg`Offer`),
+			rejected: i18n.t(msg`Rejected`),
+			ghosted: i18n.t(msg`Ghosted`),
 		}),
 		[i18n],
 	);
 
 	const locationTypeLabels = useMemo<Record<string, string>>(
 		() => ({
-			remote: i18n._(msg`Remote`),
-			hybrid: i18n._(msg`Hybrid`),
-			onsite: i18n._(msg`On-site`),
+			remote: i18n.t(msg`Remote`),
+			hybrid: i18n.t(msg`Hybrid`),
+			onsite: i18n.t(msg`On-site`),
 		}),
 		[i18n],
 	);
 
 	const methodLabels = useMemo<Record<string, string>>(
 		() => ({
-			linkedin: i18n._(msg`LinkedIn`),
-			indeed: i18n._(msg`Indeed`),
-			glassdoor: i18n._(msg`Glassdoor`),
-			email: i18n._(msg`Email`),
-			website: i18n._(msg`Company Website`),
-			referral: i18n._(msg`Referral`),
-			other: i18n._(msg`Other`),
+			linkedin: i18n.t(msg`LinkedIn`),
+			indeed: i18n.t(msg`Indeed`),
+			glassdoor: i18n.t(msg`Glassdoor`),
+			email: i18n.t(msg`Email`),
+			website: i18n.t(msg`Company Website`),
+			referral: i18n.t(msg`Referral`),
+			other: i18n.t(msg`Other`),
 		}),
 		[i18n],
 	);
@@ -100,7 +100,7 @@ export function ApplicationDetailSheet({ application, open, onOpenChange }: Prop
 			{ id: application.id },
 			{
 				onSuccess: () => {
-					void queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions());
+					queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions()).catch(() => {});
 					toast.success(t`Application deleted.`);
 					onOpenChange(false);
 				},
@@ -117,7 +117,7 @@ export function ApplicationDetailSheet({ application, open, onOpenChange }: Prop
 			{ id: application.id, notes: notesDraft.trim() || null },
 			{
 				onSuccess: () => {
-					void queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions());
+					queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions()).catch(() => {});
 					setIsEditingNotes(false);
 					toast.success(t`Notes saved.`);
 				},
@@ -146,11 +146,11 @@ export function ApplicationDetailSheet({ application, open, onOpenChange }: Prop
 							<TabsTrigger value="overview">
 								<Trans>Overview</Trans>
 							</TabsTrigger>
-							<TabsTrigger value="notes">
-								<Trans>Notes</Trans>
-							</TabsTrigger>
 							<TabsTrigger value="description">
 								<Trans>Job Description</Trans>
+							</TabsTrigger>
+							<TabsTrigger value="notes">
+								<Trans>Notes</Trans>
 							</TabsTrigger>
 							<TabsTrigger value="activity">
 								<Trans>Activity</Trans>
@@ -172,7 +172,7 @@ export function ApplicationDetailSheet({ application, open, onOpenChange }: Prop
 										{statusLabels[application.status] ?? application.status}
 									</Badge>
 									{application.locationType && (
-										<Badge variant="outline" className="capitalize">
+										<Badge variant="outline">
 											{locationTypeLabels[application.locationType] ?? application.locationType}
 										</Badge>
 									)}

@@ -15,12 +15,14 @@ import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { msg, t } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Badge } from "@reactive-resume/ui/components/badge";
 import { cn } from "@reactive-resume/utils/style";
 import { orpc } from "@/libs/orpc/client";
 import { ApplicationCard } from "./application-card";
+import { BulkActionBar } from "./bulk-action-bar";
+import { ExportImportButtons } from "./export-import";
 
 type JobApplication = RouterOutput["jobApplication"]["application"]["list"][number];
 
@@ -35,20 +37,23 @@ const COLUMNS: { status: ApplicationStatus; label: MessageDescriptor }[] = [
 
 type Props = {
 	applications: JobApplication[];
+	campaignId: string;
 	onCardClick: (application: JobApplication) => void;
 };
 
-/** Resolve a drag target ID to a column status. Column droppables report the status directly; card sortables report the card ID, so we look up the card's current status. */
+// Resolve a drag target ID to a column status. Column droppables report the status directly; card sortables report the card ID, so we look up the card's current status
 function resolveStatus(overId: UniqueIdentifier, applications: JobApplication[]): ApplicationStatus | null {
 	if (COLUMNS.some((c) => c.status === overId)) return overId as ApplicationStatus;
 	const card = applications.find((a) => a.id === overId);
 	return card ? card.status : null;
 }
 
-export function KanbanBoard({ applications, onCardClick }: Props) {
+export function KanbanBoard({ applications, campaignId, onCardClick }: Props) {
 	const { i18n } = useLingui();
 	const [activeApplication, setActiveApplication] = useState<JobApplication | null>(null);
 	const [dropPlaceholder, setDropPlaceholder] = useState<{ status: ApplicationStatus; index: number } | null>(null);
+	const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+	const [lastSelectedId, setLastSelectedId] = useState<string | null>(null);
 	const queryClient = useQueryClient();
 
 	const { mutate: reorderColumn } = useMutation(orpc.jobApplication.application.reorderColumn.mutationOptions());
@@ -56,9 +61,61 @@ export function KanbanBoard({ applications, onCardClick }: Props) {
 	const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 8 } }));
 
 	const byStatus = useCallback(
-		(status: ApplicationStatus) => applications.filter((a) => a.status === status),
+		(status: ApplicationStatus) =>
+			applications.filter((a) => a.status === status).sort((a, b) => a.position - b.position),
 		[applications],
 	);
+
+	// Clear selection on Escape
+	useEffect(() => {
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				setSelectedIds(new Set());
+				setLastSelectedId(null);
+			}
+		};
+
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, []);
+
+	const toggleSelection = useCallback(
+		(appId: string, event: React.MouseEvent) => {
+			const app = applications.find((a) => a.id === appId);
+			if (!app) return;
+
+			if (event.ctrlKey || event.metaKey) {
+				// Toggle individual selection
+				setSelectedIds((prev) => {
+					const next = new Set(prev);
+					if (next.has(appId)) next.delete(appId);
+					else next.add(appId);
+					return next;
+				});
+				setLastSelectedId(appId);
+			} else if (event.shiftKey && lastSelectedId) {
+				// Range select
+				const allApps = applications;
+				const startIdx = allApps.findIndex((a) => a.id === lastSelectedId);
+				const endIdx = allApps.findIndex((a) => a.id === appId);
+				if (startIdx !== -1 && endIdx !== -1) {
+					const [minIdx, maxIdx] = [Math.min(startIdx, endIdx), Math.max(startIdx, endIdx)];
+					const range = new Set(allApps.slice(minIdx, maxIdx + 1).map((a) => a.id));
+					setSelectedIds(range);
+				}
+			} else {
+				// Single select
+				setSelectedIds(new Set([appId]));
+				setLastSelectedId(appId);
+			}
+		},
+		[applications, lastSelectedId],
+	);
+
+	const clearSelection = useCallback(() => {
+		setSelectedIds(new Set());
+		setLastSelectedId(null);
+	}, []);
 
 	const handleDragStart = useCallback(
 		(event: DragStartEvent) => {
@@ -162,7 +219,7 @@ export function KanbanBoard({ applications, onCardClick }: Props) {
 
 		// Optimistic update: reorder applications array in query cache
 		queryClient.setQueryData(
-			orpc.jobApplication.application.list.queryOptions().queryKey,
+			orpc.jobApplication.application.list.queryOptions({ input: { campaignId } }).queryKey,
 			(old: JobApplication[] | undefined) => {
 				if (!old) return old;
 				const updated = [...old];
@@ -171,12 +228,7 @@ export function KanbanBoard({ applications, onCardClick }: Props) {
 					const app = newTargetColumnApps[i];
 					const idx = updated.findIndex((a) => a.id === app.id);
 					if (idx !== -1) {
-						const patch: Partial<JobApplication> = { status: targetStatus, position: i };
-						// Mirror server-side auto-set of appliedAt when moving wishlist → applied
-						if (targetStatus === "applied" && app.status === "wishlist" && !app.appliedAt) {
-							patch.appliedAt = new Date();
-						}
-						updated[idx] = { ...updated[idx], ...patch };
+						updated[idx] = { ...updated[idx], status: targetStatus, position: i };
 					}
 				}
 				// If cross-column move, also update source column positions
@@ -199,44 +251,63 @@ export function KanbanBoard({ applications, onCardClick }: Props) {
 			{
 				onError: () => {
 					toast.error(t`Failed to reorder applications.`);
-					void queryClient.invalidateQueries(orpc.jobApplication.application.list.queryOptions());
+					queryClient
+						.invalidateQueries(orpc.jobApplication.application.list.queryOptions({ input: { campaignId } }))
+						.catch(() => {});
 				},
 			},
 		);
 	};
 
 	return (
-		<DndContext
-			sensors={sensors}
-			collisionDetection={pointerWithin}
-			onDragStart={handleDragStart}
-			onDragOver={handleDragOver}
-			onDragEnd={handleDragEnd}
-		>
-			<div className="flex gap-3 overflow-x-auto pb-4">
-				{COLUMNS.map(({ status, label }) => {
-					const columnApps = byStatus(status);
-					const placeholder = dropPlaceholder?.status === status ? dropPlaceholder.index : null;
-					return (
-						<KanbanColumn
-							key={status}
-							status={status}
-							label={i18n._(label)}
-							applications={columnApps}
-							onCardClick={onCardClick}
-							draggedApplicationId={activeApplication?.id ?? null}
-							dropPlaceholderIndex={placeholder}
-						/>
-					);
-				})}
+		<div className="flex flex-col gap-4">
+			<div className="flex items-center justify-between">
+				<h2 className="font-semibold">{t`Job Applications`}</h2>
+				<ExportImportButtons campaignId={campaignId} />
 			</div>
 
-			<DragOverlay>
-				{activeApplication && (
-					<ApplicationCard application={activeApplication} onClick={() => {}} draggedApplicationId={null} />
-				)}
-			</DragOverlay>
-		</DndContext>
+			<DndContext
+				sensors={sensors}
+				collisionDetection={pointerWithin}
+				onDragStart={handleDragStart}
+				onDragOver={handleDragOver}
+				onDragEnd={handleDragEnd}
+			>
+				<div className="flex gap-3 overflow-x-auto pb-4">
+					{COLUMNS.map(({ status, label }) => {
+						const columnApps = byStatus(status);
+						const placeholder = dropPlaceholder?.status === status ? dropPlaceholder.index : null;
+						return (
+							<KanbanColumn
+								key={status}
+								status={status}
+								label={i18n.t(label)}
+								applications={columnApps}
+								onCardClick={onCardClick}
+								draggedApplicationId={activeApplication?.id ?? null}
+								dropPlaceholderIndex={placeholder}
+								selectedIds={selectedIds}
+								onToggleSelection={toggleSelection}
+							/>
+						);
+					})}
+				</div>
+
+				<DragOverlay>
+					{activeApplication && (
+						<ApplicationCard
+							application={activeApplication}
+							onClick={() => {}}
+							draggedApplicationId={null}
+							selected={false}
+							onToggleSelection={() => {}}
+						/>
+					)}
+				</DragOverlay>
+			</DndContext>
+
+			<BulkActionBar selectedIds={selectedIds} onClearSelection={clearSelection} />
+		</div>
 	);
 }
 
@@ -247,6 +318,8 @@ type ColumnProps = {
 	onCardClick: (application: JobApplication) => void;
 	draggedApplicationId: string | null;
 	dropPlaceholderIndex: number | null;
+	selectedIds: Set<string>;
+	onToggleSelection: (appId: string, event: React.MouseEvent) => void;
 };
 
 function KanbanColumn({
@@ -256,6 +329,8 @@ function KanbanColumn({
 	onCardClick,
 	draggedApplicationId,
 	dropPlaceholderIndex,
+	selectedIds,
+	onToggleSelection,
 }: ColumnProps) {
 	const { setNodeRef: setDroppableRef } = useDroppable({ id: status });
 
@@ -303,6 +378,8 @@ function KanbanColumn({
 									application={item.app}
 									onClick={onCardClick}
 									draggedApplicationId={draggedApplicationId}
+									selected={selectedIds.has(item.app.id)}
+									onToggleSelection={onToggleSelection}
 								/>
 							);
 						});

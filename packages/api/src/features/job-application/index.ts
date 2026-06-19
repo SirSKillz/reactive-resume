@@ -1,0 +1,1 @@
+export { jobApplicationService } from "./service";
